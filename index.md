@@ -51,8 +51,8 @@ page_sections:
     quick edits throughout your new site</span>
   content: You have business problems. We find solutions. We work to understand your
     business objectives and aspirations, audience behaviors and needs, and then translate
-    them into actions.<br><br>- Business Strategy<br>- Goal Setting<br>- Usability
-    Testing<br>- Content Audits<br>- Content Strategy<br>- Taxonomy
+    them into actions.<br><br>+ Business Strategy<br>+ Goal Setting<br>+ Usability
+    Testing<br>+ Content Audits<br>+ Content Strategy<br>+ Taxonomy
   media:
     image: "/uploads/2018/06/21/edit.gif"
     alt_text: Customize Blocks
