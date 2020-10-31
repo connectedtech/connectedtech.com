@@ -47,10 +47,12 @@ page_sections:
   block: feature-1
   media_alignment: Right
   slug: customize
-  headline: <strong>Customize Blocks</strong><span class="light">&nbsp;to make quick
-    edits throughout your new site</span>
-  content: Each block comes with custom Front Matter that can be edited in Forestry
-    CMS.
+  headline: <strong>Strategy and Consultation</strong><span class="light"> to make
+    quick edits throughout your new site</span>
+  content: You have business problems. We find solutions. We work to understand your
+    business objectives and aspirations, audience behaviors and needs, and then translate
+    them into actions.<br><br>- Business Strategy<br>- Goal Setting<br>- Usability
+    Testing<br>- Content Audits<br>- Content Strategy<br>- Taxonomy
   media:
     image: "/uploads/2018/06/21/edit.gif"
     alt_text: Customize Blocks
