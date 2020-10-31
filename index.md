@@ -58,7 +58,7 @@ page_sections:
     alt_text: Customize Blocks
 - template: content-feature
   block: feature-1
-  media_alignment: Right
+  media_alignment: Left
   headline: "<strong>Project Management</strong>"
   content: Projects have lots of moving parts, so each one gets a dedicated Project
     Manager. From start to finish, your PM provides a steady hand to keep schedules
