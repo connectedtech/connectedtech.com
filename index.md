@@ -54,7 +54,7 @@ page_sections:
     them into actions.<br><br>+ Business Strategy<br>+ Goal Setting<br>+ Usability
     Testing<br>+ Content Audits<br>+ Content Strategy<br>+ Taxonomy
   media:
-    image: "/uploads/2018/06/21/edit.gif"
+    image: "/uploads/2020/10/31/icon-only.png"
     alt_text: Customize Blocks
 - template: content-feature
   block: feature-1
