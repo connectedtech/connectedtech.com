@@ -56,6 +56,19 @@ page_sections:
   media:
     image: "/uploads/2018/06/21/edit.gif"
     alt_text: Customize Blocks
+- template: content-feature
+  block: feature-1
+  media_alignment: Right
+  headline: "<strong>Project Management</strong>"
+  content: Projects have lots of moving parts, so each one gets a dedicated Project
+    Manager. From start to finish, your PM provides a steady hand to keep schedules
+    running smoothly, track project risks and find solutions, keep communication flowing,
+    and monitor the budget.<br>+ Scheduling<br>+ Budgeting<br>+ Weekly Status Updates<br>+
+    Client Communications<br>+ Agenda Development
+  slug: ''
+  media:
+    image: ''
+    alt_text: ''
 - template: 1-column-text
   block: one-column-1
   slug: responsive
@@ -99,10 +112,6 @@ page_sections:
     this demo in Forestry</a>.</p></li><li><p>Read <a href="https://forestry.io/blog/ubuild-a-new-theme-for-static-sites-using-blocks/">our
     article</a> and create your own Blocks.</p></li><li><p>Add and customize the available
     Blocks and preview them as you go along.</p></li></ol>
-- template: signup-bar
-  block: cta-bar
-  content: ''
-  email_recipient: ''
 - template: simple-footer
   block: footer-1
   content: Made with ❤︎ in Canada
