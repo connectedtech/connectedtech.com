@@ -83,6 +83,14 @@ page_sections:
   image: "/uploads/2018/06/21/theme.png"
   caption: All Available Blocks
   slug: blocks
+- template: 2-column-media-element
+  block: media-2
+  image_1:
+    image: "/uploads/2018/06/21/theme.png"
+    caption: Image 1 caption
+  image_2:
+    image: "/uploads/2018/06/21/product-shot-1.png"
+    caption: Image 2 caption
 - template: detail-content
   block: text-1
   headline: Steps to Build a Site!
