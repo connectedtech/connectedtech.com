@@ -78,9 +78,9 @@ page_sections:
     image: ''
     alt_text: ''
   cta:
-    enabled: false
-    url: ''
-    button_text: ''
+    enabled: true
+    url: "#"
+    button_text: Give Us a Call
 - template: 1-column-text
   block: one-column-1
   slug: responsive
