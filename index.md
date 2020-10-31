@@ -7,8 +7,6 @@ page_sections:
   block: header-2
   logo: "/uploads/2020/10/31/icon-with-arial-text-6.png"
   navigation:
-  - link: "/"
-    link_text: Home
   - link: "#swap"
     link_text: Services
   - link: "#about"
