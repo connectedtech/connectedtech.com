@@ -64,6 +64,20 @@ page_sections:
     The Design Blocks can be used without Forestry but to harness the power
     of Blocks we recommend using <a href="https://forestry.io">Forestry</a>. Once the site is imported you can immediately
     create new sites and make them fully customizable.
+- template: 3-column-text
+  block: three-column-1
+  col_1:
+    headline: Column 1
+    content: This is content
+    slug: ''
+  col_2:
+    headline: Column 2
+    content: And a bit more...
+    slug: ''
+  col_3:
+    headline: Column 3
+    content: Here's the rest of it!
+    slug: ''
 - template: full-width-media-element
   block: media-1
   image: "/uploads/2018/06/21/theme.png"
@@ -77,6 +91,10 @@ page_sections:
     this demo in Forestry</a>.</p></li><li><p>Read <a href="https://forestry.io/blog/ubuild-a-new-theme-for-static-sites-using-blocks/">our
     article</a> and create your own Blocks.</p></li><li><p>Add and customize the available
     Blocks and preview them as you go along.</p></li></ol>
+- template: signup-bar
+  block: cta-bar
+  content: ''
+  email_recipient: ''
 - template: simple-footer
   block: footer-1
   content: Made with ❤︎ in Canada
