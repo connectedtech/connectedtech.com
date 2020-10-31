@@ -19,7 +19,7 @@ page_sections:
     link_text: Blocks
   cta:
     url: https://app.forestry.io/quick-start?repo=forestryio/ubuild-jekyll&provider=github&engine=jekyll
-    button_text: Import
+    button_text: Let's Talk
 - template: hero-banner-w-image
   block: hero-2
   slug: features
