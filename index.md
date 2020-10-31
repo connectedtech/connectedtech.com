@@ -23,13 +23,13 @@ page_sections:
 - template: hero-banner-w-image
   block: hero-2
   slug: features
-  headline: uBuild <br><strong>design blocks</strong>
-  content: The tool that allows you to build beautiful sites<br>all inside Forestry's
-    content manager.
+  headline: Digital Marketing<br><strong>for Hospitals</strong>
+  content: Palantir designs and develops solutions for healthcare, higher education,
+    technology, and public sector clients using Drupal and other open source technologies.
   cta:
     enabled: true
     url: https://github.com/forestryio/ubuild-jekyll
-    button_text: 'See on GitHub '
+    button_text: Let's Talk
   image:
     image: "/uploads/2018/06/21/product-shot-1.png"
     alt_text: Product Shot
