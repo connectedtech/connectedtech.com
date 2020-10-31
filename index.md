@@ -67,7 +67,7 @@ page_sections:
     Client Communications<br>+ Agenda Development
   slug: ''
   media:
-    image: ''
+    image: "/uploads/2020/10/31/icon-only.png"
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
