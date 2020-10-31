@@ -63,8 +63,8 @@ page_sections:
   content: Projects have lots of moving parts, so each one gets a dedicated Project
     Manager. From start to finish, your PM provides a steady hand to keep schedules
     running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br>+ Scheduling<br>+ Budgeting<br>+ Weekly Status Updates<br>+
-    Client Communications<br>+ Agenda Development
+    and monitor the budget.<br><br>+ Scheduling<br>+ Budgeting<br>+ Weekly Status
+    Updates<br>+ Client Communications<br>+ Agenda Development
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
