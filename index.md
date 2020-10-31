@@ -108,9 +108,9 @@ page_sections:
   content: Made with ❤︎ in Canada
 - template: 4-column-footer
   block: footer-2
-  col_2: "<strong>C2 Content</strong>"
-  image: ''
-  col_3: C3 Content
-  col_4: C4 Content
+  col_2: "<strong>C2 Content<br></strong>This<br>That"
+  image: "/uploads/2020/10/31/icon-only.png"
+  col_3: "<strong>C3 Content<br></strong>This<br>That<br>The other"
+  col_4: "<strong>C4 Content<br></strong>Testimonials"
 
 ---
