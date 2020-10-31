@@ -38,7 +38,7 @@ page_sections:
   block: feature-1
   media_alignment: Left
   slug: services
-  headline: "<strong>Development</strong>"
+  headline: Development
   content: "- This<br>- That<br>- The other thing<br>- Again"
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
