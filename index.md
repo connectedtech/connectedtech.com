@@ -7,11 +7,11 @@ page_sections:
   block: header-2
   logo: "/uploads/2020/10/31/icon-with-arial-text-6.png"
   navigation:
-  - link: "#swap"
+  - link: "#services"
     link_text: Services
   - link: "#about"
     link_text: About
-  - link: "#responsive"
+  - link: "#contact"
     link_text: Contact
   cta:
     url: https://app.forestry.io/quick-start?repo=forestryio/ubuild-jekyll&provider=github&engine=jekyll
@@ -90,7 +90,7 @@ page_sections:
   col_1:
     headline: Column 1
     content: This is content
-    slug: ''
+    slug: about
   col_2:
     headline: Column 2
     content: And a bit more...
@@ -120,6 +120,15 @@ page_sections:
     this demo in Forestry</a>.</p></li><li><p>Read <a href="https://forestry.io/blog/ubuild-a-new-theme-for-static-sites-using-blocks/">our
     article</a> and create your own Blocks.</p></li><li><p>Add and customize the available
     Blocks and preview them as you go along.</p></li></ol>
+- template: content-feature
+  block: feature-1
+  media_alignment: Right
+  slug: contact
+  headline: Contact Us
+  content: "(contact form goes here)"
+  media:
+    image: ''
+    alt_text: ''
 - template: simple-footer
   block: footer-1
   content: Made with ❤︎ in Canada
