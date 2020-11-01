@@ -14,7 +14,7 @@ page_sections:
   - link: "#contact"
     link_text: Contact
   cta:
-    url: https://app.forestry.io/quick-start?repo=forestryio/ubuild-jekyll&provider=github&engine=jekyll
+    url: "#contact"
     button_text: Let's Talk
 - template: hero-banner-w-image
   block: hero-2
@@ -24,7 +24,7 @@ page_sections:
     technology, and public sector clients using Drupal and other open source technologies.
   cta:
     enabled: true
-    url: https://github.com/forestryio/ubuild-jekyll
+    url: "#contact"
     button_text: Let's Talk About Your Project
   image:
     image: "/uploads/2018/06/21/product-shot-1.png"
@@ -34,7 +34,7 @@ page_sections:
   block: feature-1
   media_alignment: Left
   slug: services
-  headline: Development
+  headline: "<strong>Development</strong>"
   content: "- This<br>- That<br>- The other thing<br>- Again"
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
