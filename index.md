@@ -80,7 +80,7 @@ page_sections:
 - template: 1-column-text
   block: one-column-1
   slug: about
-  headline: 16 Fully Responsive Design Blocks
+  headline: About Us
   content: |
     The Design Blocks can be used without Forestry but to harness the power
     of Blocks we recommend using <a href="https://forestry.io">Forestry</a>. Once the site is imported you can immediately
