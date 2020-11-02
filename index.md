@@ -42,12 +42,12 @@ page_sections:
   block: feature-1
   media_alignment: Right
   slug: customize
-  headline: <strong>Strategy and Consultation</strong><span class="light"> to make
+  headline: <strong>User Experience &amp; Design</strong><span class="light"> to make
     quick edits throughout your new site</span>
   content: You have business problems. We find solutions. We work to understand your
     business objectives and aspirations, audience behaviors and needs, and then translate
-    them into actions.<br><br>+ Business Strategy<br>+ Goal Setting<br>+ Usability
-    Testing<br>+ Content Audits<br>+ Content Strategy<br>+ Taxonomy
+    them into actions.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
+    Usability Testing<br>+ Service Design<br>+ Design Systems
   media:
     image: "/uploads/2020/10/31/icon-only.png"
     alt_text: Customize Blocks
