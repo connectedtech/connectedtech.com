@@ -3,9 +3,17 @@ layout: blocks
 title: Contact
 date: 
 page_sections:
-- template: simple-header
-  block: header-3
-  logo: ''
+- template: navigation-header-w-button
+  block: header-2
+  logo: "/uploads/2020/10/31/icon-with-arial-text-6.png"
+  navigation:
+  - link: "#services"
+    link_text: Services
+  - link: "#about"
+    link_text: About
+  cta:
+    url: "#contact"
+    button_text: CONTACT US
 - template: 1-column-text
   block: one-column-1
   content: '<form name="contact" method="POST" data-netlify="true">
