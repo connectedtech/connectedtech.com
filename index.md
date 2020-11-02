@@ -32,7 +32,7 @@ page_sections:
   block: feature-1
   media_alignment: Left
   slug: services
-  headline: "<strong>Strategy &amp; Consultation</strong>"
+  headline: "<strong>Consultation &amp; Strategy</strong>"
   content: Projects have lots of moving parts, so each one gets a dedicated Project
     Manager. From start to finish, your PM provides a steady hand to keep schedules
     running smoothly, track project risks and find solutions, keep communication flowing,
