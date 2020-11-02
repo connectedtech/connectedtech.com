@@ -33,7 +33,8 @@ page_sections:
   media_alignment: Left
   slug: services
   headline: "<strong>Strategy &amp; Consultation</strong>"
-  content: "- This<br>- That<br>- The other thing<br>- Again"
+  content: "+ User Journey Mapping<br>+ Stakeholder Alignment<br>+ Competitive research<br>+
+    SEO / SEM<br>+ Social Media Strategy<br>+ Content Strategy<br>+ Digital Transformation"
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
     alt_text: uBuild Blocks Mock-Up
