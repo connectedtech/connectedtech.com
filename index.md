@@ -20,8 +20,8 @@ page_sections:
   block: hero-2
   slug: features
   headline: Digital Marketing<br><strong>for Hospitals</strong>
-  content: Palantir designs and develops solutions for healthcare, higher education,
-    technology, and public sector clients using Drupal and other open source technologies.
+  content: Connected Technologies designs and develops solutions for hospitals using
+    best in class technologies.
   cta:
     enabled: true
     url: "#contact"
