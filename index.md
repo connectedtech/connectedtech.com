@@ -33,8 +33,12 @@ page_sections:
   media_alignment: Left
   slug: services
   headline: "<strong>Strategy &amp; Consultation</strong>"
-  content: "+ User Journey Mapping<br>+ Stakeholder Alignment<br>+ Competitive research<br>+
-    SEO / SEM<br>+ Social Media Strategy<br>+ Content Strategy<br>+ Digital Transformation"
+  content: Projects have lots of moving parts, so each one gets a dedicated Project
+    Manager. From start to finish, your PM provides a steady hand to keep schedules
+    running smoothly, track project risks and find solutions, keep communication flowing,
+    and monitor the budget.<br><br>+ User Journey Mapping<br>+ Stakeholder Alignment<br>+
+    Competitive research<br>+ SEO / SEM<br>+ Social Media Strategy<br>+ Content Strategy<br>+
+    Digital Transformation
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
     alt_text: uBuild Blocks Mock-Up
@@ -71,12 +75,15 @@ page_sections:
   block: feature-1
   media_alignment: Right
   headline: "<strong>Systems &amp; Development</strong>"
-  content: "+ Websites<br>+ Intranets<br>+ Content Management Systems<br>+ Dashboards
-    &amp; Reports<br>+ Ecommerce<br>+ Telehealth<br>+ Form Management<br>+ CRM<br>+
-    Marketing Automation"
+  content: Projects have lots of moving parts, so each one gets a dedicated Project
+    Manager. From start to finish, your PM provides a steady hand to keep schedules
+    running smoothly, track project risks and find solutions, keep communication flowing,
+    and monitor the budget.<br><br>+ Websites<br>+ Intranets<br>+ Content Management
+    Systems<br>+ Dashboards &amp; Reports<br>+ Ecommerce<br>+ Telehealth<br>+ Form
+    Management<br>+ CRM<br>+ Marketing Automation
   slug: ''
   media:
-    image: ''
+    image: "/uploads/2020/10/31/icon-only.png"
     alt_text: ''
 - template: hero-banner-w-image
   block: hero-2
