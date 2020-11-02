@@ -58,6 +58,20 @@ page_sections:
 - template: content-feature
   block: feature-1
   media_alignment: Left
+  headline: "<strong>Systems &amp; Development</strong>"
+  content: Projects have lots of moving parts, so each one gets a dedicated Project
+    Manager. From start to finish, your PM provides a steady hand to keep schedules
+    running smoothly, track project risks and find solutions, keep communication flowing,
+    and monitor the budget.<br><br>+ Websites<br>+ Intranets<br>+ Content Management
+    Systems<br>+ Dashboards &amp; Reports<br>+ Ecommerce<br>+ Telehealth<br>+ Form
+    Management<br>+ CRM<br>+ Marketing Automation
+  slug: ''
+  media:
+    image: "/uploads/2020/10/31/icon-only.png"
+    alt_text: ''
+- template: content-feature
+  block: feature-1
+  media_alignment: Right
   headline: "<strong>Operations &amp; Support</strong>"
   content: Projects have lots of moving parts, so each one gets a dedicated Project
     Manager. From start to finish, your PM provides a steady hand to keep schedules
@@ -67,20 +81,6 @@ page_sections:
     Automation<br>+ CMS management<br>+ Accessibility / ADA / WCAG compliance<br>+
     Testing<br>+ Location &amp; Reputation Management<br>+ Reports &amp; Dashboards<br>+
     SEO<br>+ Content Management<br>+ Virtual Events<br>+ Digital Advertising
-  slug: ''
-  media:
-    image: "/uploads/2020/10/31/icon-only.png"
-    alt_text: ''
-- template: content-feature
-  block: feature-1
-  media_alignment: Right
-  headline: "<strong>Systems &amp; Development</strong>"
-  content: Projects have lots of moving parts, so each one gets a dedicated Project
-    Manager. From start to finish, your PM provides a steady hand to keep schedules
-    running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br><br>+ Websites<br>+ Intranets<br>+ Content Management
-    Systems<br>+ Dashboards &amp; Reports<br>+ Ecommerce<br>+ Telehealth<br>+ Form
-    Management<br>+ CRM<br>+ Marketing Automation
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
