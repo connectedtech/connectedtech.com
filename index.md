@@ -124,8 +124,26 @@ page_sections:
   slug: blocks
 - template: 1-column-text
   block: one-column-1
-  content: 'Please feel free to contact us about anything!<br><br>Your Name: Your
-    Email: Your Role: Leader Follower Message: Send'
+  content: '<p>Please feel free to contact us about anything!</p><form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>'
   headline: Contact Us
   slug: contact
 - template: 4-column-footer
