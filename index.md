@@ -85,18 +85,6 @@ page_sections:
   media:
     image: "/uploads/2020/10/31/icon-only.png"
     alt_text: ''
-- template: hero-banner-w-image
-  block: hero-2
-  headline: "<strong>Headline</strong> Okay"
-  content: Content
-  background_image: ''
-  image:
-    image: ''
-    alt_text: ''
-  cta:
-    enabled: true
-    url: "#"
-    button_text: Give Us a Call
 - template: 1-column-text
   block: one-column-1
   slug: about
@@ -105,6 +93,16 @@ page_sections:
     The Design Blocks can be used without Forestry but to harness the power
     of Blocks we recommend using <a href="https://forestry.io">Forestry</a>. Once the site is imported you can immediately
     create new sites and make them fully customizable.
+- template: 2-column-text
+  block: two-column-1
+  col_1:
+    headline: Column 1
+    content: Content is here
+    slug: ''
+  col_2:
+    headline: Column 2
+    content: More content is here!
+    slug: ''
 - template: 3-column-text
   block: three-column-1
   col_1:
@@ -124,14 +122,6 @@ page_sections:
   image: "/uploads/2018/06/21/theme.png"
   caption: All Available Blocks
   slug: blocks
-- template: 2-column-media-element
-  block: media-2
-  image_1:
-    image: "/uploads/2018/06/21/theme.png"
-    caption: Image 1 caption
-  image_2:
-    image: "/uploads/2018/06/21/product-shot-1.png"
-    caption: Image 2 caption
 - template: detail-content
   block: text-1
   headline: Steps to Build a Site!
@@ -142,31 +132,14 @@ page_sections:
     Blocks and preview them as you go along.</p></li></ol>
 - template: 1-column-text
   block: one-column-1
-  content: '<form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>'
-  headline: ''
+  content: '<form name="contact" method="POST" data-netlify="true"> <p> <label>Your
+    Name: <input type="text" name="name" /></label> </p> <p> <label>Your Email: <input
+    type="email" name="email" /></label> </p> <p> <label>Your Role: <select name="role[]"
+    multiple> <option value="leader">Leader</option> <option value="follower">Follower</option>
+    </select></label> </p> <p> <label>Message: <textarea name="message"></textarea></label>
+    </p> <p> <button type="submit">Send</button> </p> </form>'
+  headline: Contact Us
   slug: ''
-- template: simple-footer
-  block: footer-1
-  content: Made with ❤︎ in Canada
 - template: 4-column-footer
   block: footer-2
   col_2: <strong>C2 Content<br></strong><a href="#" title="">This</a><br><a href="#"
