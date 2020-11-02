@@ -135,7 +135,7 @@ page_sections:
   content: 'Please feel free to contact us about anything!<br><br>Your Name: Your
     Email: Your Role: Leader Follower Message: Send'
   headline: Contact Us
-  slug: ''
+  slug: contact
 - template: 4-column-footer
   block: footer-2
   col_2: <strong>C2 Content<br></strong><a href="#" title="">This</a><br><a href="#"
