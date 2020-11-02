@@ -27,5 +27,9 @@ page_sections:
     <span class="token tag">&lt;/form&gt;</span></code>'
   headline: ''
   slug: ''
+- template: detail-content
+  block: text-1
+  content: "<pre><code></code></pre>"
+  headline: ''
 
 ---
