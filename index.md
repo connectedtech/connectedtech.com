@@ -11,11 +11,9 @@ page_sections:
     link_text: Services
   - link: "#about"
     link_text: About
-  - link: "#contact"
-    link_text: Contact
   cta:
     url: "#contact"
-    button_text: Let's Talk
+    button_text: CONTACT US
 - template: hero-banner-w-image
   block: hero-2
   slug: features
