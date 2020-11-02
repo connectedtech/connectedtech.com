@@ -54,12 +54,15 @@ page_sections:
 - template: content-feature
   block: feature-1
   media_alignment: Left
-  headline: "<strong>Project Management</strong>"
+  headline: "<strong>Operations &amp; Support</strong>"
   content: Projects have lots of moving parts, so each one gets a dedicated Project
     Manager. From start to finish, your PM provides a steady hand to keep schedules
     running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br><br>+ Scheduling<br>+ Budgeting<br>+ Weekly Status
-    Updates<br>+ Client Communications<br>+ Agenda Development
+    and monitor the budget.<br><br>+ Project Management<br>+ Digital Audits<br>+ Technical
+    Liaison<br>+ Budget &amp; Roadmap Planning<br>+ Vendor Selection &amp; Management<br>+
+    Automation<br>+ CMS management<br>+ Accessibility / ADA / WCAG compliance<br>+
+    Testing<br>+ Location &amp; Reputation Management<br>+ Reports &amp; Dashboards<br>+
+    SEO<br>+ Content Management<br>+ Virtual Events<br>+ Digital Advertising
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
