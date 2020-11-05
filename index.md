@@ -44,9 +44,9 @@ page_sections:
   media_alignment: Right
   slug: ''
   headline: "<strong>User Experience &amp; Design</strong>"
-  content: You have business problems. We find solutions. We work to understand your
-    business objectives and aspirations, audience behaviors and needs, and then translate
-    them into actions.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
+  content: Great user experience is a deliberate activity. We work through the strategy
+    to design touchpoints and experiences that align with the user journey and your
+    organizational goals.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
     Design Systems<br>+ Service Design<br>+ Usability Testing
   media:
     image: "/uploads/2020/10/31/icon-only.png"
