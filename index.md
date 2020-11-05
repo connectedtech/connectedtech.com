@@ -45,8 +45,8 @@ page_sections:
   slug: ''
   headline: "<strong>User Experience &amp; Design</strong>"
   content: Great user experience is a deliberate activity. We work through the strategy
-    to design touchpoints and experiences that align with the user journey and your
-    organizational goals.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
+    to design touchpoints and experiences that align the user journey with your organizational
+    goals.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
     Design Systems<br>+ Service Design<br>+ Usability Testing
   media:
     image: "/uploads/2020/10/31/icon-only.png"
@@ -73,9 +73,9 @@ page_sections:
     running smoothly, track project risks and find solutions, keep communication flowing,
     and monitor the budget.<br><br>+ Budget &amp; Roadmap Planning<br>+ Project Management<br>+
     Vendor Selection &amp; Management<br>+ Technical Liaison<br>+ Digital Audits<br>+
-    Digital Advertising<br>+ Automation<br>+ CMS &amp; Content Management<br>+ Location
-    &amp; Reputation Management<br>+ SEO<br>+ Accessibility (ADA &amp; WCAG Compliance)<br>+
-    Virtual Events<br>+ Training<br>+ Reports &amp; Dashboards
+    Digital Advertising<br>+ Marketing Automation<br>+ CMS &amp; Content Management<br>+
+    Location &amp; Reputation Management<br>+ SEO<br>+ Accessibility (ADA &amp; WCAG
+    Compliance)<br>+ Virtual Events<br>+ Training<br>+ Reports &amp; Dashboards
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
