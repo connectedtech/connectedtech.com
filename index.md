@@ -38,7 +38,7 @@ page_sections:
     Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
     Social Media Strategy<br>+ Stakeholder Alignment
   media:
-    image: "/uploads/2020/11/05/hospital-user-light.svg"
+    image: "/uploads/2020/11/05/chart-line-duotone.svg"
     alt_text: uBuild Blocks Mock-Up
 - template: content-feature
   block: feature-1
