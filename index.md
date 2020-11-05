@@ -37,7 +37,7 @@ page_sections:
     and understanding we can help to determine what your best opportunities are design
     a strategy to effectively address them.<br><br>+ Digital Transformation<br>+ User
     Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
-    Social Media Strategy<br>+ Stakeholder Alignment<br>
+    Social Media Strategy<br>+ Stakeholder Alignment
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
     alt_text: uBuild Blocks Mock-Up
