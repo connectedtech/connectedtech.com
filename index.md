@@ -9,8 +9,6 @@ page_sections:
   navigation:
   - link: "#services"
     link_text: Services
-  - link: "#about"
-    link_text: About
   cta:
     url: "#contact"
     button_text: CONTACT US
