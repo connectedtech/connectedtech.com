@@ -68,14 +68,14 @@ page_sections:
   block: feature-1
   media_alignment: Right
   headline: "<strong>Operations &amp; Support</strong>"
-  content: Projects have lots of moving parts, so each one gets a dedicated Project
-    Manager. From start to finish, your PM provides a steady hand to keep schedules
-    running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br><br>+ Budget &amp; Roadmap Planning<br>+ Project Management<br>+
-    Vendor Selection &amp; Management<br>+ Technical Liaison<br>+ Digital Audits<br>+
-    Digital Advertising<br>+ Marketing Automation<br>+ CMS &amp; Content Management<br>+
-    Location &amp; Reputation Management<br>+ SEO<br>+ Accessibility (ADA &amp; WCAG
-    Compliance)<br>+ Virtual Events<br>+ Training<br>+ Reports &amp; Dashboards
+  content: As a full-service digital agency for hospitals, we utilize a variety of
+    activities to maintain a steady state for your digital marketing while driving
+    new revenue streams and garnering new market share.&nbsp;<br><br>+ Budget &amp;
+    Roadmap Planning<br>+ Project Management<br>+ Vendor Selection &amp; Management<br>+
+    Technical Liaison<br>+ Digital Audits<br>+ Digital Advertising<br>+ Marketing
+    Automation<br>+ CMS &amp; Content Management<br>+ Location &amp; Reputation Management<br>+
+    SEO<br>+ Accessibility (ADA &amp; WCAG Compliance)<br>+ Virtual Events<br>+ Training<br>+
+    Reports &amp; Dashboards
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
