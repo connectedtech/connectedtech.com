@@ -37,7 +37,7 @@ page_sections:
     Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
     Social Media Strategy<br>+ Stakeholder Alignment
   media:
-    image: "/uploads/2020/10/31/icon-only.png"
+    image: "/uploads/2018/06/21/blocks-split.png"
     alt_text: uBuild Blocks Mock-Up
 - template: content-feature
   block: feature-1
@@ -59,8 +59,8 @@ page_sections:
     Manager. From start to finish, your PM provides a steady hand to keep schedules
     running smoothly, track project risks and find solutions, keep communication flowing,
     and monitor the budget.<br><br>+ Websites<br>+ Intranets<br>+ Content Management
-    Systems (CMS)<br>+ Ecommerce<br>+ Forms<br>+ Marketing Automation<br>+ Telehealth<br>+
-    Customer Relationship Management (CRM)
+    Systems (CMS)<br>+ Cloud Infrastructure<br>+ Ecommerce<br>+ Forms<br>+ Marketing
+    Automation<br>+ Telehealth<br>+ Customer Relationship Management (CRM)
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
