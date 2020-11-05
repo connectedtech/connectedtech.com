@@ -74,11 +74,11 @@ page_sections:
   content: Projects have lots of moving parts, so each one gets a dedicated Project
     Manager. From start to finish, your PM provides a steady hand to keep schedules
     running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br><br>+ Project Management<br>+ Digital Audits<br>+ Technical
-    Liaison<br>+ Budget &amp; Roadmap Planning<br>+ Vendor Selection &amp; Management<br>+
-    Automation<br>+ CMS management<br>+ Accessibility / ADA / WCAG compliance<br>+
-    Testing<br>+ Location &amp; Reputation Management<br>+ Reports &amp; Dashboards<br>+
-    SEO<br>+ Content Management<br>+ Virtual Events<br>+ Digital Advertising
+    and monitor the budget.<br><br>+ Budget &amp; Roadmap Planning<br>+ Project Management<br>+
+    Vendor Selection &amp; Management<br>+ Technical Liaison<br>+ Digital Audits<br>+
+    Digital Advertising<br>+ Automation<br>+ CMS &amp; Content Management<br>+ Location
+    &amp; Reputation Management<br>+ SEO<br>+ Accessibility (ADA &amp; WCAG Compliance)<br>+
+    Virtual Events<br>+ Training<br>+ Reports &amp; Dashboards
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
