@@ -57,7 +57,7 @@ page_sections:
   headline: "<strong>Systems &amp; Development</strong>"
   content: Digital marketing ecosystems have lots of moving parts. We help you select
     systems that fit, build the features you want, then connect everything together
-    for seamless digital experiences.<br><br>+ Websites<br>+ Intranets<br>+ Content
+    for a seamless digital experience.<br><br>+ Websites<br>+ Intranets<br>+ Content
     Management Systems (CMS)<br>+ Cloud Infrastructure<br>+ Ecommerce<br>+ Forms<br>+
     Marketing Automation<br>+ Telehealth<br>+ Customer Relationship Management (CRM)
   slug: ''
