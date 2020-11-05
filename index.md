@@ -18,7 +18,7 @@ page_sections:
   block: hero-2
   slug: features
   headline: Digital Marketing<br><strong>for Hospitals</strong>
-  content: Connected Technologies designs and develops solutions for hospitals using
+  content: Connected Technologies designs and develops marketing solutions for hospitals using
     best in class technologies.
   cta:
     enabled: true
