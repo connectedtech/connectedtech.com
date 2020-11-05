@@ -18,8 +18,8 @@ page_sections:
   block: hero-2
   slug: features
   headline: Digital Marketing<br><strong>for Hospitals</strong>
-  content: Connected Technologies designs and develops marketing solutions for hospitals using
-    best in class technologies.
+  content: Connected Technologies designs and develops marketing solutions for hospitals
+    using best in class technologies.
   cta:
     enabled: true
     url: "#contact"
@@ -33,12 +33,11 @@ page_sections:
   media_alignment: Left
   slug: services
   headline: "<strong>Consultation &amp; Strategy</strong>"
-  content: Projects have lots of moving parts, so each one gets a dedicated Project
-    Manager. From start to finish, your PM provides a steady hand to keep schedules
-    running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br><br>+ User Journey Mapping<br>+ Stakeholder Alignment<br>+
-    Competitive research<br>+ SEO / SEM<br>+ Social Media Strategy<br>+ Content Strategy<br>+
-    Digital Transformation
+  content: You know your business. We know digital marketing. Through collaboration
+    and understanding we can help to determine what your best opportunities are design
+    a strategy to effectively address them.<br><br>+ Digital Transformation<br>+ User
+    Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
+    Social Media Strategy<br>+ Stakeholder Alignment<br>
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
     alt_text: uBuild Blocks Mock-Up
@@ -124,26 +123,13 @@ page_sections:
   slug: blocks
 - template: 1-column-text
   block: one-column-1
-  content: '<p>Please feel free to contact us about anything!</p><form name="contact" method="POST" data-netlify="true">
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <label>Your Email: <input type="email" name="email" /></label>
-  </p>
-  <p>
-    <label>Your Role: <select name="role[]" multiple>
-      <option value="leader">Leader</option>
-      <option value="follower">Follower</option>
-    </select></label>
-  </p>
-  <p>
-    <label>Message: <textarea name="message"></textarea></label>
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form>'
+  content: '<p>Please feel free to contact us about anything!</p><form name="contact"
+    method="POST" data-netlify="true"> <p> <label>Your Name: <input type="text" name="name"
+    /></label> </p> <p> <label>Your Email: <input type="email" name="email" /></label>
+    </p> <p> <label>Your Role: <select name="role[]" multiple> <option value="leader">Leader</option>
+    <option value="follower">Follower</option> </select></label> </p> <p> <label>Message:
+    <textarea name="message"></textarea></label> </p> <p> <button type="submit">Send</button>
+    </p> </form>'
   headline: Contact Us
   slug: contact
 - template: 4-column-footer
