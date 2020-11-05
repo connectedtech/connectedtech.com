@@ -61,8 +61,8 @@ page_sections:
     Manager. From start to finish, your PM provides a steady hand to keep schedules
     running smoothly, track project risks and find solutions, keep communication flowing,
     and monitor the budget.<br><br>+ Websites<br>+ Intranets<br>+ Content Management
-    Systems<br>+ Dashboards &amp; Reports<br>+ Ecommerce<br>+ Telehealth<br>+ Form
-    Management<br>+ CRM<br>+ Marketing Automation
+    Systems (CMS)<br>+ Ecommerce<br>+ Forms<br>+ Marketing Automation<br>+ Telehealth<br>+
+    Customer Relationship Management (CRM)
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
