@@ -31,7 +31,7 @@ page_sections:
   media_alignment: Left
   slug: services
   headline: "<strong>Consultation &amp; Strategy</strong>"
-  content: <span style="color: green;"><i class="fad fa-hospital-user fa-20x"></i></span>You know your hospital. We know digital marketing. Through collaboration
+  content: <span class="green"><i class="fad fa-hospital-user fa-20x"></i></span>You know your hospital. We know digital marketing. Through collaboration
     we are able to share understanding and determine your best opportunities, then
     create practical goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+
     User Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
