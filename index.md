@@ -44,13 +44,12 @@ page_sections:
 - template: content-feature
   block: feature-1
   media_alignment: Right
-  slug: customize
-  headline: <strong>User Experience &amp; Design</strong><span class="light"> to make
-    quick edits throughout your new site</span>
+  slug: ''
+  headline: "<strong>User Experience &amp; Design</strong>"
   content: You have business problems. We find solutions. We work to understand your
     business objectives and aspirations, audience behaviors and needs, and then translate
     them into actions.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
-    Usability Testing<br>+ Service Design<br>+ Design Systems
+    Design Systems<br>+ Service Design<br>+ Usability Testing
   media:
     image: "/uploads/2020/10/31/icon-only.png"
     alt_text: Customize Blocks
