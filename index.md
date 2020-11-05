@@ -31,13 +31,14 @@ page_sections:
   media_alignment: Left
   slug: services
   headline: "<strong>Consultation &amp; Strategy</strong>"
-  content: <span class="green"><i class="fad fa-hospital-user fa-20x"></i></span>You know your hospital. We know digital marketing. Through collaboration
-    we are able to share understanding and determine your best opportunities, then
-    create practical goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+
-    User Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
+  content: <span class="green"><i class="fad fa-hospital-user fa-20x"></i></span>You
+    know your hospital. We know digital marketing. Through collaboration we are able
+    to share understanding and determine your best opportunities, then create practical
+    goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+ User
+    Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
     Social Media Strategy<br>+ Stakeholder Alignment
   media:
-    image: "/uploads/2018/06/21/blocks-split.png"
+    image: "/uploads/2020/11/05/hospital-user-duotone.svg"
     alt_text: uBuild Blocks Mock-Up
 - template: content-feature
   block: feature-1
