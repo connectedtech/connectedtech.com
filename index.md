@@ -32,7 +32,7 @@ page_sections:
   slug: services
   headline: "<strong>Consultation &amp; Strategy</strong>"
   content: You know your hospital. We know digital marketing. Through collaboration
-    we are able to share understanding and determine your best opportunities. Then
+    we are able to share understanding and determine your best opportunities, then
     create practical goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+
     User Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
     Social Media Strategy<br>+ Stakeholder Alignment
