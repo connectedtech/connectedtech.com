@@ -78,7 +78,7 @@ page_sections:
     Reports &amp; Dashboards
   slug: ''
   media:
-    image: "/uploads/2020/10/31/icon-only.png"
+    image: "/uploads/2020/11/05/analytics-duotone.svg"
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
