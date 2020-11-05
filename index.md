@@ -31,10 +31,10 @@ page_sections:
   media_alignment: Left
   slug: services
   headline: "<strong>Consultation &amp; Strategy</strong>"
-  content: You know your business. We know digital marketing. Through collaboration
-    and understanding we can help to determine what your best opportunities are design
-    a strategy to effectively address them.<br><br>+ Digital Transformation<br>+ User
-    Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
+  content: You know your hospital. We know digital marketing. Through collaboration
+    we are able to share understanding and determine your best opportunities. Then
+    create practical goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+
+    User Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
     Social Media Strategy<br>+ Stakeholder Alignment
   media:
     image: "/uploads/2018/06/21/blocks-split.png"
