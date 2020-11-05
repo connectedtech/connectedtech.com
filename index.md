@@ -82,7 +82,7 @@ page_sections:
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
-  content: |-
+  content: 
     <p>Please feel free to contact us about anything!</p> 
 <div class="field"> <label class="label">Name</label> <div class="control"> <input class="input" type="text" placeholder="Your Name"> </div> </div>
 <div class="field"> <label class="label">Company</label> <div class="control"> <input class="input" type="text" placeholder="Company Name"> </div> </div>
