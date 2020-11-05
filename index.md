@@ -111,6 +111,6 @@ page_sections:
   col_4: "<strong>C4 Content<br></strong>Testimonials"
 - template: simple-footer
   block: footer-1
-  content: ''
+  content: Made with love in Flint, MI
 
 ---
