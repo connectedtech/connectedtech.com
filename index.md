@@ -62,7 +62,7 @@ page_sections:
     Marketing Automation<br>+ Telehealth<br>+ Customer Relationship Management (CRM)
   slug: ''
   media:
-    image: "/uploads/2020/10/31/icon-only.png"
+    image: "/uploads/2020/11/05/sitemap-duotone.svg"
     alt_text: ''
 - template: content-feature
   block: feature-1
