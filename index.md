@@ -83,14 +83,6 @@ page_sections:
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
-  slug: about
-  headline: About Us
-  content: |
-    The Design Blocks can be used without Forestry but to harness the power
-    of Blocks we recommend using <a href="https://forestry.io">Forestry</a>. Once the site is imported you can immediately
-    create new sites and make them fully customizable.
-- template: 1-column-text
-  block: one-column-1
   content: '<p>Please feel free to contact us about anything!</p><form name="contact"
     method="POST" data-netlify="true"> <p> <label>Your Name: <input type="text" name="name"
     /></label> </p> <p> <label>Your Email: <input type="email" name="email" /></label>
