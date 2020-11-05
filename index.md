@@ -55,12 +55,11 @@ page_sections:
   block: feature-1
   media_alignment: Left
   headline: "<strong>Systems &amp; Development</strong>"
-  content: Projects have lots of moving parts, so each one gets a dedicated Project
-    Manager. From start to finish, your PM provides a steady hand to keep schedules
-    running smoothly, track project risks and find solutions, keep communication flowing,
-    and monitor the budget.<br><br>+ Websites<br>+ Intranets<br>+ Content Management
-    Systems (CMS)<br>+ Cloud Infrastructure<br>+ Ecommerce<br>+ Forms<br>+ Marketing
-    Automation<br>+ Telehealth<br>+ Customer Relationship Management (CRM)
+  content: Digital marketing ecosystems have lots of moving parts. We help you select
+    systems that fit, build the features you want, then connect everything together
+    for seamless digital experiences.<br><br>+ Websites<br>+ Intranets<br>+ Content
+    Management Systems (CMS)<br>+ Cloud Infrastructure<br>+ Ecommerce<br>+ Forms<br>+
+    Marketing Automation<br>+ Telehealth<br>+ Customer Relationship Management (CRM)
   slug: ''
   media:
     image: "/uploads/2020/10/31/icon-only.png"
