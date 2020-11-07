@@ -106,7 +106,7 @@ page_sections:
 <div class="field">
   <label class="label">Message</label>
   <div class="control">
-    <textarea class="textarea" placeholder="Textarea"></textarea>
+    <textarea class="textarea" placeholder="Message"></textarea>
   </div>
 </div>
 
