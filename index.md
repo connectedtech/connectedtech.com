@@ -88,24 +88,5 @@ page_sections:
 - template: simple-footer
   block: footer-1
   content: Made with love in Flint, MI
-- template: detail-content
-  block: text-1
-  content: "<pre><code>&lt;p&gt;Please feel free to contact us about anything!&lt;/p&gt;
-    \n&lt;div class=\"field\"&gt; &lt;label class=\"label\"&gt;Name&lt;/label&gt;
-    &lt;div class=\"control\"&gt; &lt;input class=\"input\" type=\"text\" placeholder=\"Your
-    Name\"&gt; &lt;/div&gt; &lt;/div&gt;\n&lt;div class=\"field\"&gt; &lt;label class=\"label\"&gt;Company&lt;/label&gt;
-    &lt;div class=\"control\"&gt; &lt;input class=\"input\" type=\"text\" placeholder=\"Company
-    Name\"&gt; &lt;/div&gt; &lt;/div&gt;\n    &lt;div class=\"field\"&gt; &lt;label
-    class=\"label\"&gt;Email&lt;/label&gt; &lt;div class=\"control has-icons-left\"&gt;
-    &lt;input class=\"input\" type=\"email\" placeholder=\"Your Email\"&gt; &lt;span
-    class=\"icon is-small is-left\"&gt; &lt;i class=\"fas fa-envelope\"&gt;&lt;/i&gt;
-    &lt;/span&gt; &lt;/div&gt; &lt;/div&gt;\n    &lt;div class=\"field\"&gt; &lt;label
-    class=\"label\"&gt;Message&lt;/label&gt; &lt;div class=\"control\"&gt; &lt;textarea
-    class=\"textarea\" placeholder=\"Tell us about your project\"&gt;&lt;/textarea&gt;
-    &lt;/div&gt; &lt;/div&gt;\n    &lt;div class=\"field is-grouped\"&gt; &lt;div
-    class=\"control\"&gt; &lt;button class=\"button is-link\"&gt;Submit&lt;/button&gt;
-    &lt;/div&gt; &lt;div class=\"control\"&gt; &lt;button class=\"button is-link is-light\"&gt;Cancel&lt;/button&gt;
-    &lt;/div&gt; &lt;/div&gt;</code></pre>"
-  headline: Contact
 
 ---
