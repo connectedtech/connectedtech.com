@@ -82,7 +82,7 @@ page_sections:
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
-  content: <div class="field">
+  content: "<div class="field">
   <label class="label">Name</label>
   <div class="control">
     <input class="input" type="text" placeholder="e.g Alex Smith">
@@ -94,7 +94,7 @@ page_sections:
   <div class="control">
     <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
   </div>
-</div>
+</div>"
   headline: Contact Us
   slug: contact
 - template: simple-footer
