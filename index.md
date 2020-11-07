@@ -85,16 +85,35 @@ page_sections:
   content: '<div class="field">
   <label class="label">Name</label>
   <div class="control">
-    <input class="input" type="text" placeholder="e.g Alex Smith">
+    <input class="input" type="text" placeholder="Your Name">
+  </div>
+</div>
+
+<div class="field">
+  <label class="label">Company</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Company Name">
   </div>
 </div>
 
 <div class="field">
   <label class="label">Email</label>
   <div class="control">
-    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+    <input class="input" type="email" placeholder="Your Email">
   </div>
-</div>'
+</div>
+
+<div class="field">
+  <label class="label">Message</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+  </div>
+</div>
+
+<div class="field">
+  <div class="control">
+    <button class="button is-link">Submit</button>
+  </div>'
   headline: Contact Us
   slug: contact
 - template: simple-footer
