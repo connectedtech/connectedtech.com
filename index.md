@@ -82,8 +82,7 @@ page_sections:
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
-  content: 
-    <p>Please feel free to contact us about anything!</p> 
+  content: <p>Please feel free to contact us about anything!</p> 
 <div class="field"> <label class="label">Name</label> <div class="control"> <input class="input" type="text" placeholder="Your Name"> </div> </div>
 <div class="field"> <label class="label">Company</label> <div class="control"> <input class="input" type="text" placeholder="Company Name"> </div> </div>
     <div class="field"> <label class="label">Email</label> <div class="control has-icons-left"> <input class="input" type="email" placeholder="Your Email"> <span class="icon is-small is-left"> <i class="fas fa-envelope"></i> </span> </div> </div>
