@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+.label {
+  text-align: left;
+}
+
 .subhead {
   font-size: 1.5rem;
   margin-bottom: 3rem;
