@@ -26,6 +26,12 @@ page_sections:
     image: "/uploads/2020/11/08/hospitals-duotone.svg"
     alt_text: Product Shot
   background_image: "/uploads/2018/06/21/hero-2-bg.png"
+- template: 1-column-text
+  block: one-column-1
+  slug: services
+  headline: Services
+  content: We create collaborative marketing solutions using your perspective and
+    our experise.
 - template: content-feature
   block: feature-1
   media_alignment: Left
