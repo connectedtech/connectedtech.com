@@ -666,6 +666,13 @@ input.inverted::placeholder {
   margin-right: 0;
   margin-bottom: 32px;
   margin-bottom: 2rem;
+  -ms-flex-order: 2;
+  order: 2;
+}
+
+.block-feature-1 .column.media {
+  -ms-flex-order: 1;
+  order: 1;
 }
 
 .block-feature-1 .column.media,
@@ -701,16 +708,6 @@ input.inverted::placeholder {
     order: 2;
     margin-bottom: 0;
   }
-}
-
-.block-feature-1 .column.text {
-  -ms-flex-order: 2;
-  order: 2;
-}
-
-.block-feature-1 .column.media {
-  -ms-flex-order: 1;
-  order: 1;
 }
 
 .block-feature-2 .columns {
