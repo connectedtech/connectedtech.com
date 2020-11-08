@@ -389,7 +389,7 @@ input.inverted::placeholder {
   .block-hero-2 .column.media img {
     width: 45vw;
     max-width: 400px;
-    display: contents;
+    display: block;
   }
 }
 
