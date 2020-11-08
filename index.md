@@ -89,7 +89,7 @@ page_sections:
 - template: 1-column-text
   block: one-column-1
   content: |-
-    <p>Share a few details about yourself and your project, and we’ll follow up within one business day. Or email us at sales@connectedtech.com.</p>
+    <p class="subhead">Share a few details about yourself and your project, and we’ll follow up within one business day. Or email us at <a href="mailto:sales@connectedtech.com">sales@connectedtech.com</a>.</p>
     <div class="field"> <label class="label">Name</label> <div class="control"> <input class="input" type="text" placeholder="Your Name"> </div> </div>
     <div class="field"> <label class="label">Company</label> <div class="control"> <input class="input" type="text" placeholder="Company Name"> </div> </div>
     <div class="field"> <label class="label">Email</label> <div class="control"> <input class="input" type="email" placeholder="Your Email"> </div> </div>
