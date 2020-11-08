@@ -105,7 +105,7 @@ page_sections:
   block: footer-1
   content: © Copyright 2020 <strong>Connected Technologies</strong>. Please call us
     at <a href="tel:+1-810-258-7000" title="Call us at (810) 258-7000">(810) 258-7000</a>
-    or <a href="sales@connectedtech.com" title="Email sales@connectedtech.com">send
+    or <a href="mailto:sales@connectedtech.com" title="Email sales@connectedtech.com">send
     an email</a>.
 
 ---
