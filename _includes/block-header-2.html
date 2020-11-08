@@ -13,14 +13,14 @@
   
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
+      </div>
+  
+      <div class="navbar-end">
         {% for nav_item in section.navigation %}
         <a class="navbar-item nav-item" href="{{ nav_item.link | relative_url }}">
           {{ nav_item.link_text }}
         </a>
         {% endfor %}
-      </div>
-  
-      <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
             <a class="button is-link block-header-2--cta" href="{{ section.cta.url }}">
