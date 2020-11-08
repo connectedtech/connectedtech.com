@@ -30,7 +30,8 @@ page_sections:
   block: one-column-1
   slug: services
   headline: Services
-  content: <p class="subhead">We create collaborative marketing solutions using your perspective and our experise.</p>
+  content: <p class="subhead">We create collaborative marketing solutions using your
+    perspective and our experise.</p>
 - template: content-feature
   block: feature-1
   media_alignment: Left
@@ -98,6 +99,9 @@ page_sections:
   slug: contact
 - template: simple-footer
   block: footer-1
-  content: Made with love in Flint, MI
+  content: © Copyright 2020 <strong>Connected Technologies</strong>. Please call us
+    at <a href="tel:+1-810-258-7000" title="Call us at (810) 258-7000">(810) 258-7000</a>
+    or <a href="sales@connectedtech.com" title="Email sales@connectedtech.com">send
+    an email</a>.
 
 ---
