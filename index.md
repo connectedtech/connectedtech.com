@@ -23,7 +23,7 @@ page_sections:
     url: "#contact"
     button_text: Let's Talk About Your Project
   image:
-    image: "/uploads/2020/11/05/hospital-user-solid.svg"
+    image: "/uploads/2020/11/08/hospitals-duotone.svg"
     alt_text: Product Shot
   background_image: "/uploads/2018/06/21/hero-2-bg.png"
 - template: content-feature
@@ -82,38 +82,12 @@ page_sections:
     alt_text: ''
 - template: 1-column-text
   block: one-column-1
-  content: '<div class="field">
-  <label class="label">Name</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Your Name">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Company</label>
-  <div class="control">
-    <input class="input" type="text" placeholder="Company Name">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Email</label>
-  <div class="control">
-    <input class="input" type="email" placeholder="Your Email">
-  </div>
-</div>
-
-<div class="field">
-  <label class="label">Message</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Message"></textarea>
-  </div>
-</div>
-
-<div class="field">
-  <div class="control">
-    <button class="button is-link">Submit</button>
-  </div>'
+  content: |-
+    <div class="field"> <label class="label">Name</label> <div class="control"> <input class="input" type="text" placeholder="Your Name"> </div> </div>
+    <div class="field"> <label class="label">Company</label> <div class="control"> <input class="input" type="text" placeholder="Company Name"> </div> </div>
+    <div class="field"> <label class="label">Email</label> <div class="control"> <input class="input" type="email" placeholder="Your Email"> </div> </div>
+    <div class="field"> <label class="label">Message</label> <div class="control"> <textarea class="textarea" placeholder="Message"></textarea> </div> </div>
+    <div class="field"> <div class="control"> <button class="button is-link">Submit</button> </div>
   headline: Contact Us
   slug: contact
 - template: simple-footer
