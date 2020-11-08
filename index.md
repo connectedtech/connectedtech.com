@@ -30,8 +30,7 @@ page_sections:
   block: one-column-1
   slug: services
   headline: Services
-  content: We create collaborative marketing solutions using your perspective and
-    our experise.
+  content: <p class="subhead">We create collaborative marketing solutions using your perspective and our experise.</p>
 - template: content-feature
   block: feature-1
   media_alignment: Left
