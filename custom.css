@@ -389,6 +389,11 @@ input.inverted::placeholder {
   .block-hero-2 .column.media img {
     width: 45vw;
     max-width: 400px;
+  }
+}
+
+@media screen and (min-width: 828px) {
+  .block-hero-2 .column.media img {
     visibility: visible;
   }
 }
