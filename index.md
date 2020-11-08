@@ -3,6 +3,9 @@ layout: blocks
 title: Homepage
 date: 2017-11-22T23:00:00.000+00:00
 page_sections:
+- template: simple-header
+  block: header-3
+  logo: ''
 - template: navigation-header-w-button
   block: header-2
   logo: "/uploads/2020/10/31/icon-with-arial-text-6.png"
