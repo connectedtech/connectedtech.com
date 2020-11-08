@@ -25,7 +25,7 @@ page_sections:
   image:
     image: "/uploads/2020/11/08/hospitals-duotone.svg"
     alt_text: Product Shot
-  background_image: ''
+  background_image: "/uploads/2018/06/21/hero-2-bg.png"
 - template: content-feature
   block: feature-1
   media_alignment: Left
