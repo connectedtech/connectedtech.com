@@ -7,7 +7,7 @@ page_sections:
   block: header-2
   logo: "/uploads/2020/10/31/icon-with-arial-text-6.png"
   navigation:
-  - link: "#services"
+  - link: "/#services"
     link_text: Services
   cta:
     url: "#contact"
