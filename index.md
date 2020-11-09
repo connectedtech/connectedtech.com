@@ -20,7 +20,7 @@ page_sections:
     for hospitals using best in class technologies.
   cta:
     enabled: true
-    url: "#contact"
+    url: "/#contact"
     button_text: Let's Talk About Your Project
   image:
     image: "/uploads/2020/11/08/hospitals-duotone.svg"
