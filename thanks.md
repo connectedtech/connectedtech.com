@@ -10,7 +10,7 @@ page_sections:
   - link: "/#services"
     link_text: Services
   cta:
-    url: "#contact"
+    url: "/#contact"
     button_text: CONTACT US
 - template: hero-banner-w-image
   block: hero-2
