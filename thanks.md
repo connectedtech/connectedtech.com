@@ -16,8 +16,8 @@ page_sections:
   block: hero-2
   background_image: "/uploads/2018/06/21/hero-2-bg.png"
   image:
-    image: ''
-    alt_text: ''
+    image: "/uploads/2020/11/09/comment-check-duotone.svg"
+    alt_text: Message sent successfully!
   headline: Thanks!
   content: Thank you for your message! We'll contact you within one business day.
   cta:
@@ -26,9 +26,9 @@ page_sections:
     button_text: ''
 - template: simple-footer
   block: footer-1
-  content:
-      © Copyright 2020 <strong>Connected Technologies</strong>. Please call us
-      at <a href="tel:+1-810-258-7000" title="Call us at (810) 258-7000">(810) 258-7000</a>
-      or <a href="mailto:sales@connectedtech.com" title="Email sales@connectedtech.com">send
-      an email</a>.
+  content: © Copyright 2020 <strong>Connected Technologies</strong>. Please call us
+    at <a href="tel:+1-810-258-7000" title="Call us at (810) 258-7000">(810) 258-7000</a>
+    or <a href="mailto:sales@connectedtech.com" title="Email sales@connectedtech.com">send
+    an email</a>.
+
 ---
