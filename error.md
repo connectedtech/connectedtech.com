@@ -18,7 +18,7 @@ page_sections:
   image:
     image: "/uploads/2020/11/09/exclamation-triangle-duotone.svg"
     alt_text: '404: Page Not Found'
-  headline: "<strong>404</strong> Page Not Found"
+  headline: "<strong>404</strong> <br>Page Not Found"
   content: The page you requested could not be found.
   cta:
     enabled: true
