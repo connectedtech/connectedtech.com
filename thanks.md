@@ -21,9 +21,9 @@ page_sections:
   headline: Your message has been sent. <strong>Thanks!</strong>
   content: Thank you for your message! We'll contact you within one business day.
   cta:
-    enabled: false
-    url: ''
-    button_text: ''
+    enabled: true
+    url: "/"
+    button_text: Return Home
 - template: simple-footer
   block: footer-1
   content: © Copyright 2020 <strong>Connected Technologies</strong>. Please call us
