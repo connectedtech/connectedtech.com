@@ -18,7 +18,7 @@ page_sections:
   image:
     image: "/uploads/2020/11/09/comment-check-duotone.svg"
     alt_text: Message sent successfully!
-  headline: Thanks!
+  headline: Your message has been sent.<br><strong>Thanks!</strong>
   content: Thank you for your message! We'll contact you within one business day.
   cta:
     enabled: false
