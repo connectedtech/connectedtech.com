@@ -33,5 +33,6 @@ fields:
   - 4-column-footer
 pages:
 - contact.md
+- error.md
 - index.md
 - thanks.md
