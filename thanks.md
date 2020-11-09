@@ -18,8 +18,8 @@ page_sections:
   image:
     image: ''
     alt_text: ''
-  headline: ''
-  content: ''
+  headline: Thanks!
+  content: Thank you for your message! We'll contact you within one business day.
   cta:
     enabled: false
     url: ''
