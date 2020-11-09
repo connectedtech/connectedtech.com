@@ -23,7 +23,7 @@ page_sections:
   cta:
     enabled: true
     url: "/"
-    button_text: Return Home
+    button_text: Return to Homepage
 - template: simple-footer
   block: footer-1
   content: © Copyright 2020 <strong>Connected Technologies</strong>. Please call us
