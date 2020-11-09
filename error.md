@@ -18,8 +18,8 @@ page_sections:
   image:
     image: "/uploads/2020/11/09/exclamation-triangle-duotone.svg"
     alt_text: '404: Page Not Found'
-  headline: Your message has been sent. <strong>Thanks!</strong>
-  content: Thank you for your message! We'll contact you within one business day.
+  headline: "<strong>404</strong> Page Not Found"
+  content: The page you requested could not be found.
   cta:
     enabled: true
     url: "/"
