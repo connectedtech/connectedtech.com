@@ -31,5 +31,4 @@ page_sections:
       at <a href="tel:+1-810-258-7000" title="Call us at (810) 258-7000">(810) 258-7000</a>
       or <a href="mailto:sales@connectedtech.com" title="Email sales@connectedtech.com">send
       an email</a>.
-
 ---
