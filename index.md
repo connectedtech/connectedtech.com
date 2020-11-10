@@ -39,11 +39,9 @@ page_sections:
   headline: "<strong>Consultation &amp; Strategy</strong>"
   content: You know your hospital. We know digital marketing. Through collaboration
     we are able to share understanding and determine your best opportunities, then
-    create practical goals and a strategy to achieve them.<br><br><strong>+</strong>
-    Digital Transformation<br><strong>+</strong> User Journey Mapping<br><strong>+</strong>
-    Competitive Research<br><strong>+</strong> Modeling<br><strong>+</strong> Content
-    Strategy<br><strong>+</strong> Social Media Strategy<br><strong>+</strong> Stakeholder
-    Alignment
+    create practical goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+
+    User Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
+    Social Media Strategy<br>+ Stakeholder Alignment
   media:
     image: "/uploads/2020/11/05/chart-line-duotone.svg"
     alt_text: uBuild Blocks Mock-Up
