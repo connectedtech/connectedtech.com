@@ -98,7 +98,7 @@ page_sections:
     <div class="field"> <label class="label">Company</label> <div class="control"> <input class="input" type="text" placeholder="Company Name" name="company"> </div> </div>
     <div class="field"> <label class="label">Email</label> <div class="control"> <input class="input" type="email" placeholder="Your Email" name="email"> </div> </div>
     <div class="field"> <label class="label">Message</label> <div class="control"> <textarea class="textarea" placeholder="Message" name="message"></textarea> </div> </div>
-    <div class="field"> <div class="control"> <button class="button is-link">Submit</button> </div></form>
+    <div class="field"> <div class="control is-pulled-left"> <button class="button is-link">Submit</button> </div></form>
   headline: Contact Us
   slug: contact
 - template: simple-footer
