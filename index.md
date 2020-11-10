@@ -39,9 +39,9 @@ page_sections:
   headline: "<strong>Consultation &amp; Strategy</strong>"
   content: You know your hospital. We know digital marketing. Through collaboration
     we are able to share understanding and determine your best opportunities, then
-    create practical goals and a strategy to achieve them.<br><br>+ Digital Transformation<br>+
-    User Journey Mapping<br>+ Competitive Research<br>+ Modeling<br>+ Content Strategy<br>+
-    Social Media Strategy<br>+ Stakeholder Alignment
+    create practical goals and a strategy to achieve them.<br><br><span class="bullet">+</span> Digital Transformation<br><span class="bullet">+</span>
+    User Journey Mapping<br><span class="bullet">+</span> Competitive Research<br><span class="bullet">+</span> Modeling<br><span class="bullet">+</span> Content Strategy<br><span class="bullet">+</span>
+    Social Media Strategy<br><span class="bullet">+</span> Stakeholder Alignment
   media:
     image: "/uploads/2020/11/05/chart-line-duotone.svg"
     alt_text: uBuild Blocks Mock-Up
@@ -52,8 +52,8 @@ page_sections:
   headline: "<strong>User Experience &amp; Design</strong>"
   content: Great user experience is a deliberate activity. We work through the strategy
     to design touchpoints and experiences that align the user journey with your organizational
-    goals.<br><br>+ Wireframing<br>+ Prototyping<br>+ Information Architecture<br>+
-    Design Systems<br>+ Service Design<br>+ Usability Testing
+    goals.<br><br><span class="bullet">+</span> Wireframing<br><span class="bullet">+</span> Prototyping<br><span class="bullet">+</span> Information Architecture<br><span class="bullet">+</span>
+    Design Systems<br><span class="bullet">+</span> Service Design<br><span class="bullet">+</span> Usability Testing
   media:
     image: "/uploads/2020/11/05/chart-network-duotone.svg"
     alt_text: Customize Blocks
@@ -63,9 +63,9 @@ page_sections:
   headline: "<strong>Systems &amp; Development</strong>"
   content: Digital marketing ecosystems have lots of moving parts. We help you select
     systems that fit, build the features you want, and connect everything together
-    for a seamless digital experience.<br><br>+ Websites<br>+ Intranets<br>+ Content
-    Management Systems (CMS)<br>+ Cloud Infrastructure<br>+ Ecommerce<br>+ Forms<br>+
-    Marketing Automation<br>+ Telehealth<br>+ Customer Relationship Management (CRM)
+    for a seamless digital experience.<br><br><span class="bullet">+</span> Websites<br><span class="bullet">+</span> Intranets<br><span class="bullet">+</span> Content
+    Management Systems (CMS)<br><span class="bullet">+</span> Cloud Infrastructure<br><span class="bullet">+</span> Ecommerce<br><span class="bullet">+</span> Forms<br><span class="bullet">+</span>
+    Marketing Automation<br><span class="bullet">+</span> Telehealth<br><span class="bullet">+</span> Customer Relationship Management (CRM)
   slug: ''
   media:
     image: "/uploads/2020/11/05/sitemap-duotone.svg"
@@ -76,11 +76,11 @@ page_sections:
   headline: "<strong>Operations &amp; Support</strong>"
   content: As a full-service digital agency for hospitals, we utilize a variety of
     activities to maintain a steady state for your digital marketing while driving
-    new revenue streams and garnering new market share.&nbsp;<br><br>+ Budget &amp;
-    Roadmap Planning<br>+ Project Management<br>+ Vendor Selection &amp; Management<br>+
-    Technical Liaison<br>+ Digital Audits<br>+ Digital Advertising<br>+ Marketing
-    Automation<br>+ CMS &amp; Content Management<br>+ Location &amp; Reputation Management<br>+
-    SEO<br>+ Accessibility (ADA &amp; WCAG Compliance)<br>+ Virtual Events<br>+ Training<br>+
+    new revenue streams and garnering new market share.&nbsp;<br><br><span class="bullet">+</span> Budget &amp;
+    Roadmap Planning<br><span class="bullet">+</span> Project Management<br><span class="bullet">+</span> Vendor Selection &amp; Management<br><span class="bullet">+</span>
+    Technical Liaison<br><span class="bullet">+</span> Digital Audits<br><span class="bullet">+</span> Digital Advertising<br><span class="bullet">+</span> Marketing
+    Automation<br><span class="bullet">+</span> CMS &amp; Content Management<br><span class="bullet">+</span> Location &amp; Reputation Management<br><span class="bullet">+</span>
+    SEO<br><span class="bullet">+</span> Accessibility (ADA &amp; WCAG Compliance)<br><span class="bullet">+</span> Virtual Events<br><span class="bullet">+</span> Training<br><span class="bullet">+</span>
     Reports &amp; Dashboards
   slug: ''
   media:
