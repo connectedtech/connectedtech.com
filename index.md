@@ -24,7 +24,7 @@ page_sections:
     button_text: Let's Talk About Your Project
   image:
     image: "/uploads/2020/11/13/hospitals-tile.png"
-    alt_text: Product Shot
+    alt_text: Graphic of two hospitals side-by-side
   background_image: "/uploads/2018/06/21/hero-2-bg.png"
 - template: 1-column-text
   block: one-column-1
