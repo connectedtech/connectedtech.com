@@ -23,7 +23,7 @@ page_sections:
     url: "/#contact"
     button_text: Let's Talk About Your Project
   image:
-    image: "/uploads/2020/11/08/hospitals-duotone.svg"
+    image: "/uploads/2020/11/13/hospitals-tile.png"
     alt_text: Product Shot
   background_image: "/uploads/2018/06/21/hero-2-bg.png"
 - template: 1-column-text
