@@ -10,3 +10,4 @@ site/public/
 dist/
 .tmp/
 _site/
+s3_website.yml
