@@ -6,7 +6,7 @@ style="background-image: url('{{ section.background_image | relative_url }}')"
     <div class="columns">
       <div class="column text">
         <h1><span class="light">{{ section.headline }}</span></h1>
-        <p>{{ section.content }}</p>
+        <p class="subhead">{{ section.content }}</p>
         {% if section.cta and section.cta.enabled == true %}
         <a class="button is-link is-light is-medium" href="{{ section.cta.url }}">{{ section.cta.button_text }}</a>
         {% endif %}
@@ -17,6 +17,8 @@ style="background-image: url('{{ section.background_image | relative_url }}')"
     </div>
   </div>
 </section>
-<div id="services" class="center">
+<div class="column">
+<div id="services">
 <h2>Services</h2>
 <p class="subhead">We create collaborative marketing solutions using your perspective and our experise.</p></div>
+</div>
