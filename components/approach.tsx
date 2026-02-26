@@ -67,7 +67,7 @@ export function Approach() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-foreground">
-                  Scott Danforth
+                  Steve Danforth
                 </h3>
                 <p className="mt-1 text-sm font-medium text-primary">
                   Founder, Connected Technologies
