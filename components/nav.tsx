@@ -49,7 +49,7 @@ export function Nav() {
             </a>
           ))}
           <Button asChild size="sm">
-            <a href="#contact">Get in Touch</a>
+            <a href="#contact">Let's Talk</a>
           </Button>
         </div>
 
@@ -83,7 +83,7 @@ export function Nav() {
             ))}
             <Button asChild size="sm" className="w-full">
               <a href="#contact" onClick={() => setMobileOpen(false)}>
-                Get in Touch
+                Let's Talk
               </a>
             </Button>
           </div>

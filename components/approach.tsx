@@ -21,7 +21,7 @@ const steps = [
     number: "03",
     title: "Deliver",
     description:
-      "We execute, measure, and optimize. Working campaigns and real results \u2014 not slide decks. And we stay engaged to keep improving.",
+      "We execute, measure, and optimize. Campaigns go live, performance is tracked, and we stay engaged to keep improving.",
   },
 ];
 
@@ -46,7 +46,7 @@ export function Approach() {
                 {i < steps.length - 1 && (
                   <div className="absolute right-0 top-14 hidden h-px w-8 bg-border md:block" />
                 )}
-                <div className="mb-3 text-7xl font-black leading-none text-primary/10 md:text-8xl">
+                <div className="mb-3 text-7xl font-black leading-none text-brand-amber/20 md:text-8xl">
                   {step.number}
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">
@@ -62,7 +62,7 @@ export function Approach() {
 
         <FadeIn delay={0.3} className="mt-12 text-center">
           <p className="text-muted-foreground">
-            Step 1 is a free strategy call. No commitment, no pitch deck.
+            Step 1 is a free strategy call. No commitment required.
           </p>
           <Button asChild className="mt-4">
             <a href="#contact">
