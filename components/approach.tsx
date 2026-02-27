@@ -53,7 +53,15 @@ export function Approach() {
                   {step.title}
                 </h3>
                 <p className="mt-2 leading-relaxed text-muted-foreground">
-                  {step.description}
+                  {step.description.split(/(AI)/g).map((part, j) =>
+                    part === "AI" ? (
+                      <span key={j} className="font-semibold text-brand-ai">
+                        {part}
+                      </span>
+                    ) : (
+                      part
+                    )
+                  )}
                 </p>
               </div>
             </FadeInStaggerItem>

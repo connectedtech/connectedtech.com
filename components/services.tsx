@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { BarChart3, Brain, Code2, ArrowRight, Check } from "lucide-react";
+import { BarChart3, Brain, Code2, ArrowRight, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/motion-wrapper";
 
@@ -9,6 +9,7 @@ const services = [
   {
     icon: BarChart3,
     title: "AI-Infused Digital Marketing",
+    aiPowered: true,
     description:
       "SEO, content strategy, paid media, and analytics — powered by AI tools that help us move faster, target smarter, and deliver better ROI. 15+ years of driving measurable results, now with AI built in from the start.",
     bullets: [
@@ -23,6 +24,7 @@ const services = [
   {
     icon: Brain,
     title: "AI Strategy & Integration",
+    aiPowered: true,
     description:
       "We identify where AI makes the biggest difference in your marketing and operations, then build it in — delivering working solutions from day one.",
     bullets: [
@@ -37,6 +39,7 @@ const services = [
   {
     icon: Code2,
     title: "Web Design & Development",
+    aiPowered: false,
     description:
       "Fast, modern, conversion-focused websites built to perform and grow with you.",
     bullets: [
@@ -49,6 +52,24 @@ const services = [
     cta: "Discuss Your Project",
   },
 ];
+
+/** Highlight every occurrence of "AI" in a string with the AI brand color */
+function HighlightAI({ text }: { text: string }) {
+  const parts = text.split(/(AI)/g);
+  return (
+    <>
+      {parts.map((part, i) =>
+        part === "AI" ? (
+          <span key={i} className="text-brand-ai">
+            {part}
+          </span>
+        ) : (
+          part
+        )
+      )}
+    </>
+  );
+}
 
 export function Services() {
   const [active, setActive] = useState(0);
@@ -77,17 +98,27 @@ export function Services() {
                     : "border-border bg-card hover:border-primary/20 hover:bg-primary/[0.02]"
                 }`}
               >
-                <div
-                  className={`mb-5 inline-flex rounded-xl p-3 transition-colors duration-200 ${
-                    active === i
-                      ? "bg-primary/10 text-primary"
-                      : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  <service.icon className="h-6 w-6" />
+                {/* Icon row with optional AI chip */}
+                <div className="mb-5 flex w-full items-start justify-between gap-3">
+                  <div
+                    className={`inline-flex rounded-xl p-3 transition-colors duration-200 ${
+                      active === i
+                        ? "bg-primary/10 text-primary"
+                        : "bg-muted text-muted-foreground"
+                    }`}
+                  >
+                    <service.icon className="h-6 w-6" />
+                  </div>
+                  {service.aiPowered && (
+                    <div className="flex items-center gap-1 rounded-full bg-brand-ai/10 px-2 py-0.5 text-xs font-semibold text-brand-ai">
+                      <Sparkles className="h-3 w-3" />
+                      <span>AI</span>
+                    </div>
+                  )}
                 </div>
+
                 <h3 className="text-xl font-bold text-foreground">
-                  {service.title}
+                  <HighlightAI text={service.title} />
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
@@ -109,13 +140,19 @@ export function Services() {
               </div>
             ))}
           </div>
-          <div className="mt-6 border-t border-primary/10 pt-5">
+          <div className="mt-6 flex items-center justify-between border-t border-primary/10 pt-5">
             <Button asChild size="sm">
               <a href="#contact">
                 {services[active].cta}
                 <ArrowRight className="ml-2 h-3.5 w-3.5" />
               </a>
             </Button>
+            {services[active].aiPowered && (
+              <div className="flex items-center gap-1.5 text-xs text-brand-ai/70">
+                <Sparkles className="h-3.5 w-3.5" />
+                <span>AI-powered</span>
+              </div>
+            )}
           </div>
         </FadeIn>
       </div>
