@@ -16,7 +16,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-ai/25 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-brand-ai">
             <Sparkles className="h-4 w-4" />
             AI-Infused Digital Marketing
           </div>
@@ -29,7 +29,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           Marketing Built{" "}
-          <span className="text-primary">for the AI Era</span>
+          <span className="text-primary">for the </span>
+          <span className="text-brand-ai">AI</span>
+          <span className="text-primary"> Era</span>
         </motion.h1>
 
         <motion.p
