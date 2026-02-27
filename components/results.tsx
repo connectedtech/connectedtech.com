@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import { FadeInStagger, FadeInStaggerItem, FadeIn } from "@/components/motion-wrapper";
 
 const stats = [
@@ -6,6 +10,38 @@ const stats = [
   { value: "200+", label: "Projects delivered" },
   { value: "9", label: "Industries served" },
 ];
+
+function AnimatedNumber({ value }: { value: string }) {
+  const match = value.match(/^(\d+)(.*)$/);
+  if (!match) return <>{value}</>;
+
+  const target = parseInt(match[1]);
+  const suffix = match[2];
+
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const start = performance.now();
+    const duration = 1600;
+
+    const animate = (now: number) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // ease-out cubic — fast start, satisfying slow finish
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * target));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  }, [isInView, target]);
+
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export function Results() {
   return (
@@ -25,11 +61,9 @@ export function Results() {
             <FadeInStaggerItem key={stat.label}>
               <div className="text-center">
                 <div className="text-4xl font-bold text-primary md:text-5xl">
-                  {stat.value}
+                  <AnimatedNumber value={stat.value} />
                 </div>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {stat.label}
-                </p>
+                <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
               </div>
             </FadeInStaggerItem>
           ))}
