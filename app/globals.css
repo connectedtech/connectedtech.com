@@ -25,6 +25,9 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-brand-amber: var(--brand-amber);
+  --color-brand-amber-subtle: var(--brand-amber-subtle);
+  --color-brand-dark: var(--brand-dark);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -54,6 +57,9 @@
   --border: oklch(0.92 0.005 260);
   --input: oklch(0.92 0.005 260);
   --ring: oklch(0.55 0.22 260);
+  --brand-amber: oklch(0.70 0.17 75);
+  --brand-amber-subtle: oklch(0.95 0.04 75);
+  --brand-dark: oklch(0.12 0.025 262);
 }
 
 @layer base {

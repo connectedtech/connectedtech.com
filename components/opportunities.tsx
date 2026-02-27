@@ -8,6 +8,9 @@ const industries = [
   {
     icon: Factory,
     title: "Manufacturing & Engineering",
+    description: "AI-powered capabilities for industrial and technical markets",
+    color: "oklch(0.70 0.17 75)",
+    colorBg: "oklch(0.70 0.17 75 / 0.15)",
     opportunities: [
       "AI-driven content and campaigns for complex products",
       "Automated lead nurturing and sales enablement",
@@ -19,6 +22,9 @@ const industries = [
   {
     icon: HeartPulse,
     title: "Healthcare",
+    description: "Compliant, patient-centered marketing that drives engagement",
+    color: "oklch(0.65 0.22 350)",
+    colorBg: "oklch(0.65 0.22 350 / 0.15)",
     opportunities: [
       "Patient engagement and communication automation",
       "Reputation management and review response",
@@ -30,6 +36,9 @@ const industries = [
   {
     icon: Briefcase,
     title: "Professional Services",
+    description: "Thought leadership and client acquisition at scale",
+    color: "oklch(0.60 0.22 28)",
+    colorBg: "oklch(0.60 0.22 28 / 0.15)",
     opportunities: [
       "Thought leadership and content marketing at scale",
       "AI-assisted proposal and report generation",
@@ -52,7 +61,7 @@ export function Opportunities() {
             How We Help
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            See yourself here? That&apos;s the first sign we&apos;re a good fit.
+            We specialize in three industries where we&apos;ve driven consistent, measurable results.
           </p>
         </FadeIn>
 
@@ -64,9 +73,10 @@ export function Opportunities() {
               onClick={() => setActive(i)}
               className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
                 active === i
-                  ? "bg-primary text-white shadow-md"
+                  ? "text-white shadow-md"
                   : "border border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
               }`}
+              style={active === i ? { backgroundColor: ind.color } : undefined}
             >
               <ind.icon className="h-4 w-4" />
               {ind.title}
@@ -76,16 +86,40 @@ export function Opportunities() {
 
         {/* Content panel */}
         <FadeIn key={active} className="mt-6">
-          <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
-            <div className="grid gap-4 sm:grid-cols-2">
-              {industry.opportunities.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <div className="mt-0.5 flex-shrink-0 rounded-full bg-primary/10 p-1">
-                    <Check className="h-3.5 w-3.5 text-primary" />
+          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+            {/* Industry header */}
+            <div className="flex items-center gap-5 border-b border-border bg-muted/30 px-8 py-5">
+              <div
+                className="flex-shrink-0 rounded-xl p-3"
+                style={{ backgroundColor: industry.colorBg, color: industry.color }}
+              >
+                <industry.icon className="h-7 w-7" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-foreground">{industry.title}</h3>
+                <p className="mt-0.5 text-sm text-muted-foreground">{industry.description}</p>
+              </div>
+              <div
+                className="ml-auto hidden h-1 w-16 flex-shrink-0 rounded-full sm:block"
+                style={{ backgroundColor: industry.color, opacity: 0.4 }}
+              />
+            </div>
+
+            {/* Opportunities grid */}
+            <div className="p-8 md:p-10">
+              <div className="grid gap-4 sm:grid-cols-2">
+                {industry.opportunities.map((item) => (
+                  <div key={item} className="flex items-start gap-3">
+                    <div
+                      className="mt-0.5 flex-shrink-0 rounded-full p-1"
+                      style={{ backgroundColor: industry.colorBg, color: industry.color }}
+                    >
+                      <Check className="h-3.5 w-3.5" />
+                    </div>
+                    <span className="text-muted-foreground">{item}</span>
                   </div>
-                  <span className="text-muted-foreground">{item}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </FadeIn>

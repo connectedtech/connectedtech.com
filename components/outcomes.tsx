@@ -1,42 +1,50 @@
-import { TrendingUp, Target, Zap, Star } from "lucide-react";
+import { TrendingUp, PieChart, Scissors, Gem } from "lucide-react";
 import { FadeInStagger, FadeInStaggerItem, FadeIn } from "@/components/motion-wrapper";
 
 const outcomes = [
   {
     icon: TrendingUp,
     title: "Grow Revenue",
+    color: "oklch(0.65 0.18 150)",
+    colorBg: "oklch(0.65 0.18 150 / 0.18)",
     description:
       "AI-powered campaigns that reach the right buyers, generate more qualified leads, and convert at a higher rate.",
   },
   {
-    icon: Target,
+    icon: PieChart,
     title: "Win Market Share",
+    color: "oklch(0.68 0.18 220)",
+    colorBg: "oklch(0.68 0.18 220 / 0.18)",
     description:
       "SEO, content, and paid media that expand your digital footprint and put you ahead of competitors.",
   },
   {
-    icon: Zap,
+    icon: Scissors,
     title: "Reduce Costs",
+    color: "oklch(0.70 0.17 75)",
+    colorBg: "oklch(0.70 0.17 75 / 0.18)",
     description:
-      "AI automation eliminates repetitive manual work so your team focuses on strategy — not execution.",
+      "AI automation eliminates repetitive manual work so your team focuses on strategy over execution.",
   },
   {
-    icon: Star,
+    icon: Gem,
     title: "Improve Quality",
+    color: "oklch(0.68 0.19 310)",
+    colorBg: "oklch(0.68 0.19 310 / 0.18)",
     description:
-      "Smarter targeting, better content, and data-driven optimization that raises the bar across your marketing.",
+      "Smarter targeting, stronger content, and data-driven optimization that raises the bar across your marketing.",
   },
 ];
 
 export function Outcomes() {
   return (
-    <section id="outcomes" className="bg-primary px-6 py-16 md:py-20">
+    <section id="outcomes" className="bg-brand-dark px-6 py-16 md:py-20">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
             Four Outcomes. One Agency.
           </h2>
-          <p className="mt-4 text-lg text-white/70">
+          <p className="mt-4 text-lg text-white/60">
             Everything we do maps back to the metrics that matter most to your
             business.
           </p>
@@ -46,13 +54,16 @@ export function Outcomes() {
           {outcomes.map((outcome) => (
             <FadeInStaggerItem key={outcome.title}>
               <div className="text-center">
-                <div className="mx-auto mb-4 inline-flex rounded-full bg-white/10 p-3 text-white">
+                <div
+                  className="mx-auto mb-4 inline-flex rounded-full p-3"
+                  style={{ backgroundColor: outcome.colorBg, color: outcome.color }}
+                >
                   <outcome.icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-lg font-semibold text-white">
                   {outcome.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/65">
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
                   {outcome.description}
                 </p>
               </div>
