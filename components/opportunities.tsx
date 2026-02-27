@@ -9,7 +9,6 @@ import {
   GraduationCap,
   ShoppingBag,
   Check,
-  Star,
 } from "lucide-react";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 
@@ -18,7 +17,6 @@ const industries = [
     icon: HeartPulse,
     title: "Healthcare & Medical",
     description: "Health systems, physician practices, behavioral health, and health tech companies.",
-    proven: true,
     color: "oklch(0.65 0.22 350)",
     colorBg: "oklch(0.65 0.22 350 / 0.12)",
     opportunities: [
@@ -32,7 +30,6 @@ const industries = [
     icon: Factory,
     title: "Manufacturing & Industrial",
     description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
-    proven: true,
     color: "oklch(0.70 0.17 75)",
     colorBg: "oklch(0.70 0.17 75 / 0.12)",
     opportunities: [
@@ -46,7 +43,6 @@ const industries = [
     icon: Monitor,
     title: "Technology & Software",
     description: "SaaS companies, IT service providers, MSPs, and technology consultancies.",
-    proven: true,
     color: "oklch(0.60 0.20 250)",
     colorBg: "oklch(0.60 0.20 250 / 0.12)",
     opportunities: [
@@ -153,17 +149,7 @@ export function Opportunities() {
         <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
             <FadeInStaggerItem key={industry.title}>
-              <div className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:shadow-md" style={{ "--hover-border": industry.color } as React.CSSProperties}>
-
-                {industry.proven && (
-                  <div
-                    className="absolute right-4 top-4 flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold"
-                    style={{ backgroundColor: industry.colorBg, color: industry.color }}
-                  >
-                    <Star className="h-3 w-3" />
-                    Proven
-                  </div>
-                )}
+              <div className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:shadow-md">
 
                 <div
                   className="mb-4 inline-flex rounded-xl p-2.5"
@@ -172,7 +158,7 @@ export function Opportunities() {
                   <industry.icon className="h-5 w-5" />
                 </div>
 
-                <h3 className="pr-16 text-base font-semibold text-foreground">
+                <h3 className="text-base font-semibold text-foreground">
                   {industry.title}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">
