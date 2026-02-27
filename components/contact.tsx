@@ -69,7 +69,7 @@ export function Contact() {
       <div className="mx-auto max-w-2xl">
         <FadeIn className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Ready to Get Started?
+            Let&apos;s Talk
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Tell us about your business and what you want to achieve. We&apos;ll
@@ -104,7 +104,6 @@ export function Contact() {
                   <Input
                     id="name"
                     name="name"
-                    placeholder="Your name"
                     required
                   />
                 </div>
@@ -114,7 +113,6 @@ export function Contact() {
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="you@company.com"
                     required
                   />
                 </div>
@@ -125,17 +123,16 @@ export function Contact() {
                 <Input
                   id="company"
                   name="company"
-                  placeholder="Your company name"
                 />
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">What are you looking to achieve?</Label>
+                <Label htmlFor="message">What do you want to achieve? Don&apos;t hold back.</Label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Tell us about your goals, current marketing, or specific challenges..."
-                  rows={5}
+                  placeholder="Tell us your biggest goal, what you've already tried, and what success looks like 12 months from now. The more specific, the better."
+                  rows={8}
                   required
                 />
               </div>
