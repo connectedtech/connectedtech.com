@@ -53,9 +53,9 @@ export function Outcomes() {
         <FadeInStagger className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {outcomes.map((outcome) => (
             <FadeInStaggerItem key={outcome.title}>
-              <div className="text-center">
+              <div className="group text-center">
                 <div
-                  className="mx-auto mb-4 inline-flex rounded-full p-3"
+                  className="mx-auto mb-4 inline-flex rounded-full p-3 transition-transform duration-200 group-hover:scale-110"
                   style={{ backgroundColor: outcome.colorBg, color: outcome.color }}
                 >
                   <outcome.icon className="h-6 w-6" />

@@ -17,8 +17,8 @@ const industries = [
     icon: HeartPulse,
     title: "Healthcare & Medical",
     description: "Health systems, physician practices, behavioral health, and health tech companies.",
-    color: "oklch(0.65 0.22 350)",
-    colorBg: "oklch(0.65 0.22 350 / 0.12)",
+    color: "oklch(0.58 0.22 350)",
+    colorBg: "oklch(0.58 0.22 350 / 0.12)",
     opportunities: [
       "Patient acquisition campaigns built to meet compliance requirements",
       "Service line and specialty program marketing",
@@ -30,8 +30,8 @@ const industries = [
     icon: Factory,
     title: "Manufacturing & Industrial",
     description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
-    color: "oklch(0.70 0.17 75)",
-    colorBg: "oklch(0.70 0.17 75 / 0.12)",
+    color: "oklch(0.62 0.19 48)",
+    colorBg: "oklch(0.62 0.19 48 / 0.12)",
     opportunities: [
       "Lead generation for complex, long-cycle B2B sales",
       "Technical SEO and content for engineering audiences",
@@ -43,8 +43,8 @@ const industries = [
     icon: Monitor,
     title: "Technology & Software",
     description: "SaaS companies, IT service providers, MSPs, and technology consultancies.",
-    color: "oklch(0.60 0.20 250)",
-    colorBg: "oklch(0.60 0.20 250 / 0.12)",
+    color: "oklch(0.52 0.22 235)",
+    colorBg: "oklch(0.52 0.22 235 / 0.12)",
     opportunities: [
       "Demand generation and pipeline marketing",
       "Thought leadership content at scale",
@@ -56,8 +56,8 @@ const industries = [
     icon: Briefcase,
     title: "Professional Services",
     description: "Law firms, consultancies, accounting firms, staffing agencies, and HR companies.",
-    color: "oklch(0.55 0.18 200)",
-    colorBg: "oklch(0.55 0.18 200 / 0.12)",
+    color: "oklch(0.54 0.17 193)",
+    colorBg: "oklch(0.54 0.17 193 / 0.12)",
     opportunities: [
       "Thought leadership content that attracts ideal clients",
       "LinkedIn and search campaigns targeting decision-makers",
@@ -69,8 +69,8 @@ const industries = [
     icon: Landmark,
     title: "Financial Services",
     description: "Banks, credit unions, insurance providers, financial advisors, and fintech companies.",
-    color: "oklch(0.55 0.18 155)",
-    colorBg: "oklch(0.55 0.18 155 / 0.12)",
+    color: "oklch(0.52 0.18 152)",
+    colorBg: "oklch(0.52 0.18 152 / 0.12)",
     opportunities: [
       "Compliant digital marketing within regulatory guidelines",
       "Lead generation for financial products and services",
@@ -82,8 +82,8 @@ const industries = [
     icon: HardHat,
     title: "Construction & Real Estate",
     description: "General contractors, specialty trades, developers, and commercial property firms.",
-    color: "oklch(0.65 0.16 45)",
-    colorBg: "oklch(0.65 0.16 45 / 0.12)",
+    color: "oklch(0.57 0.20 27)",
+    colorBg: "oklch(0.57 0.20 27 / 0.12)",
     opportunities: [
       "Local SEO and Google Business for service area businesses",
       "Lead generation for residential and commercial projects",
@@ -95,8 +95,8 @@ const industries = [
     icon: Truck,
     title: "Logistics & Distribution",
     description: "Freight brokers, 3PLs, distributors, and supply chain technology providers.",
-    color: "oklch(0.58 0.16 220)",
-    colorBg: "oklch(0.58 0.16 220 / 0.12)",
+    color: "oklch(0.50 0.20 272)",
+    colorBg: "oklch(0.50 0.20 272 / 0.12)",
     opportunities: [
       "B2B lead generation for freight and logistics services",
       "Account-based marketing for enterprise shippers",
@@ -108,8 +108,8 @@ const industries = [
     icon: GraduationCap,
     title: "Education & Training",
     description: "Higher education, trade schools, corporate training providers, and e-learning platforms.",
-    color: "oklch(0.60 0.18 140)",
-    colorBg: "oklch(0.60 0.18 140 / 0.12)",
+    color: "oklch(0.55 0.17 128)",
+    colorBg: "oklch(0.55 0.17 128 / 0.12)",
     opportunities: [
       "Enrollment and student recruitment campaigns",
       "Search and social ads for prospective students",
@@ -121,8 +121,8 @@ const industries = [
     icon: ShoppingBag,
     title: "Retail & E-commerce",
     description: "Online retailers, brick-and-mortar shops, and omnichannel consumer brands.",
-    color: "oklch(0.60 0.20 300)",
-    colorBg: "oklch(0.60 0.20 300 / 0.12)",
+    color: "oklch(0.52 0.21 308)",
+    colorBg: "oklch(0.52 0.21 308 / 0.12)",
     opportunities: [
       "AI-optimized product listings and SEO",
       "Paid search and shopping campaigns",
@@ -149,35 +149,45 @@ export function Opportunities() {
         <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
             <FadeInStaggerItem key={industry.title}>
-              <div className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:shadow-md">
+              <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
 
+                {/* Colored header — icon + title live here */}
                 <div
-                  className="mb-4 inline-flex rounded-xl p-2.5"
-                  style={{ backgroundColor: industry.colorBg, color: industry.color }}
+                  className="flex items-center gap-3 px-5 py-4"
+                  style={{ backgroundColor: industry.colorBg }}
                 >
-                  <industry.icon className="h-5 w-5" />
+                  <industry.icon
+                    className="h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+                    style={{ color: industry.color }}
+                  />
+                  <h3
+                    className="text-sm font-semibold leading-snug"
+                    style={{ color: industry.color }}
+                  >
+                    {industry.title}
+                  </h3>
                 </div>
 
-                <h3 className="text-base font-semibold text-foreground">
-                  {industry.title}
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {industry.description}
-                </p>
+                {/* Card body */}
+                <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
+                  <p className="text-sm text-muted-foreground">
+                    {industry.description}
+                  </p>
 
-                <ul className="mt-4 space-y-2 border-t border-border pt-4">
-                  {industry.opportunities.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <div
-                        className="mt-0.5 flex-shrink-0 rounded-full p-0.5"
-                        style={{ backgroundColor: industry.colorBg, color: industry.color }}
-                      >
-                        <Check className="h-3 w-3" />
-                      </div>
-                      <span className="text-sm text-muted-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <ul className="mt-4 space-y-2 border-t border-border pt-4">
+                    {industry.opportunities.map((item) => (
+                      <li key={item} className="flex items-start gap-2">
+                        <div
+                          className="mt-0.5 flex-shrink-0 rounded-full p-0.5"
+                          style={{ backgroundColor: industry.colorBg, color: industry.color }}
+                        >
+                          <Check className="h-3 w-3" />
+                        </div>
+                        <span className="text-sm text-muted-foreground">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
               </div>
             </FadeInStaggerItem>
