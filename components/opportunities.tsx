@@ -6,11 +6,11 @@ const industries = [
     icon: Factory,
     title: "Manufacturing & Engineering",
     opportunities: [
-      "Predictive maintenance that reduces downtime before it happens",
-      "Automated quality inspection using computer vision",
-      "Supply chain optimization and demand forecasting",
-      "Intelligent process documentation and training",
-      "Automated reporting and compliance workflows",
+      "AI-driven content and campaigns for complex products",
+      "Automated lead nurturing and sales enablement",
+      "SEO and digital presence for technical buyers",
+      "Predictive analytics for marketing performance",
+      "AI-assisted documentation and training materials",
     ],
   },
   {
@@ -18,21 +18,21 @@ const industries = [
     title: "Healthcare",
     opportunities: [
       "Patient engagement and communication automation",
-      "Clinical workflow optimization",
-      "Documentation and coding assistance",
       "Reputation management and review response",
       "Personalized marketing for service lines",
+      "Content strategy built for compliance",
+      "AI-powered analytics for campaign optimization",
     ],
   },
   {
     icon: Briefcase,
     title: "Professional Services",
     opportunities: [
-      "Document processing and intelligent extraction",
-      "Client communication automation",
-      "Proposal and report generation",
-      "Knowledge management and internal search",
+      "Thought leadership and content marketing at scale",
+      "AI-assisted proposal and report generation",
       "Lead qualification and CRM enrichment",
+      "Client communication automation",
+      "Search and paid campaigns that attract the right clients",
     ],
   },
 ];
@@ -40,17 +40,17 @@ const industries = [
 export function Opportunities() {
   return (
     <section
-      id="opportunities"
+      id="how-we-help"
       className="bg-muted/50 px-6 py-20 md:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Where AI Can Move the Needle
+            How We Help
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Every business has untapped AI opportunities. Here are some of the
-            most impactful ones we see across industries.
+            AI-infused marketing looks different depending on your industry.
+            Here&apos;s what it means for the businesses we work with.
           </p>
         </FadeIn>
 
@@ -82,12 +82,12 @@ export function Opportunities() {
 
         <FadeIn delay={0.3} className="mt-12 text-center">
           <p className="text-muted-foreground">
-            Not sure where to start?{" "}
+            Don&apos;t see your industry?{" "}
             <a
               href="#contact"
               className="font-medium text-primary hover:underline"
             >
-              That&apos;s exactly what our first conversation is for.
+              Let&apos;s talk — we&apos;ve likely worked in your space.
             </a>
           </p>
         </FadeIn>

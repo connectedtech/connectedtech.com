@@ -1,25 +1,25 @@
-import { Brain, BarChart3, Code2 } from "lucide-react";
+import { BarChart3, Brain, Code2 } from "lucide-react";
 import { FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 
 const services = [
   {
-    icon: Brain,
-    title: "AI Strategy & Enablement",
+    icon: BarChart3,
+    title: "AI-Infused Digital Marketing",
     description:
-      "We assess your operations, identify high-impact AI opportunities, and build a practical roadmap to get you there. From automation to intelligent workflows — we go from assessment to production, not just strategy decks.",
+      "SEO, content strategy, paid media, and analytics — all powered by AI tools that help us move faster, target smarter, and deliver better ROI. 15+ years of driving measurable results, now with AI built in from the start.",
     accent: true,
   },
   {
-    icon: BarChart3,
-    title: "Digital Marketing",
+    icon: Brain,
+    title: "AI Strategy & Integration",
     description:
-      "SEO, content strategy, paid media, and analytics — enhanced with AI tools that give you an edge. 15 years of driving measurable results for organizations that need marketing to actually move the needle.",
+      "We identify where AI can make the biggest difference in your marketing and operations, then build it in. Not strategy decks — working solutions you can see and measure from day one.",
   },
   {
     icon: Code2,
     title: "Web Design & Development",
     description:
-      "Modern, fast, conversion-focused websites and web applications built with the latest frameworks. Your digital presence should work as hard as your team does.",
+      "Fast, modern, conversion-focused websites built with the latest frameworks. Your digital home base, designed to perform and built to grow with you.",
   },
 ];
 
@@ -32,7 +32,7 @@ export function Services() {
             What We Do
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Three disciplines, one thread: AI amplifies everything we touch.
+            Digital marketing at the core. AI woven through everything.
           </p>
         </div>
 

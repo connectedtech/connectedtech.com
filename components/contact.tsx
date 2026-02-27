@@ -69,11 +69,11 @@ export function Contact() {
       <div className="mx-auto max-w-2xl">
         <FadeIn className="text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Let&apos;s Start a Conversation
+            Ready to Get Started?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Tell us a bit about your business and what you&apos;re looking to
-            achieve. We&apos;ll get back to you within one business day.
+            Tell us about your business and what you want to achieve. We&apos;ll
+            respond within one business day with a clear path forward.
           </p>
         </FadeIn>
 
@@ -82,11 +82,11 @@ export function Contact() {
             <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center">
               <CheckCircle2 className="mx-auto h-12 w-12 text-primary" />
               <h3 className="mt-4 text-xl font-semibold text-foreground">
-                Message received!
+                You&apos;re on our radar!
               </h3>
               <p className="mt-2 text-muted-foreground">
-                We&apos;ll be in touch within one business day. Looking forward to
-                learning about your business.
+                We&apos;ll be in touch within one business day with next steps.
+                Looking forward to learning about your business.
               </p>
             </div>
           ) : (
@@ -123,11 +123,11 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">How can we help?</Label>
+                <Label htmlFor="message">What are you looking to achieve?</Label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Tell us about your goals or challenges..."
+                  placeholder="Tell us about your goals, current marketing, or specific challenges..."
                   rows={5}
                   required
                 />
@@ -147,7 +147,7 @@ export function Contact() {
                   "Sending..."
                 ) : (
                   <>
-                    Send Message
+                    Let&apos;s Talk
                     <Send className="ml-2 h-4 w-4" />
                   </>
                 )}
