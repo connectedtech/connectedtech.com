@@ -41,6 +41,15 @@ export function Contact() {
       if (data.success) {
         setSubmitted(true);
         form.reset();
+
+        // Fire GA4 conversion event for ad campaign tracking
+        if (typeof window !== "undefined" && typeof window.gtag === "function") {
+          window.gtag("event", "generate_lead", {
+            event_category: "contact",
+            event_label: payload.company || "no company",
+            value: 1,
+          });
+        }
       } else {
         setError(
           data.error || "Something went wrong. Please try again or email us directly."
