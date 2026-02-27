@@ -51,7 +51,7 @@ const services = [
 ];
 
 export function Services() {
-  const [active, setActive] = useState<number | null>(null);
+  const [active, setActive] = useState(0);
 
   return (
     <section id="services" className="px-6 py-20 md:py-28">
@@ -65,20 +65,20 @@ export function Services() {
           </p>
         </FadeIn>
 
-        <div className="mt-16 grid items-start gap-6 lg:grid-cols-3">
+        {/* Service selector cards — fixed height, no layout shift */}
+        <div className="mt-16 grid items-stretch gap-4 lg:grid-cols-3">
           {services.map((service, i) => (
             <FadeIn key={service.title}>
-              <div
-                onMouseEnter={() => setActive(i)}
-                onMouseLeave={() => setActive(null)}
-                className={`flex cursor-default flex-col rounded-2xl border p-8 transition-all duration-200 ${
+              <button
+                onClick={() => setActive(i)}
+                className={`flex w-full cursor-pointer flex-col items-start rounded-2xl border p-8 text-left transition-all duration-200 ${
                   active === i
-                    ? "border-primary/30 bg-primary/[0.04] shadow-sm"
-                    : "border-border bg-card"
+                    ? "border-primary/40 bg-primary/[0.04] shadow-sm"
+                    : "border-border bg-card hover:border-primary/20 hover:bg-primary/[0.02]"
                 }`}
               >
                 <div
-                  className={`mb-5 inline-flex w-fit rounded-xl p-3 transition-colors duration-200 ${
+                  className={`mb-5 inline-flex rounded-xl p-3 transition-colors duration-200 ${
                     active === i
                       ? "bg-primary/10 text-primary"
                       : "bg-muted text-muted-foreground"
@@ -92,35 +92,32 @@ export function Services() {
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {service.description}
                 </p>
-
-                {active === i && (
-                  <div className="mt-6">
-                    <ul className="space-y-2.5">
-                      {service.bullets.map((bullet) => (
-                        <li key={bullet} className="flex items-start gap-2.5">
-                          <div className="mt-0.5 flex-shrink-0 rounded-full bg-primary/10 p-0.5">
-                            <Check className="h-3 w-3 text-primary" />
-                          </div>
-                          <span className="text-sm text-muted-foreground">
-                            {bullet}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="mt-6">
-                      <Button asChild size="sm">
-                        <a href="#contact">
-                          {service.cta}
-                          <ArrowRight className="ml-2 h-3.5 w-3.5" />
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                )}
-              </div>
+              </button>
             </FadeIn>
           ))}
         </div>
+
+        {/* Detail panel — always present, updates on card click */}
+        <FadeIn className="mt-4 rounded-2xl border border-primary/20 bg-primary/[0.03] px-8 py-7">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {services[active].bullets.map((bullet) => (
+              <div key={bullet} className="flex items-start gap-2.5">
+                <div className="mt-0.5 flex-shrink-0 rounded-full bg-primary/10 p-0.5">
+                  <Check className="h-3 w-3 text-primary" />
+                </div>
+                <span className="text-sm text-muted-foreground">{bullet}</span>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 border-t border-primary/10 pt-5">
+            <Button asChild size="sm">
+              <a href="#contact">
+                {services[active].cta}
+                <ArrowRight className="ml-2 h-3.5 w-3.5" />
+              </a>
+            </Button>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );
