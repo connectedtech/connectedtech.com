@@ -84,11 +84,11 @@ export function Outcomes() {
                   style={{ backgroundColor: outcome.colorBg }}
                 >
                   <outcome.icon
-                    className="h-4 w-4 flex-shrink-0 transition-transform duration-300 group-hover:scale-110"
+                    className="h-4 w-4 flex-shrink-0 opacity-75 transition-[transform,opacity] duration-200 group-hover:scale-110 group-hover:opacity-100"
                     style={{ color: outcome.color }}
                   />
                   <h3
-                    className="text-sm font-semibold leading-snug"
+                    className="text-sm font-semibold leading-snug opacity-75 transition-opacity duration-200 group-hover:opacity-100"
                     style={{ color: outcome.color }}
                   >
                     {outcome.title}
@@ -98,7 +98,7 @@ export function Outcomes() {
                 {/* Card body */}
                 <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
                   <p
-                    className="text-xs font-medium"
+                    className="text-xs font-medium opacity-75 transition-opacity duration-200 group-hover:opacity-100"
                     style={{ color: outcome.color }}
                   >
                     {outcome.detail}
