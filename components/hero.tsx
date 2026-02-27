@@ -18,7 +18,7 @@ export function Hero() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground">
             <Sparkles className="h-4 w-4 text-brand-ai" />
-            AI-Powered Digital Solutions
+            AI marketing. Real results.
           </div>
         </motion.div>
 

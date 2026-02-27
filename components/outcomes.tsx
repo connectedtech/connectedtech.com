@@ -49,11 +49,12 @@ export function Outcomes() {
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-            How We Make a Difference
+            Four Outcomes That Drive Everything We Do
           </h2>
           <p className="mt-4 text-lg text-white/60">
-            Everything we do maps back to the metrics that matter most to your
-            business.
+            Most agencies report on clicks and impressions. We focus on the
+            four business outcomes that determine whether marketing is worth
+            the spend.
           </p>
         </FadeIn>
 
