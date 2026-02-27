@@ -11,28 +11,45 @@ import { FadeIn } from "@/components/motion-wrapper";
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
+    setError("");
 
     const form = e.currentTarget;
-    const data = new FormData(form);
+    const formData = new FormData(form);
+
+    const payload = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      message: formData.get("message") as string,
+      botcheck: formData.get("botcheck") as string,
+    };
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: data,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (data.success) {
         setSubmitted(true);
         form.reset();
+      } else {
+        setError(
+          data.error || "Something went wrong. Please try again or email us directly."
+        );
       }
     } catch {
-      // Fallback: show success anyway for demo purposes
-      // Replace with proper error handling once Web3Forms key is added
-      setSubmitted(true);
+      setError(
+        "We couldn\u2019t send your message. Please try again or reach out to us directly."
+      );
     } finally {
       setLoading(false);
     }
@@ -65,18 +82,6 @@ export function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="mt-12 space-y-6">
-              {/* Web3Forms access key — replace with your key */}
-              <input
-                type="hidden"
-                name="access_key"
-                value={process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "YOUR_ACCESS_KEY"}
-              />
-              <input
-                type="hidden"
-                name="subject"
-                value="New inquiry from connectedtech.com"
-              />
-
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
@@ -119,8 +124,14 @@ export function Contact() {
                 />
               </div>
 
-              {/* Honeypot for spam */}
+              {/* Honeypot for spam — hidden from real users */}
               <input type="checkbox" name="botcheck" className="hidden" />
+
+              {error && (
+                <p className="text-sm text-red-600 bg-red-50 rounded-lg px-4 py-3">
+                  {error}
+                </p>
+              )}
 
               <Button type="submit" size="lg" className="w-full" disabled={loading}>
                 {loading ? (
