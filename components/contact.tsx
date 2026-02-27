@@ -248,7 +248,7 @@ export function Contact() {
                 <Textarea
                   id="message"
                   name="message"
-                  className={`min-h-48 placeholder:text-muted-foreground/40 ${fields.message === "valid" ? "border-green-500" : ""}`}
+                  className={`min-h-64 sm:min-h-48 placeholder:text-muted-foreground/40 ${fields.message === "valid" ? "border-green-500" : ""}`}
                   placeholder={`e.g. "We're a 30-person B2B software company. Our leads have dried up — cost per lead doubled this year and we don't know if it's the ads, the SEO, or the messaging. We refreshed the site last year but nothing really moved. We want to figure this out before Q2. We're not looking to spend more, just use what we have better."`}
                   required
                   onBlur={(e) => handleBlur("message", e.target.value)}
