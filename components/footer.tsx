@@ -8,6 +8,13 @@ export function Footer() {
           </span>
         </div>
 
+        <a
+          href="tel:8102857000"
+          className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+        >
+          (810) 285-7000
+        </a>
+
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} Connected Technologies. All rights
           reserved.

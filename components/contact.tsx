@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Send, CheckCircle2 } from "lucide-react";
+import { Send, CheckCircle2, Phone } from "lucide-react";
 import { FadeIn } from "@/components/motion-wrapper";
 
 export function Contact() {
@@ -75,6 +75,13 @@ export function Contact() {
             Tell us about your business and what you want to achieve. We&apos;ll
             respond within one business day with a clear path forward.
           </p>
+          <a
+            href="tel:8102857000"
+            className="mt-6 inline-flex items-center gap-2 text-primary hover:underline font-medium"
+          >
+            <Phone className="h-4 w-4" />
+            (810) 285-7000
+          </a>
         </FadeIn>
 
         <FadeIn delay={0.15}>
