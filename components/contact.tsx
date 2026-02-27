@@ -15,18 +15,47 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [fields, setFields] = useState<{ name: FieldState; email: FieldState }>({
+  const [fields, setFields] = useState<{
+    name: FieldState;
+    email: FieldState;
+    company: FieldState;
+    message: FieldState;
+  }>({
     name: "untouched",
     email: "untouched",
+    company: "untouched",
+    message: "untouched",
   });
 
-  function validateField(field: "name" | "email", value: string) {
+  function getNameState(value: string): FieldState {
+    return value.trim() ? "valid" : "invalid";
+  }
+
+  function getEmailState(value: string): FieldState {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()) ? "valid" : "invalid";
+  }
+
+  function handleBlur(field: keyof typeof fields, value: string) {
     if (field === "name") {
-      setFields((prev) => ({ ...prev, name: value.trim() ? "valid" : "invalid" }));
+      setFields((prev) => ({ ...prev, name: getNameState(value) }));
+    } else if (field === "email") {
+      setFields((prev) => ({ ...prev, email: getEmailState(value) }));
     } else {
-      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-      setFields((prev) => ({ ...prev, email: ok ? "valid" : "invalid" }));
+      // company and message: green if any content, no indicator if empty
+      setFields((prev) => ({ ...prev, [field]: value.trim() ? "valid" : "untouched" }));
     }
+  }
+
+  // Re-validate on change if currently showing an error — fixes password manager
+  // autofill race condition where blur fires before the manager finishes setting the value
+  function handleChange(field: "name" | "email", value: string) {
+    setFields((prev) => {
+      if (prev[field] !== "invalid") return prev;
+      return {
+        ...prev,
+        [field]: field === "name" ? getNameState(value) : getEmailState(value),
+      };
+    });
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -88,8 +117,7 @@ export function Contact() {
             Let&apos;s Talk
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Tell us about your business and what you want to achieve. We&apos;ll
-            respond within one business day with a clear path forward.
+            Tell us about your business and what you want to achieve.
           </p>
           <a
             href="tel:8102857000"
@@ -134,7 +162,7 @@ export function Contact() {
               </motion.p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="mt-12 space-y-6">
+            <form onSubmit={handleSubmit} autoComplete="on" className="mt-12 space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
@@ -142,8 +170,10 @@ export function Contact() {
                     <Input
                       id="name"
                       name="name"
+                      autoComplete="name"
                       required
-                      onBlur={(e) => validateField("name", e.target.value)}
+                      onBlur={(e) => handleBlur("name", e.target.value)}
+                      onChange={(e) => handleChange("name", e.target.value)}
                       className={
                         fields.name === "valid"
                           ? "border-green-500 pr-9"
@@ -168,8 +198,10 @@ export function Contact() {
                       id="email"
                       name="email"
                       type="email"
+                      autoComplete="email"
                       required
-                      onBlur={(e) => validateField("email", e.target.value)}
+                      onBlur={(e) => handleBlur("email", e.target.value)}
+                      onChange={(e) => handleChange("email", e.target.value)}
                       className={
                         fields.email === "valid"
                           ? "border-green-500 pr-9"
@@ -197,10 +229,18 @@ export function Contact() {
                   Company{" "}
                   <span className="text-xs font-normal text-muted-foreground/60">(optional)</span>
                 </Label>
-                <Input
-                  id="company"
-                  name="company"
-                />
+                <div className="relative">
+                  <Input
+                    id="company"
+                    name="company"
+                    autoComplete="organization"
+                    onBlur={(e) => handleBlur("company", e.target.value)}
+                    className={fields.company === "valid" ? "border-green-500 pr-9" : ""}
+                  />
+                  {fields.company === "valid" && (
+                    <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
+                  )}
+                </div>
               </div>
 
               <div className="space-y-2">
@@ -208,9 +248,10 @@ export function Contact() {
                 <Textarea
                   id="message"
                   name="message"
-                  className="min-h-48 placeholder:text-muted-foreground/40"
+                  className={`min-h-48 placeholder:text-muted-foreground/40 ${fields.message === "valid" ? "border-green-500" : ""}`}
                   placeholder={`e.g. "We're a 30-person B2B software company. Our leads have dried up — cost per lead doubled this year and we don't know if it's the ads, the SEO, or the messaging. We refreshed the site last year but nothing really moved. We want to figure this out before Q2. We're not looking to spend more, just use what we have better."`}
                   required
+                  onBlur={(e) => handleBlur("message", e.target.value)}
                 />
               </div>
 
