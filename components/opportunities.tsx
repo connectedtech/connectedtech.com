@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   HeartPulse,
   Factory,
@@ -9,36 +12,13 @@ import {
   GraduationCap,
   ShoppingBag,
   Check,
+  ChevronDown,
 } from "lucide-react";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
+import { AnimatePresence, motion } from "framer-motion";
 
+// Ordered by likelihood to visit an AI marketing agency
 const industries = [
-  {
-    icon: HeartPulse,
-    title: "Healthcare & Medical",
-    description: "Health systems, physician practices, behavioral health, and health tech companies.",
-    color: "oklch(0.58 0.22 350)",
-    colorBg: "oklch(0.58 0.22 350 / 0.12)",
-    opportunities: [
-      "Patient acquisition campaigns built to meet compliance requirements",
-      "Service line and specialty program marketing",
-      "Reputation management and review response automation",
-      "AI-assisted content for patient and provider education",
-    ],
-  },
-  {
-    icon: Factory,
-    title: "Manufacturing & Industrial",
-    description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
-    color: "oklch(0.62 0.19 48)",
-    colorBg: "oklch(0.62 0.19 48 / 0.12)",
-    opportunities: [
-      "Lead generation for complex, long-cycle B2B sales",
-      "Technical SEO and content for engineering audiences",
-      "Account-based marketing for key accounts",
-      "Trade show amplification and post-show nurture",
-    ],
-  },
   {
     icon: Monitor,
     title: "Technology & Software",
@@ -63,6 +43,32 @@ const industries = [
       "LinkedIn and search campaigns targeting decision-makers",
       "Local SEO and Google Business optimization",
       "Automated follow-up and client nurture sequences",
+    ],
+  },
+  {
+    icon: HeartPulse,
+    title: "Healthcare & Medical",
+    description: "Health systems, physician practices, behavioral health, and health tech companies.",
+    color: "oklch(0.58 0.22 350)",
+    colorBg: "oklch(0.58 0.22 350 / 0.12)",
+    opportunities: [
+      "Patient acquisition campaigns built to meet compliance requirements",
+      "Service line and specialty program marketing",
+      "Reputation management and review response automation",
+      "AI-assisted content for patient and provider education",
+    ],
+  },
+  {
+    icon: Factory,
+    title: "Manufacturing & Industrial",
+    description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
+    color: "oklch(0.62 0.19 48)",
+    colorBg: "oklch(0.62 0.19 48 / 0.12)",
+    opportunities: [
+      "Lead generation for complex, long-cycle B2B sales",
+      "Technical SEO and content for engineering audiences",
+      "Account-based marketing for key accounts",
+      "Trade show amplification and post-show nurture",
     ],
   },
   {
@@ -132,7 +138,51 @@ const industries = [
   },
 ];
 
+const INITIAL_COUNT = 3;
+
+function IndustryCard({ industry }: { industry: typeof industries[number] }) {
+  return (
+    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
+      <div
+        className="flex items-center gap-3 px-5 py-4"
+        style={{ backgroundColor: industry.colorBg }}
+      >
+        <industry.icon
+          className="h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+          style={{ color: industry.color }}
+        />
+        <h3
+          className="text-sm font-semibold leading-snug"
+          style={{ color: industry.color }}
+        >
+          {industry.title}
+        </h3>
+      </div>
+
+      <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
+        <p className="text-sm text-muted-foreground">{industry.description}</p>
+
+        <ul className="mt-4 space-y-2 border-t border-border pt-4">
+          {industry.opportunities.map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <div
+                className="mt-0.5 flex-shrink-0 rounded-full p-0.5"
+                style={{ backgroundColor: industry.colorBg, color: industry.color }}
+              >
+                <Check className="h-3 w-3" />
+              </div>
+              <span className="text-sm text-muted-foreground">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 export function Opportunities() {
+  const [expanded, setExpanded] = useState(false);
+
   return (
     <section id="how-we-help" className="px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
@@ -146,61 +196,69 @@ export function Opportunities() {
           </p>
         </FadeIn>
 
-        {/* Mobile: horizontal swipe carousel. Tablet+: grid */}
+        {/* First 3 — always visible, mobile carousel on small screens */}
         <FadeInStagger className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
-          {industries.map((industry) => (
-            <FadeInStaggerItem key={industry.title} className="min-h-[366px] w-[75vw] max-w-[300px] flex-none snap-start sm:w-auto sm:max-w-none">
-              <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
-
-                {/* Colored header — icon + title live here */}
-                <div
-                  className="flex items-center gap-3 px-5 py-4"
-                  style={{ backgroundColor: industry.colorBg }}
-                >
-                  <industry.icon
-                    className="h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
-                    style={{ color: industry.color }}
-                  />
-                  <h3
-                    className="text-sm font-semibold leading-snug"
-                    style={{ color: industry.color }}
-                  >
-                    {industry.title}
-                  </h3>
-                </div>
-
-                {/* Card body */}
-                <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
-                  <p className="text-sm text-muted-foreground">
-                    {industry.description}
-                  </p>
-
-                  <ul className="mt-4 space-y-2 border-t border-border pt-4">
-                    {industry.opportunities.map((item) => (
-                      <li key={item} className="flex items-start gap-2">
-                        <div
-                          className="mt-0.5 flex-shrink-0 rounded-full p-0.5"
-                          style={{ backgroundColor: industry.colorBg, color: industry.color }}
-                        >
-                          <Check className="h-3 w-3" />
-                        </div>
-                        <span className="text-sm text-muted-foreground">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-              </div>
+          {industries.slice(0, INITIAL_COUNT).map((industry) => (
+            <FadeInStaggerItem
+              key={industry.title}
+              className="min-h-[366px] w-[75vw] max-w-[300px] flex-none snap-start sm:w-auto sm:max-w-none"
+            >
+              <IndustryCard industry={industry} />
             </FadeInStaggerItem>
           ))}
         </FadeInStagger>
 
-        {/* Mobile-only swipe hint */}
+        {/* Mobile swipe hint */}
         <p className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
-          Swipe to explore all 9 industries →
+          Swipe to explore →
         </p>
 
-        <FadeIn delay={0.2} className="mt-10 text-center">
+        {/* Remaining industries — animated expand */}
+        <AnimatePresence>
+          {expanded && (
+            <motion.div
+              key="extra-industries"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.45, ease: [0.4, 0, 0.2, 1] }}
+              className="overflow-hidden"
+            >
+              <div className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {industries.slice(INITIAL_COUNT).map((industry, i) => (
+                  <motion.div
+                    key={industry.title}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.06, duration: 0.3, ease: "easeOut" }}
+                    className="min-h-[366px]"
+                  >
+                    <IndustryCard industry={industry} />
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Toggle button */}
+        <FadeIn delay={0.2} className="mt-8 text-center">
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium text-muted-foreground transition-all duration-200 hover:border-primary/40 hover:text-foreground"
+          >
+            {expanded
+              ? "Show fewer industries"
+              : `See all ${industries.length} industries`}
+            <ChevronDown
+              className={`h-4 w-4 transition-transform duration-300 ${
+                expanded ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+        </FadeIn>
+
+        <FadeIn delay={0.25} className="mt-6 text-center">
           <p className="text-muted-foreground">
             Don&apos;t see your industry?{" "}
             <a href="#contact" className="font-medium text-primary hover:underline">
