@@ -63,7 +63,7 @@ export function Services() {
         <div className="mt-16 grid items-stretch gap-6 lg:grid-cols-3">
           {services.map((service) => (
             <FadeIn key={service.title} className="flex">
-              <div className="group flex w-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:bg-primary/[0.03] hover:shadow-2xl">
+              <div className="group flex w-full flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:bg-primary/[0.03] hover:shadow-2xl active:scale-[0.98] active:shadow-none">
 
                 {/* Icon + AI chip */}
                 <div className="mb-5 flex items-start justify-between">

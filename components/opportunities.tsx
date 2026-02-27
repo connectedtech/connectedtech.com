@@ -146,10 +146,11 @@ export function Opportunities() {
           </p>
         </FadeIn>
 
-        <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {/* Mobile: horizontal swipe carousel. Tablet+: grid */}
+        <FadeInStagger className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
           {industries.map((industry) => (
-            <FadeInStaggerItem key={industry.title} className="min-h-[366px]">
-              <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+            <FadeInStaggerItem key={industry.title} className="min-h-[366px] w-[75vw] max-w-[300px] flex-none snap-start sm:w-auto sm:max-w-none">
+              <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
 
                 {/* Colored header — icon + title live here */}
                 <div
@@ -193,6 +194,11 @@ export function Opportunities() {
             </FadeInStaggerItem>
           ))}
         </FadeInStagger>
+
+        {/* Mobile-only swipe hint */}
+        <p className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
+          Swipe to explore all 9 industries →
+        </p>
 
         <FadeIn delay={0.2} className="mt-10 text-center">
           <p className="text-muted-foreground">
