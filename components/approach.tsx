@@ -15,13 +15,13 @@ const steps = [
     number: "02",
     title: "Design",
     description:
-      "We build a focused plan with clear priorities and measurable outcomes. You\u2019ll know exactly what we\u2019re doing and why before we start.",
+      "We build a focused plan with clear priorities, AI-informed recommendations, and measurable outcomes. You\u2019ll know exactly what we\u2019re doing and why before we start.",
   },
   {
     number: "03",
     title: "Deliver",
     description:
-      "We execute, measure, and optimize. Campaigns go live, performance is tracked, and we stay engaged to keep improving.",
+      "We execute using AI-powered tools, measure everything, and optimize continuously. Campaigns go live, performance is tracked, and we stay engaged to keep improving.",
   },
 ];
 
