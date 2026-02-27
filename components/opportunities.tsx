@@ -148,8 +148,8 @@ export function Opportunities() {
 
         <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
-            <FadeInStaggerItem key={industry.title}>
-              <div className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
+            <FadeInStaggerItem key={industry.title} className="min-h-[366px]">
+              <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
 
                 {/* Colored header — icon + title live here */}
                 <div
