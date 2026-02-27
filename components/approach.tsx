@@ -86,10 +86,10 @@ export function Approach() {
           <p className="font-semibold text-foreground">
             Step 1 is a free strategy call. No commitment required.
           </p>
-          <Button asChild className="mt-4">
+          <Button asChild variant="cta" className="group mt-4">
             <a href="#contact">
               Book Your Free Call
-              <ArrowRight className="ml-2 h-4 w-4" />
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </Button>
         </FadeIn>

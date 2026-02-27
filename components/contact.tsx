@@ -264,7 +264,7 @@ export function Contact() {
                 </p>
               )}
 
-              <Button type="submit" size="lg" className="w-full" disabled={loading}>
+              <Button type="submit" size="lg" variant="cta" className="w-full" disabled={loading}>
                 {loading ? (
                   "Sending..."
                 ) : (
