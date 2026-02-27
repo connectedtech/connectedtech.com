@@ -18,7 +18,7 @@ export function Hero() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground">
             <Sparkles className="h-4 w-4 text-brand-ai" />
-            AI-Infused Digital Marketing
+            AI-Powered Digital Solutions
           </div>
         </motion.div>
 
@@ -28,10 +28,11 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Marketing Built{" "}
-          <span className="text-primary">for the </span>
-          <span className="text-brand-ai">AI</span>
-          <span className="text-primary"> Era</span>
+          Grow.{" "}
+          <span className="text-primary">Build.</span>{" "}
+          <span className="text-brand-ai">Automate.</span>
+          <br />
+          <span className="text-muted-foreground">Powered by AI.</span>
         </motion.h1>
 
         <motion.p
@@ -40,9 +41,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          We help businesses grow through smarter strategy, sharper content, and
-          campaigns that outperform. AI isn&apos;t an add-on — it&apos;s built
-          into everything we do.
+          More customers. A stronger web presence. Time back in your day. We
+          bring the tools today&apos;s most competitive businesses use — and
+          handle the technical side so you don&apos;t have to.
         </motion.p>
 
         <motion.div
