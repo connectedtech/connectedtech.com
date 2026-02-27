@@ -12,6 +12,7 @@ const outcomes = [
     color: "oklch(0.65 0.18 150)",
     colorBg: "oklch(0.65 0.18 150 / 0.25)",
     colorGlow: "oklch(0.65 0.18 150 / 0.08)",
+    colorShadow: "oklch(0.65 0.18 150 / 0.4)",
     description:
       "AI-powered campaigns that reach the right buyers, generate more qualified leads, and convert at a higher rate.",
   },
@@ -22,6 +23,7 @@ const outcomes = [
     color: "oklch(0.68 0.18 220)",
     colorBg: "oklch(0.68 0.18 220 / 0.25)",
     colorGlow: "oklch(0.68 0.18 220 / 0.08)",
+    colorShadow: "oklch(0.68 0.18 220 / 0.4)",
     description:
       "SEO, content, and paid media that expand your digital footprint and put you ahead of competitors.",
   },
@@ -32,6 +34,7 @@ const outcomes = [
     color: "oklch(0.70 0.17 75)",
     colorBg: "oklch(0.70 0.17 75 / 0.25)",
     colorGlow: "oklch(0.70 0.17 75 / 0.08)",
+    colorShadow: "oklch(0.70 0.17 75 / 0.4)",
     description:
       "AI automation eliminates repetitive manual work so your team focuses on strategy over execution.",
   },
@@ -42,6 +45,7 @@ const outcomes = [
     color: "oklch(0.68 0.19 310)",
     colorBg: "oklch(0.68 0.19 310 / 0.25)",
     colorGlow: "oklch(0.68 0.19 310 / 0.08)",
+    colorShadow: "oklch(0.68 0.19 310 / 0.4)",
     description:
       "Smarter targeting, stronger content, and data-driven optimization that raises the bar across your marketing.",
   },
@@ -67,9 +71,12 @@ export function Outcomes() {
               <motion.div
                 className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10"
                 style={{ backgroundColor: outcome.colorGlow }}
-                whileHover={{ y: -6 }}
+                whileHover={{ y: -6, boxShadow: `0 8px 32px ${outcome.colorShadow}` }}
                 whileTap={{ scale: 0.97 }}
-                transition={{ type: "spring", stiffness: 400, damping: 25 }}
+                transition={{
+                  y: { type: "spring", stiffness: 400, damping: 25 },
+                  boxShadow: { duration: 0.25, ease: "easeOut" },
+                }}
               >
                 {/* Colored header — icon + title side by side */}
                 <div
