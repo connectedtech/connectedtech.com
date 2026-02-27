@@ -177,7 +177,7 @@ function IndustryCard({ industry }: { industry: typeof industries[number] }) {
       </div>
 
       <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
-        <p className="text-sm text-muted-foreground">{industry.description}</p>
+        <p className="text-sm text-muted-foreground transition-colors duration-200 group-hover:text-foreground">{industry.description}</p>
 
         <ul className="mt-4 space-y-2 border-t border-border pt-4">
           {industry.opportunities.map((item) => (
@@ -188,7 +188,7 @@ function IndustryCard({ industry }: { industry: typeof industries[number] }) {
               >
                 <Check className="h-3 w-3" />
               </div>
-              <span className="text-sm text-muted-foreground">{item}</span>
+              <span className="text-sm text-muted-foreground transition-colors duration-200 group-hover:text-foreground">{item}</span>
             </li>
           ))}
         </ul>

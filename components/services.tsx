@@ -82,7 +82,7 @@ export function Services() {
                 </h3>
 
                 {/* Description */}
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
                   {service.description}
                 </p>
 
@@ -93,7 +93,7 @@ export function Services() {
                       <div className="mt-0.5 flex-shrink-0 rounded-full bg-primary/10 p-0.5">
                         <Check className="h-3 w-3 text-primary" />
                       </div>
-                      <span className="text-sm text-muted-foreground">
+                      <span className="text-sm text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
                         {bullet}
                       </span>
                     </li>

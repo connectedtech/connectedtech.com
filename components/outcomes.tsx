@@ -69,7 +69,7 @@ export function Outcomes() {
           {outcomes.map((outcome) => (
             <FadeInStaggerItem key={outcome.title}>
               <motion.div
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 transition-colors duration-200 hover:border-white/20"
                 style={{ backgroundColor: outcome.colorGlow }}
                 whileHover={{ y: -6, boxShadow: `0 8px 32px ${outcome.colorShadow}` }}
                 whileTap={{ scale: 0.97 }}
@@ -103,7 +103,7 @@ export function Outcomes() {
                   >
                     {outcome.detail}
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-white/55">
+                  <p className="mt-3 text-sm leading-relaxed text-white/55 transition-colors duration-200 group-hover:text-white/90">
                     {outcome.description}
                   </p>
                 </div>

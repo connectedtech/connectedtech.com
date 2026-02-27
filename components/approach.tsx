@@ -61,7 +61,7 @@ export function Approach() {
                 )}
 
                 {/* Step number */}
-                <div className="mb-4 text-7xl font-black leading-none text-brand-amber/10 md:text-8xl">
+                <div className="mb-4 text-7xl font-black leading-none text-brand-amber/10 transition-colors duration-200 group-hover:text-brand-amber/25 md:text-8xl">
                   {step.number}
                 </div>
 
@@ -75,7 +75,7 @@ export function Approach() {
                   </h3>
                 </div>
 
-                <p className="mt-1 leading-relaxed text-muted-foreground">
+                <p className="mt-1 leading-relaxed text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
                   {step.description.split(/(AI)/g).map((part, j) =>
                     part === "AI" ? (
                       <span key={j} className="font-semibold text-brand-ai">
