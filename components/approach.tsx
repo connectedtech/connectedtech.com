@@ -3,6 +3,7 @@
 import { ArrowRight, Search, Lightbulb, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
+import { motion } from "framer-motion";
 
 const steps = [
   {
@@ -44,7 +45,15 @@ export function Approach() {
         <FadeInStagger className="mt-16 grid gap-5 md:grid-cols-3">
           {steps.map((step, i) => (
             <FadeInStaggerItem key={step.title} className="flex">
-              <div className="group relative flex w-full flex-col rounded-2xl border border-border bg-card px-8 py-8 transition-all duration-200 hover:-translate-y-1 hover:border-brand-amber/30 hover:shadow-md">
+              <motion.div
+                className="group relative flex w-full flex-col rounded-2xl border border-border bg-card px-8 py-8 transition-colors duration-200 hover:border-brand-amber/30"
+                whileHover={{ y: -4, boxShadow: "0 8px 28px oklch(0.70 0.17 75 / 0.25)" }}
+                whileTap={{ scale: 0.98 }}
+                transition={{
+                  y: { type: "spring", stiffness: 400, damping: 25 },
+                  boxShadow: { duration: 0.2, ease: "easeOut" },
+                }}
+              >
 
                 {/* Connector arrow between steps on desktop */}
                 {i < steps.length - 1 && (
@@ -77,7 +86,7 @@ export function Approach() {
                     )
                   )}
                 </p>
-              </div>
+              </motion.div>
             </FadeInStaggerItem>
           ))}
         </FadeInStagger>
@@ -86,7 +95,7 @@ export function Approach() {
           <p className="font-semibold text-foreground">
             Step 1 is a free strategy call. No commitment required.
           </p>
-          <Button asChild variant="cta" className="group mt-4">
+          <Button asChild className="group mt-4">
             <a href="#contact">
               Book Your Free Call
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />

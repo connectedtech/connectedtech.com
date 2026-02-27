@@ -25,6 +25,7 @@ const industries = [
     description: "SaaS companies, IT service providers, MSPs, and technology consultancies.",
     color: "oklch(0.52 0.22 235)",
     colorBg: "oklch(0.52 0.22 235 / 0.12)",
+    colorShadow: "oklch(0.52 0.22 235 / 0.28)",
     opportunities: [
       "Demand generation and pipeline marketing",
       "Thought leadership content at scale",
@@ -38,6 +39,7 @@ const industries = [
     description: "Law firms, consultancies, accounting firms, staffing agencies, and HR companies.",
     color: "oklch(0.54 0.17 193)",
     colorBg: "oklch(0.54 0.17 193 / 0.12)",
+    colorShadow: "oklch(0.54 0.17 193 / 0.28)",
     opportunities: [
       "Thought leadership content that attracts ideal clients",
       "LinkedIn and search campaigns targeting decision-makers",
@@ -51,6 +53,7 @@ const industries = [
     description: "Health systems, physician practices, behavioral health, and health tech companies.",
     color: "oklch(0.58 0.22 350)",
     colorBg: "oklch(0.58 0.22 350 / 0.12)",
+    colorShadow: "oklch(0.58 0.22 350 / 0.28)",
     opportunities: [
       "Patient acquisition campaigns built to meet compliance requirements",
       "Service line and specialty program marketing",
@@ -64,6 +67,7 @@ const industries = [
     description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
     color: "oklch(0.62 0.19 48)",
     colorBg: "oklch(0.62 0.19 48 / 0.12)",
+    colorShadow: "oklch(0.62 0.19 48 / 0.28)",
     opportunities: [
       "Lead generation for complex, long-cycle B2B sales",
       "Technical SEO and content for engineering audiences",
@@ -77,6 +81,7 @@ const industries = [
     description: "Banks, credit unions, insurance providers, financial advisors, and fintech companies.",
     color: "oklch(0.52 0.18 152)",
     colorBg: "oklch(0.52 0.18 152 / 0.12)",
+    colorShadow: "oklch(0.52 0.18 152 / 0.28)",
     opportunities: [
       "Compliant digital marketing within regulatory guidelines",
       "Lead generation for financial products and services",
@@ -90,6 +95,7 @@ const industries = [
     description: "General contractors, specialty trades, developers, and commercial property firms.",
     color: "oklch(0.57 0.20 27)",
     colorBg: "oklch(0.57 0.20 27 / 0.12)",
+    colorShadow: "oklch(0.57 0.20 27 / 0.28)",
     opportunities: [
       "Local SEO and Google Business for service area businesses",
       "Lead generation for residential and commercial projects",
@@ -103,6 +109,7 @@ const industries = [
     description: "Freight brokers, 3PLs, distributors, and supply chain technology providers.",
     color: "oklch(0.50 0.20 272)",
     colorBg: "oklch(0.50 0.20 272 / 0.12)",
+    colorShadow: "oklch(0.50 0.20 272 / 0.28)",
     opportunities: [
       "B2B lead generation for freight and logistics services",
       "Account-based marketing for enterprise shippers",
@@ -116,6 +123,7 @@ const industries = [
     description: "Higher education, trade schools, corporate training providers, and e-learning platforms.",
     color: "oklch(0.55 0.17 128)",
     colorBg: "oklch(0.55 0.17 128 / 0.12)",
+    colorShadow: "oklch(0.55 0.17 128 / 0.28)",
     opportunities: [
       "Enrollment and student recruitment campaigns",
       "Search and social ads for prospective students",
@@ -129,6 +137,7 @@ const industries = [
     description: "Online retailers, brick-and-mortar shops, and omnichannel consumer brands.",
     color: "oklch(0.52 0.21 308)",
     colorBg: "oklch(0.52 0.21 308 / 0.12)",
+    colorShadow: "oklch(0.52 0.21 308 / 0.28)",
     opportunities: [
       "AI-optimized product listings and SEO",
       "Paid search and shopping campaigns",
@@ -142,7 +151,15 @@ const INITIAL_COUNT = 3;
 
 function IndustryCard({ industry }: { industry: typeof industries[number] }) {
   return (
-    <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg active:scale-[0.98]">
+    <motion.div
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
+      whileHover={{ y: -4, boxShadow: `0 8px 28px ${industry.colorShadow}` }}
+      whileTap={{ scale: 0.98 }}
+      transition={{
+        y: { type: "spring", stiffness: 400, damping: 25 },
+        boxShadow: { duration: 0.2, ease: "easeOut" },
+      }}
+    >
       <div
         className="flex items-center gap-3 px-5 py-4"
         style={{ backgroundColor: industry.colorBg }}
@@ -176,7 +193,7 @@ function IndustryCard({ industry }: { industry: typeof industries[number] }) {
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
