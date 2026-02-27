@@ -30,7 +30,7 @@ export function Nav() {
   }, [mobileOpen]);
 
   const headerBg = mobileOpen
-    ? "bg-brand-dark"
+    ? "bg-brand-dark border-b border-white/10"
     : scrolled
     ? "bg-white/90 backdrop-blur-md border-b border-border shadow-sm"
     : "bg-transparent";
