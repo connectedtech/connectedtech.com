@@ -4,7 +4,6 @@ import { Services } from "@/components/services";
 import { Outcomes } from "@/components/outcomes";
 import { Opportunities } from "@/components/opportunities";
 import { Approach } from "@/components/approach";
-import { Results } from "@/components/results";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
@@ -18,7 +17,6 @@ export default function Home() {
         <Outcomes />
         <Opportunities />
         <Approach />
-        <Results />
         <Contact />
       </main>
       <Footer />

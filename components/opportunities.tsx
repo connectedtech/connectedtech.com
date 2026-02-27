@@ -1,5 +1,8 @@
-import { Factory, HeartPulse, Briefcase } from "lucide-react";
-import { FadeInStagger, FadeInStaggerItem, FadeIn } from "@/components/motion-wrapper";
+"use client";
+
+import { useState } from "react";
+import { Factory, HeartPulse, Briefcase, Check } from "lucide-react";
+import { FadeIn } from "@/components/motion-wrapper";
 
 const industries = [
   {
@@ -38,49 +41,56 @@ const industries = [
 ];
 
 export function Opportunities() {
+  const [active, setActive] = useState(0);
+  const industry = industries[active];
+
   return (
-    <section
-      id="how-we-help"
-      className="bg-muted/50 px-6 py-20 md:py-28"
-    >
+    <section id="how-we-help" className="px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             How We Help
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            AI-infused marketing looks different depending on your industry.
-            Here&apos;s what it means for the businesses we work with.
+            See yourself here? That&apos;s the first sign we&apos;re a good fit.
           </p>
         </FadeIn>
 
-        <FadeInStagger className="mt-16 grid gap-8 md:grid-cols-3">
-          {industries.map((industry) => (
-            <FadeInStaggerItem key={industry.title}>
-              <div className="rounded-xl border border-border bg-card p-8">
-                <div className="mb-5 inline-flex rounded-lg bg-primary/10 p-3 text-primary">
-                  <industry.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">
-                  {industry.title}
-                </h3>
-                <ul className="mt-4 space-y-3">
-                  {industry.opportunities.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground"
-                    >
-                      <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/60" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeInStaggerItem>
+        {/* Industry tab pills */}
+        <div className="mt-12 flex flex-wrap justify-center gap-3">
+          {industries.map((ind, i) => (
+            <button
+              key={ind.title}
+              onClick={() => setActive(i)}
+              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
+                active === i
+                  ? "bg-primary text-white shadow-md"
+                  : "border border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
+              }`}
+            >
+              <ind.icon className="h-4 w-4" />
+              {ind.title}
+            </button>
           ))}
-        </FadeInStagger>
+        </div>
 
-        <FadeIn delay={0.3} className="mt-12 text-center">
+        {/* Content panel */}
+        <FadeIn key={active} className="mt-6">
+          <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
+            <div className="grid gap-4 sm:grid-cols-2">
+              {industry.opportunities.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <div className="mt-0.5 flex-shrink-0 rounded-full bg-primary/10 p-1">
+                    <Check className="h-3.5 w-3.5 text-primary" />
+                  </div>
+                  <span className="text-muted-foreground">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
+
+        <FadeIn delay={0.2} className="mt-8 text-center">
           <p className="text-muted-foreground">
             Don&apos;t see your industry?{" "}
             <a

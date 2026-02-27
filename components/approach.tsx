@@ -1,21 +1,24 @@
-import { Search, Lightbulb, Rocket } from "lucide-react";
+"use client";
+
+import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 
 const steps = [
   {
-    icon: Search,
+    number: "01",
     title: "Discover",
     description:
       "We start with a free strategy call to understand your business, your goals, and where AI can make the biggest difference. No assumptions, just listening.",
   },
   {
-    icon: Lightbulb,
+    number: "02",
     title: "Design",
     description:
       "We build a focused plan with clear priorities and measurable outcomes. You\u2019ll know exactly what we\u2019re doing and why before we start.",
   },
   {
-    icon: Rocket,
+    number: "03",
     title: "Deliver",
     description:
       "We execute, measure, and optimize. Working campaigns and real results \u2014 not slide decks. And we stay engaged to keep improving.",
@@ -24,27 +27,27 @@ const steps = [
 
 export function Approach() {
   return (
-    <section id="approach" className="px-6 py-20 md:py-28">
+    <section id="approach" className="bg-muted/40 px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             How We Work
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Getting started is simple. Every engagement follows the same clear
-            path \u2014 no surprises, no bloated onboarding.
+            Getting started is simple. Three steps, no surprises.
           </p>
         </FadeIn>
 
-        <FadeInStagger className="mt-16 grid gap-8 md:grid-cols-3">
+        <FadeInStagger className="mt-16 grid gap-0 md:grid-cols-3">
           {steps.map((step, i) => (
             <FadeInStaggerItem key={step.title}>
-              <div className="text-center">
-                <div className="mx-auto mb-4 inline-flex rounded-full bg-primary/10 p-4 text-primary">
-                  <step.icon className="h-6 w-6" />
-                </div>
-                <div className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">
-                  Step {i + 1}
+              <div className="relative px-2 py-6 md:px-8">
+                {/* Connector line between steps on desktop */}
+                {i < steps.length - 1 && (
+                  <div className="absolute right-0 top-14 hidden h-px w-8 bg-border md:block" />
+                )}
+                <div className="mb-3 text-7xl font-black leading-none text-primary/10 md:text-8xl">
+                  {step.number}
                 </div>
                 <h3 className="text-xl font-semibold text-foreground">
                   {step.title}
@@ -56,6 +59,18 @@ export function Approach() {
             </FadeInStaggerItem>
           ))}
         </FadeInStagger>
+
+        <FadeIn delay={0.3} className="mt-12 text-center">
+          <p className="text-muted-foreground">
+            Step 1 is a free strategy call. No commitment, no pitch deck.
+          </p>
+          <Button asChild className="mt-4">
+            <a href="#contact">
+              Book Your Free Call
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+        </FadeIn>
       </div>
     </section>
   );
