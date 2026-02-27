@@ -52,7 +52,7 @@ export function Approach() {
                 )}
 
                 {/* Step number */}
-                <div className="mb-4 text-7xl font-black leading-none text-brand-amber/25 md:text-8xl">
+                <div className="mb-4 text-7xl font-black leading-none text-brand-amber/10 md:text-8xl">
                   {step.number}
                 </div>
 
