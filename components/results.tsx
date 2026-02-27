@@ -2,9 +2,9 @@ import { FadeInStagger, FadeInStaggerItem, FadeIn } from "@/components/motion-wr
 
 const stats = [
   { value: "15+", label: "Years in digital marketing & strategy" },
-  { value: "40%", label: "Average increase in digital engagement" },
+  { value: "100%", label: "Client retention rate" },
   { value: "200+", label: "Projects delivered" },
-  { value: "6", label: "Industries served" },
+  { value: "9", label: "Industries served" },
 ];
 
 export function Results() {

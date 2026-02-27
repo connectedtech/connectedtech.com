@@ -1,136 +1,207 @@
-"use client";
-
-import { useState } from "react";
-import { Factory, HeartPulse, Briefcase, Check } from "lucide-react";
-import { FadeIn } from "@/components/motion-wrapper";
+import {
+  HeartPulse,
+  Factory,
+  Monitor,
+  Briefcase,
+  Landmark,
+  HardHat,
+  Truck,
+  GraduationCap,
+  ShoppingBag,
+  Check,
+  Star,
+} from "lucide-react";
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 
 const industries = [
   {
-    icon: Factory,
-    title: "Manufacturing & Engineering",
-    description: "AI-powered capabilities for industrial and technical markets",
-    color: "oklch(0.70 0.17 75)",
-    colorBg: "oklch(0.70 0.17 75 / 0.15)",
+    icon: HeartPulse,
+    title: "Healthcare & Medical",
+    description: "Health systems, physician practices, behavioral health, and health tech companies.",
+    proven: true,
+    color: "oklch(0.65 0.22 350)",
+    colorBg: "oklch(0.65 0.22 350 / 0.12)",
     opportunities: [
-      "AI-driven content and campaigns for complex products",
-      "Automated lead nurturing and sales enablement",
-      "SEO and digital presence for technical buyers",
-      "Predictive analytics for marketing performance",
-      "AI-assisted documentation and training materials",
+      "Patient acquisition campaigns built to meet compliance requirements",
+      "Service line and specialty program marketing",
+      "Reputation management and review response automation",
+      "AI-assisted content for patient and provider education",
     ],
   },
   {
-    icon: HeartPulse,
-    title: "Healthcare",
-    description: "Compliant, patient-centered marketing that drives engagement",
-    color: "oklch(0.65 0.22 350)",
-    colorBg: "oklch(0.65 0.22 350 / 0.15)",
+    icon: Factory,
+    title: "Manufacturing & Industrial",
+    description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
+    proven: true,
+    color: "oklch(0.70 0.17 75)",
+    colorBg: "oklch(0.70 0.17 75 / 0.12)",
     opportunities: [
-      "Patient engagement and communication automation",
-      "Reputation management and review response",
-      "Personalized marketing for service lines",
-      "Content strategy built for compliance",
-      "AI-powered analytics for campaign optimization",
+      "Lead generation for complex, long-cycle B2B sales",
+      "Technical SEO and content for engineering audiences",
+      "Account-based marketing for key accounts",
+      "Trade show amplification and post-show nurture",
+    ],
+  },
+  {
+    icon: Monitor,
+    title: "Technology & Software",
+    description: "SaaS companies, IT service providers, MSPs, and technology consultancies.",
+    proven: true,
+    color: "oklch(0.60 0.20 250)",
+    colorBg: "oklch(0.60 0.20 250 / 0.12)",
+    opportunities: [
+      "Demand generation and pipeline marketing",
+      "Thought leadership content at scale",
+      "SEO and paid media in competitive software markets",
+      "Marketing automation and CRM integration",
     ],
   },
   {
     icon: Briefcase,
     title: "Professional Services",
-    description: "Thought leadership and client acquisition at scale",
-    color: "oklch(0.60 0.22 28)",
-    colorBg: "oklch(0.60 0.22 28 / 0.15)",
+    description: "Law firms, consultancies, accounting firms, staffing agencies, and HR companies.",
+    color: "oklch(0.55 0.18 200)",
+    colorBg: "oklch(0.55 0.18 200 / 0.12)",
     opportunities: [
-      "Thought leadership and content marketing at scale",
-      "AI-assisted proposal and report generation",
-      "Lead qualification and CRM enrichment",
-      "Client communication automation",
-      "Search and paid campaigns that attract the right clients",
+      "Thought leadership content that attracts ideal clients",
+      "LinkedIn and search campaigns targeting decision-makers",
+      "Local SEO and Google Business optimization",
+      "Automated follow-up and client nurture sequences",
+    ],
+  },
+  {
+    icon: Landmark,
+    title: "Financial Services",
+    description: "Banks, credit unions, insurance providers, financial advisors, and fintech companies.",
+    color: "oklch(0.55 0.18 155)",
+    colorBg: "oklch(0.55 0.18 155 / 0.12)",
+    opportunities: [
+      "Compliant digital marketing within regulatory guidelines",
+      "Lead generation for financial products and services",
+      "AI-powered personalization across the customer lifecycle",
+      "Cross-sell and upsell campaign automation",
+    ],
+  },
+  {
+    icon: HardHat,
+    title: "Construction & Real Estate",
+    description: "General contractors, specialty trades, developers, and commercial property firms.",
+    color: "oklch(0.65 0.16 45)",
+    colorBg: "oklch(0.65 0.16 45 / 0.12)",
+    opportunities: [
+      "Local SEO and Google Business for service area businesses",
+      "Lead generation for residential and commercial projects",
+      "Project portfolio and case study content",
+      "Automated lead qualification and follow-up",
+    ],
+  },
+  {
+    icon: Truck,
+    title: "Logistics & Distribution",
+    description: "Freight brokers, 3PLs, distributors, and supply chain technology providers.",
+    color: "oklch(0.58 0.16 220)",
+    colorBg: "oklch(0.58 0.16 220 / 0.12)",
+    opportunities: [
+      "B2B lead generation for freight and logistics services",
+      "Account-based marketing for enterprise shippers",
+      "AI-assisted proposal and RFP content",
+      "Email and nurture campaigns for long-cycle deals",
+    ],
+  },
+  {
+    icon: GraduationCap,
+    title: "Education & Training",
+    description: "Higher education, trade schools, corporate training providers, and e-learning platforms.",
+    color: "oklch(0.60 0.18 140)",
+    colorBg: "oklch(0.60 0.18 140 / 0.12)",
+    opportunities: [
+      "Enrollment and student recruitment campaigns",
+      "Search and social ads for prospective students",
+      "Workforce development and employer partnership marketing",
+      "Inquiry automation and lead nurture",
+    ],
+  },
+  {
+    icon: ShoppingBag,
+    title: "Retail & E-commerce",
+    description: "Online retailers, brick-and-mortar shops, and omnichannel consumer brands.",
+    color: "oklch(0.60 0.20 300)",
+    colorBg: "oklch(0.60 0.20 300 / 0.12)",
+    opportunities: [
+      "AI-optimized product listings and SEO",
+      "Paid search and shopping campaigns",
+      "Email marketing and customer lifecycle automation",
+      "Conversion rate optimization",
     ],
   },
 ];
 
 export function Opportunities() {
-  const [active, setActive] = useState(0);
-  const industry = industries[active];
-
   return (
     <section id="how-we-help" className="px-6 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Industries
+            Who We Help
           </h2>
           <p className="mt-4 text-balance text-lg text-muted-foreground">
-            We specialize in three industries where we&apos;ve driven consistent, measurable results.
+            Browse by industry to see the specific ways we help businesses like
+            yours grow, automate, and compete.
           </p>
         </FadeIn>
 
-        {/* Industry tab pills */}
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
-          {industries.map((ind, i) => (
-            <button
-              key={ind.title}
-              onClick={() => setActive(i)}
-              className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 ${
-                active === i
-                  ? "text-white shadow-md"
-                  : "border border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
-              }`}
-              style={active === i ? { backgroundColor: ind.color } : undefined}
-            >
-              <ind.icon className="h-4 w-4" />
-              {ind.title}
-            </button>
-          ))}
-        </div>
+        <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((industry) => (
+            <FadeInStaggerItem key={industry.title}>
+              <div className="group relative flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-200 hover:shadow-md" style={{ "--hover-border": industry.color } as React.CSSProperties}>
 
-        {/* Content panel */}
-        <FadeIn key={active} className="mt-6">
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            {/* Industry header */}
-            <div className="flex items-center gap-5 border-b border-border bg-muted/30 px-8 py-5">
-              <div
-                className="flex-shrink-0 rounded-xl p-3"
-                style={{ backgroundColor: industry.colorBg, color: industry.color }}
-              >
-                <industry.icon className="h-7 w-7" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-foreground">{industry.title}</h3>
-                <p className="mt-0.5 text-sm text-muted-foreground">{industry.description}</p>
-              </div>
-              <div
-                className="ml-auto hidden h-1 w-16 flex-shrink-0 rounded-full sm:block"
-                style={{ backgroundColor: industry.color, opacity: 0.4 }}
-              />
-            </div>
-
-            {/* Opportunities grid */}
-            <div className="p-8 md:p-10">
-              <div className="grid gap-4 sm:grid-cols-2">
-                {industry.opportunities.map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <div
-                      className="mt-0.5 flex-shrink-0 rounded-full p-1"
-                      style={{ backgroundColor: industry.colorBg, color: industry.color }}
-                    >
-                      <Check className="h-3.5 w-3.5" />
-                    </div>
-                    <span className="text-muted-foreground">{item}</span>
+                {industry.proven && (
+                  <div
+                    className="absolute right-4 top-4 flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold"
+                    style={{ backgroundColor: industry.colorBg, color: industry.color }}
+                  >
+                    <Star className="h-3 w-3" />
+                    Proven
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </FadeIn>
+                )}
 
-        <FadeIn delay={0.2} className="mt-8 text-center">
+                <div
+                  className="mb-4 inline-flex rounded-xl p-2.5"
+                  style={{ backgroundColor: industry.colorBg, color: industry.color }}
+                >
+                  <industry.icon className="h-5 w-5" />
+                </div>
+
+                <h3 className="pr-16 text-base font-semibold text-foreground">
+                  {industry.title}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {industry.description}
+                </p>
+
+                <ul className="mt-4 space-y-2 border-t border-border pt-4">
+                  {industry.opportunities.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <div
+                        className="mt-0.5 flex-shrink-0 rounded-full p-0.5"
+                        style={{ backgroundColor: industry.colorBg, color: industry.color }}
+                      >
+                        <Check className="h-3 w-3" />
+                      </div>
+                      <span className="text-sm text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+              </div>
+            </FadeInStaggerItem>
+          ))}
+        </FadeInStagger>
+
+        <FadeIn delay={0.2} className="mt-10 text-center">
           <p className="text-muted-foreground">
             Don&apos;t see your industry?{" "}
-            <a
-              href="#contact"
-              className="font-medium text-primary hover:underline"
-            >
+            <a href="#contact" className="font-medium text-primary hover:underline">
               Let&apos;s talk — we&apos;ve likely worked in your space.
             </a>
           </p>
