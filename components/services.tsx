@@ -39,7 +39,7 @@ const services = [
   {
     icon: Code2,
     title: "Web Design & Development",
-    aiPowered: false,
+    aiPowered: true,
     description:
       "Fast, modern, conversion-focused websites built to perform and grow with you.",
     bullets: [

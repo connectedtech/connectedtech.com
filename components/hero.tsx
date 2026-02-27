@@ -16,8 +16,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-ai/25 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-brand-ai">
-            <Sparkles className="h-4 w-4" />
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground">
+            <Sparkles className="h-4 w-4 text-brand-ai" />
             AI-Infused Digital Marketing
           </div>
         </motion.div>
