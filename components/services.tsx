@@ -53,7 +53,7 @@ export function Services() {
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Marketing, AI & Web — Built to Work Together
+            Services
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Digital marketing at the core. AI woven through everything.

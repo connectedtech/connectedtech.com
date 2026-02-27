@@ -117,8 +117,7 @@ export function Contact() {
             Let&apos;s Talk
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            No pitch decks, no pressure. Just an honest conversation about
-            what&apos;s possible for your business.
+            Tell us about your business and what you want to achieve.
           </p>
           <a
             href="tel:8102857000"
