@@ -31,10 +31,10 @@ export function Approach() {
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            How We Work
+            A Simple Process
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Getting started is simple. Three steps, no surprises.
+            Three steps. No surprises.
           </p>
         </FadeIn>
 

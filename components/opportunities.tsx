@@ -58,7 +58,7 @@ export function Opportunities() {
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            How We Help
+            Industries
           </h2>
           <p className="mt-4 text-balance text-lg text-muted-foreground">
             We specialize in three industries where we&apos;ve driven consistent, measurable results.
