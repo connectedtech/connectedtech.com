@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,10 +9,25 @@ import { Label } from "@/components/ui/label";
 import { Send, CheckCircle2, Phone } from "lucide-react";
 import { FadeIn } from "@/components/motion-wrapper";
 
+type FieldState = "untouched" | "valid" | "invalid";
+
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [fields, setFields] = useState<{ name: FieldState; email: FieldState }>({
+    name: "untouched",
+    email: "untouched",
+  });
+
+  function validateField(field: "name" | "email", value: string) {
+    if (field === "name") {
+      setFields((prev) => ({ ...prev, name: value.trim() ? "valid" : "invalid" }));
+    } else {
+      const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+      setFields((prev) => ({ ...prev, email: ok ? "valid" : "invalid" }));
+    }
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -52,12 +68,12 @@ export function Contact() {
         }
       } else {
         setError(
-          data.error || "Something went wrong. Please try again or email us directly."
+          data.error || "Something went wrong — please try again or email us directly."
         );
       }
     } catch {
       setError(
-        "We couldn\u2019t send your message. Please try again or reach out to us directly."
+        "We couldn\u2019t reach our server. Check your connection and try again, or reach out to us directly."
       );
     } finally {
       setLoading(false);
@@ -86,40 +102,101 @@ export function Contact() {
 
         <FadeIn delay={0.15}>
           {submitted ? (
-            <div className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center">
-              <CheckCircle2 className="mx-auto h-12 w-12 text-primary" />
-              <h3 className="mt-4 text-xl font-semibold text-foreground">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="mt-12 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center"
+            >
+              <motion.div
+                initial={{ scale: 0.4, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.5, ease: [0.175, 0.885, 0.32, 1.275] }}
+              >
+                <CheckCircle2 className="mx-auto h-12 w-12 text-primary" />
+              </motion.div>
+              <motion.h3
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.25 }}
+                className="mt-4 text-xl font-semibold text-foreground"
+              >
                 You&apos;re on our radar!
-              </h3>
-              <p className="mt-2 text-muted-foreground">
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.38 }}
+                className="mt-2 text-muted-foreground"
+              >
                 We&apos;ll be in touch within one business day with next steps.
                 Looking forward to learning about your business.
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="mt-12 space-y-6">
               <div className="grid gap-6 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    required
-                  />
+                  <div className="relative">
+                    <Input
+                      id="name"
+                      name="name"
+                      required
+                      onBlur={(e) => validateField("name", e.target.value)}
+                      className={
+                        fields.name === "valid"
+                          ? "border-green-500 pr-9"
+                          : fields.name === "invalid"
+                          ? "border-destructive pr-9"
+                          : ""
+                      }
+                    />
+                    {fields.name === "valid" && (
+                      <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
+                    )}
+                  </div>
+                  {fields.name === "invalid" && (
+                    <p className="text-xs text-destructive">Your name is required.</p>
+                  )}
                 </div>
+
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                  />
+                  <div className="relative">
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      onBlur={(e) => validateField("email", e.target.value)}
+                      className={
+                        fields.email === "valid"
+                          ? "border-green-500 pr-9"
+                          : fields.email === "invalid"
+                          ? "border-destructive pr-9"
+                          : ""
+                      }
+                    />
+                    {fields.email === "valid" && (
+                      <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
+                    )}
+                  </div>
+                  {fields.email === "invalid" ? (
+                    <p className="text-xs text-destructive">
+                      Check your email — looks like there may be a typo.
+                    </p>
+                  ) : (
+                    <p className="text-xs text-muted-foreground/60">No spam, ever.</p>
+                  )}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="company">Company</Label>
+                <Label htmlFor="company">
+                  Company{" "}
+                  <span className="text-xs font-normal text-muted-foreground/60">(optional)</span>
+                </Label>
                 <Input
                   id="company"
                   name="company"
@@ -127,12 +204,12 @@ export function Contact() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="message">What do you want to achieve? Don&apos;t hold back.</Label>
+                <Label htmlFor="message">What&apos;s going on, and what would a win look like?</Label>
                 <Textarea
                   id="message"
                   name="message"
-                  placeholder="Tell us your biggest goal, what you've already tried, and what success looks like 12 months from now. The more specific, the better."
-                  rows={8}
+                  className="min-h-48 placeholder:text-muted-foreground/40"
+                  placeholder={`e.g. "We're a 30-person B2B software company. Our leads have dried up — cost per lead doubled this year and we don't know if it's the ads, the SEO, or the messaging. We refreshed the site last year but nothing really moved. We want to figure this out before Q2. We're not looking to spend more, just use what we have better."`}
                   required
                 />
               </div>

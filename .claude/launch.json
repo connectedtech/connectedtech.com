@@ -3,11 +3,11 @@
   "configurations": [
     {
       "name": "Next.js dev",
-      "runtimeExecutable": "/Users/sdanforth/.nvm/versions/node/v24.12.0/bin/node",
+      "runtimeExecutable": "/Users/sdanforth/.nvm/versions/node/v22.21.1/bin/node",
       "runtimeArgs": ["/Users/sdanforth/Sites/connectedtech.com/node_modules/.bin/next", "dev", "--port", "3001"],
       "port": 3001,
       "env": {
-        "PATH": "/Users/sdanforth/.nvm/versions/node/v24.12.0/bin:/usr/local/bin:/usr/bin:/bin",
+        "PATH": "/Users/sdanforth/.nvm/versions/node/v22.21.1/bin:/usr/local/bin:/usr/bin:/bin",
         "NODE_OPTIONS": "",
         "NEXT_TELEMETRY_DISABLED": "1"
       }
