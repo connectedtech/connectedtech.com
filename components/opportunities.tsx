@@ -60,7 +60,7 @@ export function Opportunities() {
           <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             How We Help
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-balance text-lg text-muted-foreground">
             We specialize in three industries where we&apos;ve driven consistent, measurable results.
           </p>
         </FadeIn>

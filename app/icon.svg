@@ -1,7 +1,7 @@
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bar    { fill: oklch(0.55 0.22 260); }
-    .corner { fill: oklch(0.40 0.22 262); }
+    .bar    { fill: oklch(0.92 0.06 260); }
+    .corner { fill: oklch(0.55 0.22 260); }
   </style>
 
   <!-- Frame bars (four sides) -->

@@ -42,7 +42,7 @@ export function Outcomes() {
       <div className="mx-auto max-w-6xl">
         <FadeIn className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Four Outcomes. One Agency.
+            How We Make a Difference
           </h2>
           <p className="mt-4 text-lg text-white/60">
             Everything we do maps back to the metrics that matter most to your
