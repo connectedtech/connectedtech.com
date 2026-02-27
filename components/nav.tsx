@@ -167,9 +167,7 @@ export function Nav() {
                 <span>Let&apos;s Talk</span>
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
-              <p className="mt-4 text-center text-sm text-white/35">
-                No commitment. Just a conversation.
-              </p>
+
             </motion.div>
           </motion.div>
         )}
