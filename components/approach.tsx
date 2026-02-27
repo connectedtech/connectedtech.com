@@ -83,7 +83,7 @@ export function Approach() {
         </FadeInStagger>
 
         <FadeIn delay={0.3} className="mt-12 text-center">
-          <p className="text-muted-foreground">
+          <p className="font-semibold text-foreground">
             Step 1 is a free strategy call. No commitment required.
           </p>
           <Button asChild className="mt-4">
