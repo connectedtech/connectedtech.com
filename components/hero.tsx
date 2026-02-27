@@ -18,7 +18,7 @@ export function Hero() {
         >
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
             <Sparkles className="h-4 w-4" />
-            AI-Powered Solutions
+            AI-Infused Digital Marketing
           </div>
         </motion.div>
 
@@ -28,8 +28,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Make AI Work{" "}
-          <span className="text-primary">for Your Business</span>
+          Marketing Built{" "}
+          <span className="text-primary">for the AI Era</span>
         </motion.h1>
 
         <motion.p
@@ -38,9 +38,9 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          We help businesses identify real AI opportunities and turn them into
-          measurable results. Strategy, marketing, and development — all
-          amplified by AI.
+          We help businesses grow through smarter strategy, sharper content, and
+          campaigns that outperform. AI isn&apos;t an add-on — it&apos;s built
+          into everything we do.
         </motion.p>
 
         <motion.div
@@ -51,12 +51,12 @@ export function Hero() {
         >
           <Button size="lg" asChild>
             <a href="#contact">
-              Let&apos;s Talk
+              Book a Free Strategy Call
               <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <a href="#opportunities">See What&apos;s Possible</a>
+            <a href="#approach">See How We Work</a>
           </Button>
         </motion.div>
       </div>
