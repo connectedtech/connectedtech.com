@@ -219,7 +219,9 @@ function IntakeForm() {
               name="name"
               autoComplete="name"
               required
-              onBlur={(e) => setNameState(validateName(e.target.value))}
+              onBlur={(e) => {
+                if (e.target.value.trim()) setNameState(validateName(e.target.value));
+              }}
               onChange={(e) => {
                 if (nameState === "invalid") setNameState(validateName(e.target.value));
               }}
@@ -249,7 +251,9 @@ function IntakeForm() {
               type="email"
               autoComplete="email"
               required
-              onBlur={(e) => setEmailState(validateEmail(e.target.value))}
+              onBlur={(e) => {
+                if (e.target.value.trim()) setEmailState(validateEmail(e.target.value));
+              }}
               onChange={(e) => {
                 if (emailState === "invalid") setEmailState(validateEmail(e.target.value));
               }}
@@ -408,14 +412,20 @@ function GeneralForm() {
   }
 
   function handleBlur(field: keyof typeof fields, value: string) {
-    if (field === "name") setFields((p) => ({ ...p, name: getNameState(value) }));
-    else if (field === "email") setFields((p) => ({ ...p, email: getEmailState(value) }));
-    else setFields((p) => ({ ...p, [field]: value.trim() ? "valid" : "untouched" }));
+    if (field === "name") {
+      if (value.trim()) setFields((p) => ({ ...p, name: getNameState(value) }));
+    } else if (field === "email") {
+      if (value.trim()) setFields((p) => ({ ...p, email: getEmailState(value) }));
+    } else {
+      setFields((p) => ({ ...p, [field]: value.trim() ? "valid" : "untouched" }));
+    }
   }
 
   function handleChange(field: "name" | "email", value: string) {
     setFields((p) => {
       if (p[field] !== "invalid") return p;
+      // If they've cleared the field, remove the error rather than keeping it
+      if (!value.trim()) return { ...p, [field]: "untouched" };
       return { ...p, [field]: field === "name" ? getNameState(value) : getEmailState(value) };
     });
   }
