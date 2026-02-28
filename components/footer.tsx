@@ -25,6 +25,12 @@ export function Footer() {
                 <stop offset="100%" stopColor="oklch(0.75 0.22 140)"/>
               </linearGradient>
             </defs>
+            {/* Outer ring — nodes connected to each other */}
+            <line x1="16" y1="4.5" x2="27.5" y2="16" stroke="url(#footer-grad)" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="27.5" y1="16" x2="16" y2="27.5" stroke="url(#footer-grad)" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="16" y1="27.5" x2="4.5" y2="16" stroke="url(#footer-grad)" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="4.5" y1="16" x2="16" y2="4.5" stroke="url(#footer-grad)" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Spokes — hub to outer nodes */}
             <line x1="16" y1="7" x2="16" y2="12.5" stroke="url(#footer-grad)" strokeWidth="2" strokeLinecap="round"/>
             <line x1="19.5" y1="16" x2="25" y2="16" stroke="url(#footer-grad)" strokeWidth="2" strokeLinecap="round"/>
             <line x1="16" y1="19.5" x2="16" y2="25" stroke="url(#footer-grad)" strokeWidth="2" strokeLinecap="round"/>
