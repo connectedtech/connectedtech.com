@@ -1,81 +1,76 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useAnimationFrame, useMotionValue, useTransform } from "framer-motion";
-import { FadeIn } from "@/components/motion-wrapper";
+import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
+import { ArrowRight } from "lucide-react";
 
-const items = [
-  "Auto-qualify leads from your contact form",
-  "Write a month of social posts in an hour",
-  "Generate follow-up emails from meeting notes",
-  "Build a 24/7 FAQ bot for your website",
-  "Score inbound leads before sales touches them",
-  "Repurpose one blog post into 10 assets",
-  "Auto-tag and route support tickets",
-  "Draft landing page copy in minutes",
-  "Summarize sales calls into action items",
-  "Monitor competitors and surface insights weekly",
-  "Personalize outreach at scale without extra headcount",
-  "Turn your SOPs into an always-on knowledge base",
-  "Automate your monthly reporting workflows",
-  "Create ad variations and test them faster",
-  "Respond to reviews and inquiries around the clock",
+const categories = [
+  {
+    label: "Lead Gen & Sales",
+    color: "oklch(0.65 0.18 150)",
+    colorBg: "oklch(0.65 0.18 150 / 0.12)",
+    colorBorder: "oklch(0.65 0.18 150 / 0.25)",
+    colorHover: "oklch(0.65 0.18 150 / 0.20)",
+    items: [
+      "Auto-qualify leads from your contact form",
+      "Score inbound leads before sales touches them",
+      "Personalize outreach at scale",
+      "Trigger follow-up sequences from CRM activity",
+      "Identify high-intent website visitors",
+      "Draft proposals from a simple intake form",
+    ],
+  },
+  {
+    label: "Content & Marketing",
+    color: "oklch(0.75 0.22 140)",
+    colorBg: "oklch(0.75 0.22 140 / 0.10)",
+    colorBorder: "oklch(0.75 0.22 140 / 0.22)",
+    colorHover: "oklch(0.75 0.22 140 / 0.18)",
+    items: [
+      "Write a month of social posts in an hour",
+      "Repurpose one blog post into 10 assets",
+      "Draft landing page copy in minutes",
+      "Create ad variations and test them faster",
+      "Generate email campaigns from a brief",
+      "Produce weekly newsletters automatically",
+    ],
+  },
+  {
+    label: "Operations & Automation",
+    color: "oklch(0.68 0.18 220)",
+    colorBg: "oklch(0.68 0.18 220 / 0.12)",
+    colorBorder: "oklch(0.68 0.18 220 / 0.25)",
+    colorHover: "oklch(0.68 0.18 220 / 0.20)",
+    items: [
+      "Summarize sales calls into action items",
+      "Auto-tag and route support tickets",
+      "Automate your monthly reporting workflows",
+      "Turn your SOPs into an always-on knowledge base",
+      "Build a 24/7 FAQ bot for your website",
+      "Respond to reviews and inquiries around the clock",
+    ],
+  },
+  {
+    label: "SEO & Visibility",
+    color: "oklch(0.72 0.18 300)",
+    colorBg: "oklch(0.72 0.18 300 / 0.10)",
+    colorBorder: "oklch(0.72 0.18 300 / 0.22)",
+    colorHover: "oklch(0.72 0.18 300 / 0.18)",
+    items: [
+      "Monitor competitors and surface insights weekly",
+      "Identify content gaps vs. top-ranking pages",
+      "Generate optimized meta and schema at scale",
+      "Track keyword trends and flag opportunities",
+      "Refresh underperforming pages automatically",
+      "Build topical authority faster with AI-assisted content",
+    ],
+  },
 ];
-
-// Duplicate for seamless loop
-const allItems = [...items, ...items];
-
-function TickerTrack({ direction = 1, speed = 35 }: { direction?: 1 | -1; speed?: number }) {
-  const x = useMotionValue(0);
-  const baseWidth = useRef(0);
-  const trackRef = useRef<HTMLDivElement>(null);
-
-  useAnimationFrame((_, delta) => {
-    if (!trackRef.current) return;
-    if (baseWidth.current === 0) {
-      baseWidth.current = trackRef.current.scrollWidth / 2;
-    }
-    const pxPerMs = speed / 1000;
-    const move = pxPerMs * delta * direction;
-    let current = x.get() - move;
-    // Wrap: reset when we've scrolled one full set width
-    if (direction === 1 && current <= -baseWidth.current) {
-      current += baseWidth.current;
-    } else if (direction === -1 && current >= 0) {
-      current -= baseWidth.current;
-    }
-    x.set(current);
-  });
-
-  return (
-    <div className="relative overflow-hidden py-2">
-      {/* Fade edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-brand-dark to-transparent" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-brand-dark to-transparent" />
-
-      <motion.div
-        ref={trackRef}
-        style={{ x }}
-        className="flex w-max gap-3"
-      >
-        {allItems.map((item, i) => (
-          <span
-            key={i}
-            className="flex items-center gap-3 whitespace-nowrap rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70"
-          >
-            <span className="h-1.5 w-1.5 flex-none rounded-full bg-brand-ai" />
-            {item}
-          </span>
-        ))}
-      </motion.div>
-    </div>
-  );
-}
 
 export function AiTicker() {
   return (
-    <section id="ai-in-action" className="overflow-hidden bg-brand-dark px-0 py-16 md:py-20">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="ai-in-action" className="bg-brand-dark px-6 py-16 md:py-20">
+      <div className="mx-auto max-w-6xl">
+
         <FadeIn className="mx-auto max-w-2xl text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-ai">
             AI in the wild
@@ -84,34 +79,73 @@ export function AiTicker() {
             Where do you even start?
           </h2>
           <p className="mt-4 text-lg text-white/60">
-            Most businesses know AI should be part of the plan. The hard part is
-            knowing which moves to make first. Here are just a few of the things
-            we help clients put into practice.
+            Most businesses know they should be doing more with AI. The hard part
+            is knowing which moves to make first. Here&rsquo;s a taste of what we help
+            clients put into practice — and keep running.
           </p>
         </FadeIn>
-      </div>
 
-      <div className="mt-10 flex flex-col gap-3">
-        <TickerTrack direction={1} speed={32} />
-        <TickerTrack direction={-1} speed={28} />
-      </div>
+        <div className="mt-14 grid gap-8 sm:grid-cols-2">
+          {categories.map((cat) => (
+            <FadeIn key={cat.label}>
+              <div className="rounded-2xl border border-white/10 p-6">
+                {/* Category header */}
+                <div className="mb-5 flex items-center gap-2">
+                  <span
+                    className="h-2 w-2 flex-none rounded-full"
+                    style={{ backgroundColor: cat.color }}
+                  />
+                  <span
+                    className="text-xs font-semibold uppercase tracking-widest"
+                    style={{ color: cat.color }}
+                  >
+                    {cat.label}
+                  </span>
+                </div>
 
-      <div className="mx-auto mt-10 max-w-6xl px-6 text-center">
-        <a
-          href="#contact"
-          className="group inline-flex items-center gap-2 rounded-full border border-brand-ai/40 bg-brand-ai/10 px-5 py-2.5 text-sm font-semibold text-brand-ai transition-all duration-200 hover:bg-brand-ai/20 hover:border-brand-ai/60"
-        >
-          Find your first AI win
-          <svg
-            className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
+                {/* Items */}
+                <FadeInStagger className="flex flex-col gap-2">
+                  {cat.items.map((item) => (
+                    <FadeInStaggerItem key={item}>
+                      <div
+                        className="group flex cursor-default items-center gap-3 rounded-xl border px-4 py-3 transition-colors duration-150"
+                        style={{
+                          backgroundColor: cat.colorBg,
+                          borderColor: cat.colorBorder,
+                        }}
+                        onMouseEnter={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.backgroundColor = cat.colorHover;
+                        }}
+                        onMouseLeave={(e) => {
+                          (e.currentTarget as HTMLDivElement).style.backgroundColor = cat.colorBg;
+                        }}
+                      >
+                        <span
+                          className="mt-0.5 h-1.5 w-1.5 flex-none rounded-full opacity-60 transition-opacity duration-150 group-hover:opacity-100"
+                          style={{ backgroundColor: cat.color }}
+                        />
+                        <span className="text-sm leading-snug text-white/70 transition-colors duration-150 group-hover:text-white">
+                          {item}
+                        </span>
+                      </div>
+                    </FadeInStaggerItem>
+                  ))}
+                </FadeInStagger>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+
+        <FadeIn className="mt-12 text-center">
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-2 rounded-full border border-brand-ai/40 bg-brand-ai/10 px-6 py-3 text-sm font-semibold text-brand-ai transition-all duration-200 hover:bg-brand-ai/20 hover:border-brand-ai/60"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-          </svg>
-        </a>
+            Find your first AI win
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </a>
+        </FadeIn>
+
       </div>
     </section>
   );
