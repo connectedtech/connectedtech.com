@@ -3,8 +3,8 @@
   <rect width="1128" height="191" fill="#151524"/>
   <!-- Subtle gradient overlay — bottom right glow -->
   <radialGradient id="glow1" cx="85%" cy="50%" r="40%">
-    <stop offset="0%" stop-color="#5046E0" stop-opacity="0.18"/>
-    <stop offset="100%" stop-color="#5046E0" stop-opacity="0"/>
+    <stop offset="0%" stop-color="#0566EE" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#0566EE" stop-opacity="0"/>
   </radialGradient>
   <radialGradient id="glow2" cx="78%" cy="55%" r="30%">
     <stop offset="0%" stop-color="#4ADE80" stop-opacity="0.13"/>
@@ -14,7 +14,7 @@
   <rect width="1128" height="191" fill="url(#glow2)"/>
   <defs>
     <linearGradient id="ct-grad" x1="44" y1="30" x2="148" y2="134" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#5046E0"/>
+      <stop offset="0%" stop-color="#0566EE"/>
       <stop offset="100%" stop-color="#4ADE80"/>
     </linearGradient>
   </defs>
