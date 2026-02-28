@@ -535,10 +535,8 @@ function GeneralForm() {
               <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
             )}
           </div>
-          {fields.email === "invalid" ? (
+          {fields.email === "invalid" && (
             <p className="text-xs text-destructive">Check your email — looks like a typo.</p>
-          ) : (
-            <p className="text-xs text-muted-foreground/60">No spam, ever.</p>
           )}
         </div>
       </div>
