@@ -107,7 +107,7 @@ export function Outcomes() {
                     style={{ color: outcome.color }}
                   />
                   <h3
-                    className="relative z-10 text-sm font-semibold leading-snug opacity-75 transition-opacity duration-200 group-hover:opacity-100"
+                    className="relative z-10 text-sm font-semibold leading-snug"
                     style={{ color: outcome.color }}
                   >
                     {outcome.title}

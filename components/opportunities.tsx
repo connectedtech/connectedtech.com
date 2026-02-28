@@ -25,6 +25,8 @@ const industries = [
     description: "SaaS companies, IT service providers, MSPs, and technology consultancies.",
     color: "oklch(0.52 0.22 235)",
     colorBg: "oklch(0.52 0.22 235 / 0.12)",
+    colorHoverHeader: "oklch(0.52 0.22 235 / 0.15)",
+    colorHoverBg: "oklch(0.52 0.22 235 / 0.08)",
     colorShadow: "oklch(0.52 0.22 235 / 0.28)",
     opportunities: [
       "Demand generation and pipeline marketing",
@@ -39,6 +41,8 @@ const industries = [
     description: "Law firms, consultancies, accounting firms, staffing agencies, and HR companies.",
     color: "oklch(0.54 0.17 193)",
     colorBg: "oklch(0.54 0.17 193 / 0.12)",
+    colorHoverHeader: "oklch(0.54 0.17 193 / 0.15)",
+    colorHoverBg: "oklch(0.54 0.17 193 / 0.08)",
     colorShadow: "oklch(0.54 0.17 193 / 0.28)",
     opportunities: [
       "Thought leadership content that attracts ideal clients",
@@ -53,6 +57,8 @@ const industries = [
     description: "Health systems, physician practices, behavioral health, and health tech companies.",
     color: "oklch(0.58 0.22 350)",
     colorBg: "oklch(0.58 0.22 350 / 0.12)",
+    colorHoverHeader: "oklch(0.58 0.22 350 / 0.15)",
+    colorHoverBg: "oklch(0.58 0.22 350 / 0.08)",
     colorShadow: "oklch(0.58 0.22 350 / 0.28)",
     opportunities: [
       "Patient acquisition campaigns built to meet compliance requirements",
@@ -67,6 +73,8 @@ const industries = [
     description: "Discrete manufacturers, process industries, distributors, and engineering firms.",
     color: "oklch(0.62 0.19 48)",
     colorBg: "oklch(0.62 0.19 48 / 0.12)",
+    colorHoverHeader: "oklch(0.62 0.19 48 / 0.15)",
+    colorHoverBg: "oklch(0.62 0.19 48 / 0.08)",
     colorShadow: "oklch(0.62 0.19 48 / 0.28)",
     opportunities: [
       "Lead generation for complex, long-cycle B2B sales",
@@ -81,6 +89,8 @@ const industries = [
     description: "Banks, credit unions, insurance providers, financial advisors, and fintech companies.",
     color: "oklch(0.52 0.18 152)",
     colorBg: "oklch(0.52 0.18 152 / 0.12)",
+    colorHoverHeader: "oklch(0.52 0.18 152 / 0.15)",
+    colorHoverBg: "oklch(0.52 0.18 152 / 0.08)",
     colorShadow: "oklch(0.52 0.18 152 / 0.28)",
     opportunities: [
       "Compliant digital marketing within regulatory guidelines",
@@ -95,6 +105,8 @@ const industries = [
     description: "General contractors, specialty trades, developers, and commercial property firms.",
     color: "oklch(0.57 0.20 27)",
     colorBg: "oklch(0.57 0.20 27 / 0.12)",
+    colorHoverHeader: "oklch(0.57 0.20 27 / 0.15)",
+    colorHoverBg: "oklch(0.57 0.20 27 / 0.08)",
     colorShadow: "oklch(0.57 0.20 27 / 0.28)",
     opportunities: [
       "Local SEO and Google Business for service area businesses",
@@ -109,6 +121,8 @@ const industries = [
     description: "Freight brokers, 3PLs, distributors, and supply chain technology providers.",
     color: "oklch(0.50 0.20 272)",
     colorBg: "oklch(0.50 0.20 272 / 0.12)",
+    colorHoverHeader: "oklch(0.50 0.20 272 / 0.15)",
+    colorHoverBg: "oklch(0.50 0.20 272 / 0.08)",
     colorShadow: "oklch(0.50 0.20 272 / 0.28)",
     opportunities: [
       "B2B lead generation for freight and logistics services",
@@ -123,6 +137,8 @@ const industries = [
     description: "Higher education, trade schools, corporate training providers, and e-learning platforms.",
     color: "oklch(0.55 0.17 128)",
     colorBg: "oklch(0.55 0.17 128 / 0.12)",
+    colorHoverHeader: "oklch(0.55 0.17 128 / 0.15)",
+    colorHoverBg: "oklch(0.55 0.17 128 / 0.08)",
     colorShadow: "oklch(0.55 0.17 128 / 0.28)",
     opportunities: [
       "Enrollment and student recruitment campaigns",
@@ -137,6 +153,8 @@ const industries = [
     description: "Online retailers, brick-and-mortar shops, and omnichannel consumer brands.",
     color: "oklch(0.52 0.21 308)",
     colorBg: "oklch(0.52 0.21 308 / 0.12)",
+    colorHoverHeader: "oklch(0.52 0.21 308 / 0.15)",
+    colorHoverBg: "oklch(0.52 0.21 308 / 0.08)",
     colorShadow: "oklch(0.52 0.21 308 / 0.28)",
     opportunities: [
       "AI-optimized product listings and SEO",
@@ -152,31 +170,43 @@ const INITIAL_COUNT = 3;
 function IndustryCard({ industry }: { industry: typeof industries[number] }) {
   return (
     <motion.div
-      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
-      whileHover={{ y: -4, boxShadow: `0 8px 28px ${industry.colorShadow}` }}
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card"
+      whileHover={{ y: -4, boxShadow: `0 16px 48px ${industry.colorShadow}` }}
       whileTap={{ scale: 0.98 }}
       transition={{
         y: { type: "spring", stiffness: 400, damping: 25 },
         boxShadow: { duration: 0.2, ease: "easeOut" },
       }}
     >
+      {/* Card body hover overlay */}
       <div
-        className="flex items-center gap-3 px-5 py-4"
+        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+        style={{ backgroundColor: industry.colorHoverBg }}
+      />
+
+      {/* Colored header */}
+      <div
+        className="relative flex items-center gap-3 px-5 py-4"
         style={{ backgroundColor: industry.colorBg }}
       >
+        {/* Header hover overlay */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          style={{ backgroundColor: industry.colorHoverHeader }}
+        />
         <industry.icon
-          className="h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
+          className="relative z-10 h-4 w-4 flex-shrink-0 transition-transform duration-200 group-hover:scale-110"
           style={{ color: industry.color }}
         />
         <h3
-          className="text-sm font-semibold leading-snug"
+          className="relative z-10 text-sm font-semibold leading-snug"
           style={{ color: industry.color }}
         >
           {industry.title}
         </h3>
       </div>
 
-      <div className="flex flex-1 flex-col px-5 pb-5 pt-4">
+      <div className="relative z-10 flex flex-1 flex-col px-5 pb-5 pt-4">
         <p className="text-sm text-muted-foreground transition-colors duration-200 group-hover:text-foreground">{industry.description}</p>
 
         <ul className="mt-4 space-y-2 border-t border-border pt-4">
