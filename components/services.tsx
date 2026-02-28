@@ -3,10 +3,10 @@
 import { BarChart3, Brain, Code2, ArrowRight, Check, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn } from "@/components/motion-wrapper";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 // Sparkles in the AI chip spin on card hover — propagated from parent variants
-const sparkleVariants = {
+const sparkleVariants: Variants = {
   rest: { rotate: 0 },
   hover: { rotate: 360, transition: { duration: 0.6, ease: "easeInOut" } },
 };
@@ -29,7 +29,7 @@ const services = [
     iconVariants: {
       rest: { scale: 1, y: 0 },
       hover: { scale: 1.28, y: -4, transition: { type: "spring", stiffness: 400, damping: 10 } },
-    },
+    } as Variants,
   },
   {
     icon: Brain,
@@ -55,7 +55,7 @@ const services = [
           rotate: { duration: 0.5, ease: "easeInOut" },
         },
       },
-    },
+    } as Variants,
   },
   {
     icon: Code2,
@@ -77,7 +77,7 @@ const services = [
         x: [-3, 3, -2, 2, 0],
         transition: { duration: 0.4, ease: "easeInOut" },
       },
-    },
+    } as Variants,
   },
 ];
 

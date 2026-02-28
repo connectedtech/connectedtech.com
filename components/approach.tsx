@@ -3,7 +3,7 @@
 import { ArrowRight, Search, Lightbulb, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const steps = [
   {
@@ -16,7 +16,7 @@ const steps = [
     iconVariants: {
       rest: { scale: 1 },
       hover: { scale: 1.7, transition: { type: "spring", stiffness: 400, damping: 10 } },
-    },
+    } as Variants,
   },
   {
     number: "02",
@@ -28,7 +28,7 @@ const steps = [
     iconVariants: {
       rest: { scale: 1, rotate: 0 },
       hover: { scale: 1.35, rotate: 15, transition: { type: "spring", stiffness: 350, damping: 8 } },
-    },
+    } as Variants,
   },
   {
     number: "03",
@@ -40,7 +40,7 @@ const steps = [
     iconVariants: {
       rest: { y: 0, x: 0, rotate: 0 },
       hover: { y: -8, x: 5, rotate: -30, transition: { type: "spring", stiffness: 300, damping: 8 } },
-    },
+    } as Variants,
   },
 ];
 

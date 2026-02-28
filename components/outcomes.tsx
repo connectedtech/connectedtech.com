@@ -2,7 +2,7 @@
 
 import { TrendingUp, PieChart, Scissors, Gem } from "lucide-react";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const outcomes = [
   {
@@ -22,7 +22,7 @@ const outcomes = [
     iconVariants: {
       rest: { y: 0 },
       hover: { y: -8, transition: { type: "spring", stiffness: 500, damping: 10 } },
-    },
+    } as Variants,
   },
   {
     icon: PieChart,
@@ -41,7 +41,7 @@ const outcomes = [
     iconVariants: {
       rest: { rotate: 0 },
       hover: { rotate: 180, transition: { duration: 0.55, ease: "easeInOut" } },
-    },
+    } as Variants,
   },
   {
     icon: Scissors,
@@ -60,7 +60,7 @@ const outcomes = [
     iconVariants: {
       rest: { rotate: 0, x: 0 },
       hover: { rotate: -35, x: 5, transition: { type: "spring", stiffness: 500, damping: 8 } },
-    },
+    } as Variants,
   },
   {
     icon: Gem,
@@ -79,7 +79,7 @@ const outcomes = [
     iconVariants: {
       rest: { scale: 1, rotate: 0 },
       hover: { scale: 1.65, rotate: 22, transition: { type: "spring", stiffness: 400, damping: 10 } },
-    },
+    } as Variants,
   },
 ];
 
