@@ -1,6 +1,6 @@
 "use client";
 
-import { TrendingUp, PieChart, Scissors, Gem } from "lucide-react";
+import { TrendingUp, Zap, Globe } from "lucide-react";
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 import { motion, type Variants } from "framer-motion";
 
@@ -17,16 +17,33 @@ const outcomes = [
     colorShadow: "oklch(0.65 0.18 150 / 0.55)",
     colorShadowRest: "oklch(0.65 0.18 150 / 0)",
     description:
-      "AI-powered campaigns that reach the right buyers, generate more qualified leads, and convert at a higher rate.",
-    // TrendingUp literally trends upward
+      "AI-powered marketing reaches the right buyers, generates more qualified leads, and converts at a higher rate — without burning more budget.",
     iconVariants: {
       rest: { y: 0 },
       hover: { y: -8, transition: { type: "spring", stiffness: 500, damping: 10 } },
     } as Variants,
   },
   {
-    icon: PieChart,
-    title: "Win Market Share",
+    icon: Zap,
+    title: "Multiply Your Team",
+    detail: "Same headcount. Bigger output.",
+    color: "oklch(0.75 0.22 140)",
+    colorBg: "oklch(0.75 0.22 140 / 0.20)",
+    colorHoverHeader: "oklch(0.75 0.22 140 / 0.28)",
+    colorGlow: "oklch(0.75 0.22 140 / 0.07)",
+    colorHoverBg: "oklch(0.75 0.22 140 / 0.16)",
+    colorShadow: "oklch(0.75 0.22 140 / 0.50)",
+    colorShadowRest: "oklch(0.75 0.22 140 / 0)",
+    description:
+      "AI automation handles the repetitive work — follow-ups, reporting, content creation, workflows — freeing your team to focus on what actually moves the needle.",
+    iconVariants: {
+      rest: { scale: 1, rotate: 0 },
+      hover: { scale: 1.4, rotate: 15, transition: { type: "spring", stiffness: 400, damping: 8 } },
+    } as Variants,
+  },
+  {
+    icon: Globe,
+    title: "Own Your Market",
     detail: "Rank higher. Reach further.",
     color: "oklch(0.68 0.18 220)",
     colorBg: "oklch(0.68 0.18 220 / 0.25)",
@@ -36,49 +53,10 @@ const outcomes = [
     colorShadow: "oklch(0.68 0.18 220 / 0.55)",
     colorShadowRest: "oklch(0.68 0.18 220 / 0)",
     description:
-      "SEO, content, and paid media that expand your digital footprint and put you ahead of competitors.",
-    // PieChart rotates — claiming more of the pie
+      "SEO, content, and paid media that expand your digital footprint, keep you in front of the right buyers, and put you ahead of competitors in your space.",
     iconVariants: {
       rest: { rotate: 0 },
-      hover: { rotate: 180, transition: { duration: 0.55, ease: "easeInOut" } },
-    } as Variants,
-  },
-  {
-    icon: Scissors,
-    title: "Reduce Costs",
-    detail: "Less overhead. More output.",
-    color: "oklch(0.70 0.17 75)",
-    colorBg: "oklch(0.70 0.17 75 / 0.25)",
-    colorHoverHeader: "oklch(0.70 0.17 75 / 0.32)",
-    colorGlow: "oklch(0.70 0.17 75 / 0.08)",
-    colorHoverBg: "oklch(0.70 0.17 75 / 0.20)",
-    colorShadow: "oklch(0.70 0.17 75 / 0.55)",
-    colorShadowRest: "oklch(0.70 0.17 75 / 0)",
-    description:
-      "AI automation eliminates repetitive manual work so your team focuses on strategy over execution.",
-    // Scissors snip! — cuts costs
-    iconVariants: {
-      rest: { rotate: 0, x: 0 },
-      hover: { rotate: -35, x: 5, transition: { type: "spring", stiffness: 500, damping: 8 } },
-    } as Variants,
-  },
-  {
-    icon: Gem,
-    title: "Improve Quality",
-    detail: "Better work. Every time.",
-    color: "oklch(0.68 0.19 310)",
-    colorBg: "oklch(0.68 0.19 310 / 0.25)",
-    colorHoverHeader: "oklch(0.68 0.19 310 / 0.32)",
-    colorGlow: "oklch(0.68 0.19 310 / 0.08)",
-    colorHoverBg: "oklch(0.68 0.19 310 / 0.20)",
-    colorShadow: "oklch(0.68 0.19 310 / 0.55)",
-    colorShadowRest: "oklch(0.68 0.19 310 / 0)",
-    description:
-      "Smarter targeting, stronger content, and data-driven optimization that raises the bar across your marketing.",
-    // Gem catches the light — quality sparkles
-    iconVariants: {
-      rest: { scale: 1, rotate: 0 },
-      hover: { scale: 1.65, rotate: 22, transition: { type: "spring", stiffness: 400, damping: 10 } },
+      hover: { rotate: 360, transition: { duration: 0.7, ease: "easeInOut" } },
     } as Variants,
   },
 ];
@@ -97,7 +75,7 @@ export function Outcomes() {
           </p>
         </FadeIn>
 
-        <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {outcomes.map((outcome) => (
             <FadeInStaggerItem key={outcome.title}>
               <motion.div
@@ -115,7 +93,7 @@ export function Outcomes() {
                   boxShadow: { duration: 0.25, ease: "easeOut" },
                 }}
               >
-                {/* Card body hover overlay — materialises on hover */}
+                {/* Card body hover overlay */}
                 <div
                   className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                   style={{ backgroundColor: outcome.colorHoverBg }}
@@ -126,12 +104,10 @@ export function Outcomes() {
                   className="relative flex items-center gap-3 px-5 py-4"
                   style={{ backgroundColor: outcome.colorBg }}
                 >
-                  {/* Header hover overlay */}
                   <div
                     className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
                     style={{ backgroundColor: outcome.colorHoverHeader }}
                   />
-                  {/* Icon — animates via variant propagation from parent card */}
                   <motion.div
                     className="relative z-10 flex-shrink-0"
                     variants={outcome.iconVariants}
