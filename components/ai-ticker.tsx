@@ -94,7 +94,7 @@ function CategoryCard({
       onMouseLeave={() => setIsHovered(false)}
       style={{
         transform: `translateY(${isActive ? -4 : 0}px)`,
-        borderColor: isActive ? cat.glow.border : "rgba(255,255,255,0.1)",
+        borderColor: isActive ? cat.glow.border : "rgba(255,255,255,0.14)",
         backgroundColor: isActive ? cat.glow.bg : "transparent",
         boxShadow: isActive
           ? cat.glow.shadow
@@ -124,7 +124,7 @@ function CategoryCard({
                 className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full transition-opacity duration-300"
                 style={{
                   backgroundColor: cat.color,
-                  opacity: isActive ? 1 : 0.35,
+                  opacity: isActive ? 1 : 0.55,
                 }}
               />
               <span
@@ -132,7 +132,7 @@ function CategoryCard({
                 style={{
                   color: isActive
                     ? "rgba(255,255,255,0.95)"
-                    : "rgba(255,255,255,0.45)",
+                    : "rgba(255,255,255,0.65)",
                 }}
               >
                 {item}
