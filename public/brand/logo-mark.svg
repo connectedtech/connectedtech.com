@@ -1,0 +1,10 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <defs>
+    <linearGradient id="ct-grad" x1="18" y1="18" x2="182" y2="182" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#5046E0"/>
+      <stop offset="100%" stop-color="#4ADE80"/>
+    </linearGradient>
+  </defs>
+  <circle cx="80"  cy="80"  r="56" stroke="url(#ct-grad)" stroke-width="14"/>
+  <circle cx="120" cy="120" r="56" stroke="url(#ct-grad)" stroke-width="14"/>
+</svg>

@@ -78,7 +78,7 @@ export function AiTicker() {
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
             Where do you even start?
           </h2>
-          <p className="mt-4 text-lg text-white/60">
+          <p className="mt-4 text-lg text-white/70">
             Most businesses know they should be doing more with AI. The hard part
             is knowing which moves to make first. Here&rsquo;s a taste of what we help
             clients put into practice — and keep running.
@@ -124,7 +124,7 @@ export function AiTicker() {
                           className="mt-0.5 h-1.5 w-1.5 flex-none rounded-full opacity-60 transition-opacity duration-150 group-hover:opacity-100"
                           style={{ backgroundColor: cat.color }}
                         />
-                        <span className="text-sm leading-snug text-white/70 transition-colors duration-150 group-hover:text-white">
+                        <span className="text-sm leading-snug text-white/90 transition-colors duration-150 group-hover:text-white">
                           {item}
                         </span>
                       </div>
