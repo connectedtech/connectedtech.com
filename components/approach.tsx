@@ -12,6 +12,11 @@ const steps = [
     title: "Discover",
     description:
       "We start with a free strategy call to understand your business, your goals, and where AI can make the biggest difference. No assumptions, just listening.",
+    // Search zooms in — magnifying glass looking for answers
+    iconVariants: {
+      rest: { scale: 1 },
+      hover: { scale: 1.7, transition: { type: "spring", stiffness: 400, damping: 10 } },
+    },
   },
   {
     number: "02",
@@ -19,6 +24,11 @@ const steps = [
     title: "Design",
     description:
       "We build a focused plan with clear priorities, AI-informed recommendations, and measurable outcomes. You\u2019ll know exactly what we\u2019re doing and why before we start.",
+    // Lightbulb tips and brightens — idea moment!
+    iconVariants: {
+      rest: { scale: 1, rotate: 0 },
+      hover: { scale: 1.35, rotate: 15, transition: { type: "spring", stiffness: 350, damping: 8 } },
+    },
   },
   {
     number: "03",
@@ -26,6 +36,11 @@ const steps = [
     title: "Deliver",
     description:
       "We execute using AI-powered tools, measure everything, and optimize continuously. Campaigns go live, performance is tracked, and we stay engaged to keep improving.",
+    // Rocket launches — up and to the right
+    iconVariants: {
+      rest: { y: 0, x: 0, rotate: 0 },
+      hover: { y: -8, x: 5, rotate: -30, transition: { type: "spring", stiffness: 300, damping: 8 } },
+    },
   },
 ];
 
@@ -47,8 +62,13 @@ export function Approach() {
             <FadeInStaggerItem key={step.title} className="flex">
               <motion.div
                 className="group relative flex w-full flex-col rounded-2xl border border-border bg-card px-8 py-8 transition-colors duration-200 hover:border-brand-amber/30"
-                whileHover={{ y: -4, boxShadow: "0 8px 28px oklch(0.70 0.17 75 / 0.25)" }}
+                initial="rest"
+                whileHover="hover"
                 whileTap={{ scale: 0.98 }}
+                variants={{
+                  rest: { y: 0, boxShadow: "0 0px 0px oklch(0.70 0.17 75 / 0)" },
+                  hover: { y: -4, boxShadow: "0 8px 28px oklch(0.70 0.17 75 / 0.25)" },
+                }}
                 transition={{
                   y: { type: "spring", stiffness: 400, damping: 25 },
                   boxShadow: { duration: 0.2, ease: "easeOut" },
@@ -68,7 +88,9 @@ export function Approach() {
                 {/* Icon badge + title */}
                 <div className="mb-3 flex items-center gap-2.5">
                   <div className="flex-none rounded-lg bg-brand-amber/10 p-1.5 transition-colors duration-200 group-hover:bg-brand-amber/20">
-                    <step.icon className="h-4 w-4 text-brand-amber" />
+                    <motion.div variants={step.iconVariants}>
+                      <step.icon className="h-4 w-4 text-brand-amber" />
+                    </motion.div>
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
                     {step.title}

@@ -16,10 +16,25 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground">
-            <Sparkles className="h-4 w-4 text-brand-ai" />
+          {/* Badge — hover to spin the sparkle */}
+          <motion.div
+            className="mb-6 inline-flex cursor-default items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground"
+            initial="rest"
+            whileHover="hover"
+            whileTap={{ scale: 0.95 }}
+            variants={{ rest: { scale: 1 }, hover: { scale: 1.06 } }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+          >
+            <motion.span
+              variants={{
+                rest: { rotate: 0 },
+                hover: { rotate: 360, transition: { duration: 0.5, ease: "easeInOut" } },
+              }}
+            >
+              <Sparkles className="h-4 w-4 text-brand-ai" />
+            </motion.span>
             AI-Powered Digital Solutions
-          </div>
+          </motion.div>
         </motion.div>
 
         <motion.h1
@@ -28,36 +43,38 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          {/* Grow — literally gets bigger */}
+          {/* Grow — literally gets MUCH bigger */}
           <motion.span
             className="inline-block cursor-default"
-            whileHover={{ scale: 1.15 }}
-            transition={{ type: "spring", stiffness: 350, damping: 12 }}
+            whileHover={{ scale: 1.55 }}
+            transition={{ type: "spring", stiffness: 250, damping: 10 }}
           >
             Grow.
           </motion.span>{" "}
-          {/* Build — stretches taller from the bottom, like a tower rising */}
+          {/* Build — stretches really tall from the bottom, like a skyscraper rising */}
           <motion.span
             className="inline-block cursor-default text-primary"
             style={{ transformOrigin: "bottom center" }}
-            whileHover={{ scaleY: 1.22 }}
-            transition={{ type: "spring", stiffness: 350, damping: 12 }}
+            whileHover={{ scaleY: 1.9 }}
+            transition={{ type: "spring", stiffness: 200, damping: 10 }}
           >
             Build.
           </motion.span>{" "}
-          {/* Automate — slides back and forth on its own, like a piston/conveyor */}
+          {/* Automate — does multiple distinct things in sequence, loops */}
           <motion.span
             className="inline-block cursor-default text-brand-ai"
-            whileHover={{ x: [0, 10, 0] }}
-            transition={{ x: { duration: 0.55, repeat: Infinity, ease: "linear" } }}
+            whileHover={{ x: [0, 16, 16, 0, 0], y: [0, 0, -14, -14, 0] }}
+            transition={{
+              duration: 1.6,
+              repeat: Infinity,
+              ease: "easeInOut",
+              times: [0, 0.25, 0.5, 0.75, 1],
+            }}
           >
             Automate.
           </motion.span>
-          {/* Byline */}
-          <span className="mt-4 block text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground/55 md:text-sm">
-            <Sparkles className="mr-1.5 inline-block h-3 w-3 -translate-y-px text-brand-ai/70" />
-            Powered by AI
-          </span>
+          <br />
+          <span className="text-xl text-muted-foreground md:text-3xl">Powered by AI.</span>
         </motion.h1>
 
         <motion.p

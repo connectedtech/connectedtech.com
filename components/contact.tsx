@@ -119,13 +119,25 @@ export function Contact() {
           <p className="mt-4 text-lg text-muted-foreground">
             Tell us about your business and what you want to achieve.
           </p>
-          <a
+          <motion.a
             href="tel:8102857000"
             className="mt-6 inline-flex items-center gap-2 text-primary hover:underline font-medium"
+            initial="rest"
+            whileHover="hover"
           >
-            <Phone className="h-4 w-4" />
+            <motion.span
+              variants={{
+                rest: { rotate: 0 },
+                hover: {
+                  rotate: [0, -18, 18, -15, 15, -10, 10, 0],
+                  transition: { duration: 0.65, ease: "easeInOut" },
+                },
+              }}
+            >
+              <Phone className="h-4 w-4" />
+            </motion.span>
             (810) 285-7000
-          </a>
+          </motion.a>
         </FadeIn>
 
         <FadeIn delay={0.15}>

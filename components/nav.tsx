@@ -44,6 +44,10 @@ export function Nav() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             {/* Brand mark — corner bracket mark, matches favicon geometry */}
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 8 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
             <svg
               width="26"
               height="26"
@@ -82,6 +86,7 @@ export function Nav() {
                 <rect x="26" y="20" width="4"  height="10" rx="2"/>
               </g>
             </svg>
+            </motion.div>
 
             <span
               className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
