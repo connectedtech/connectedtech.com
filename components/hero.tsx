@@ -56,8 +56,8 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          We bring the tools today&apos;s most competitive businesses use — and
-          handle the technical side so you don&apos;t have to.
+          Marketing that finds buyers. Websites that convert. AI that handles
+          the work in between.
         </motion.p>
 
         <motion.div
@@ -68,7 +68,7 @@ export function Hero() {
         >
           <Button size="lg" asChild className="group">
             <a href="#contact">
-              Book a Free Strategy Call
+              Start a Project
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </Button>
