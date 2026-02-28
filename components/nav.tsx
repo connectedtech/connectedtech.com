@@ -43,7 +43,7 @@ export function Nav() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
-            {/* Brand mark — bar-and-corner frame, matches favicon geometry */}
+            {/* Brand mark — corner bracket mark, matches favicon geometry */}
             <svg
               width="26"
               height="26"
@@ -53,16 +53,34 @@ export function Nav() {
               aria-hidden="true"
               className="flex-none"
             >
-              {/* Frame bars */}
-              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="2"  y="2"  width="28" height="7"  rx="2.5"/>
-              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="23" y="2"  width="7"  height="28" rx="2.5"/>
-              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="2"  y="23" width="28" height="7"  rx="2.5"/>
-              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="2"  y="2"  width="7"  height="28" rx="2.5"/>
-              {/* Darkened corners */}
-              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="2"  y="2"  width="7" height="7" rx="2.5"/>
-              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="23" y="2"  width="7" height="7" rx="2.5"/>
-              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="2"  y="23" width="7" height="7" rx="2.5"/>
-              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="23" y="23" width="7" height="7" rx="2.5"/>
+              <defs>
+                <linearGradient id="ct-grad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stopColor="oklch(0.55 0.22 260)"/>
+                  <stop offset="100%" stopColor="oklch(0.75 0.22 140)"/>
+                </linearGradient>
+              </defs>
+              {/* Default state — gradient brackets */}
+              <g style={{ opacity: mobileOpen ? 0 : 1, transition: "opacity 0.3s" }}>
+                <rect x="2"  y="2"  width="10" height="4" rx="2" fill="url(#ct-grad)"/>
+                <rect x="2"  y="2"  width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
+                <rect x="20" y="2"  width="10" height="4" rx="2" fill="url(#ct-grad)"/>
+                <rect x="26" y="2"  width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
+                <rect x="2"  y="26" width="10" height="4" rx="2" fill="url(#ct-grad)"/>
+                <rect x="2"  y="20" width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
+                <rect x="20" y="26" width="10" height="4" rx="2" fill="url(#ct-grad)"/>
+                <rect x="26" y="20" width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
+              </g>
+              {/* Mobile open state — white brackets on dark bg */}
+              <g style={{ opacity: mobileOpen ? 1 : 0, transition: "opacity 0.3s" }} fill="white">
+                <rect x="2"  y="2"  width="10" height="4" rx="2"/>
+                <rect x="2"  y="2"  width="4"  height="10" rx="2"/>
+                <rect x="20" y="2"  width="10" height="4" rx="2"/>
+                <rect x="26" y="2"  width="4"  height="10" rx="2"/>
+                <rect x="2"  y="26" width="10" height="4" rx="2"/>
+                <rect x="2"  y="20" width="4"  height="10" rx="2"/>
+                <rect x="20" y="26" width="10" height="4" rx="2"/>
+                <rect x="26" y="20" width="4"  height="10" rx="2"/>
+              </g>
             </svg>
 
             <span

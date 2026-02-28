@@ -28,9 +28,30 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Grow.{" "}
-          <span className="text-primary">Build.</span>{" "}
-          <span className="text-brand-ai">Automate.</span>
+          {/* Grow — literally gets bigger */}
+          <motion.span
+            className="inline-block cursor-default"
+            whileHover={{ scale: 1.15 }}
+            transition={{ type: "spring", stiffness: 350, damping: 12 }}
+          >
+            Grow.
+          </motion.span>{" "}
+          {/* Build — literally rises up, like stacking */}
+          <motion.span
+            className="inline-block cursor-default text-primary"
+            whileHover={{ y: -10 }}
+            transition={{ type: "spring", stiffness: 350, damping: 12 }}
+          >
+            Build.
+          </motion.span>{" "}
+          {/* Automate — loops on its own, like a machine running */}
+          <motion.span
+            className="inline-block cursor-default text-brand-ai"
+            whileHover={{ rotate: [0, -4, 4, -4, 0] }}
+            transition={{ rotate: { duration: 0.5, repeat: Infinity, ease: "easeInOut" } }}
+          >
+            Automate.
+          </motion.span>
           <br />
           <span className="text-muted-foreground">Powered by AI.</span>
         </motion.h1>
