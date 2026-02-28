@@ -34,7 +34,7 @@ export function Hero() {
               <Sparkles className="h-4 w-4 text-brand-ai" />
             </motion.span>
             <span className="transition-colors duration-300 group-hover:text-brand-ai">
-              AI-Powered Digital Solutions
+              AI-Powered Marketing & Technology
             </span>
           </motion.div>
         </motion.div>

@@ -11,7 +11,7 @@ const steps = [
     icon: Search,
     title: "Discover",
     description:
-      "We start with a free strategy call to understand your business, your goals, and where AI can make the biggest difference. No assumptions, just listening.",
+      "We start by understanding your business, your goals, and where AI can make the biggest difference. No assumptions, no templates — just focused listening.",
     // Search zooms in — magnifying glass looking for answers
     iconVariants: {
       rest: { scale: 1 },
@@ -35,7 +35,7 @@ const steps = [
     icon: Rocket,
     title: "Deliver",
     description:
-      "We execute using AI-powered tools, measure everything, and optimize continuously. Campaigns go live, performance is tracked, and we stay engaged to keep improving.",
+      "We execute with AI-powered tools, measure everything, and optimize continuously. Campaigns go live, sites launch, automations run — and we stay embedded to keep improving what's working.",
     // Rocket launches — up and to the right
     iconVariants: {
       rest: { y: 0, x: 0, rotate: 0 },

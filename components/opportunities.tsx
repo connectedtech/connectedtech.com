@@ -160,7 +160,7 @@ const industries = [
       "AI-optimized product listings and SEO",
       "Paid search and shopping campaigns",
       "Email marketing and customer lifecycle automation",
-      "Conversion rate optimization",
+      "Conversion rate optimization across product pages and checkout",
     ],
   },
 ];
@@ -238,8 +238,8 @@ export function Opportunities() {
             Who We Help
           </h2>
           <p className="mt-4 text-balance text-lg text-muted-foreground">
-            Browse by industry to see the specific ways we help businesses like
-            yours grow, automate, and compete.
+            See how we help businesses in your industry grow revenue, build
+            better digital experiences, and put AI to work.
           </p>
         </FadeIn>
 

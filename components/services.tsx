@@ -14,15 +14,15 @@ const sparkleVariants: Variants = {
 const services = [
   {
     icon: BarChart3,
-    title: "AI-Infused Digital Marketing",
+    title: "Digital Marketing",
     description:
-      "SEO, content strategy, paid media, and analytics powered by AI — helping us move faster, target smarter, and deliver better ROI.",
+      "Generate more qualified leads and revenue through SEO, content, paid media, and analytics — all enhanced by AI to move faster and target smarter.",
     bullets: [
-      "SEO strategy and on-page optimization",
-      "Paid media across Google, Meta, and LinkedIn",
-      "AI-assisted content creation and distribution",
-      "Marketing analytics and performance reporting",
-      "Campaign optimization driven by real data",
+      "Rank higher and get found by the right buyers",
+      "Reach decision-makers on Google, Meta, and LinkedIn",
+      "AI-assisted content that drives traffic and conversions",
+      "Performance reporting tied to revenue, not vanity metrics",
+      "Continuous optimization driven by real data",
     ],
     cta: "Start Growing",
     // Bar chart bars grow taller — revenue going up
@@ -33,15 +33,15 @@ const services = [
   },
   {
     icon: Brain,
-    title: "AI Strategy & Integration",
+    title: "AI Strategy & Automation",
     description:
-      "We identify where AI makes the biggest difference in your marketing and operations, then build it in — delivering working solutions from day one.",
+      "Not sure where AI fits? We find the highest-impact opportunities across your business, then build and automate them — so you see results from day one.",
     bullets: [
-      "AI readiness assessment and roadmap",
-      "Workflow automation and tool integration",
-      "Custom prompt engineering and AI tooling",
-      "Team training and adoption support",
-      "Ongoing optimization and iteration",
+      "AI readiness assessment and prioritized roadmap",
+      "Workflow automation that eliminates manual work",
+      "Custom AI tools built for your specific processes",
+      "Team training so your people actually adopt it",
+      "Ongoing optimization as AI capabilities evolve",
     ],
     cta: "Explore AI Strategy",
     // Brain pulses and wobbles — thinking hard
@@ -61,13 +61,13 @@ const services = [
     icon: Code2,
     title: "Web Design & Development",
     description:
-      "Fast, modern, conversion-focused websites built with AI-assisted workflows — designed to perform, and built to grow with you.",
+      "Websites, web apps, and custom software — built with modern frameworks and AI-assisted workflows. Designed to perform, engineered to scale.",
     bullets: [
-      "Conversion-focused design and UX",
+      "Conversion-focused design and user experience",
+      "Web apps, dashboards, and custom software",
       "Next.js and modern framework development",
-      "CMS setup and content management",
       "Performance optimization and Core Web Vitals",
-      "Ongoing maintenance and support",
+      "Ongoing maintenance, iteration, and support",
     ],
     cta: "Start a Build",
     // Code brackets bounce — like typing furiously
@@ -90,7 +90,7 @@ export function Services() {
             Services
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Digital marketing at the core. AI woven through everything.
+            Marketing. Technology. AI. One team, end to end.
           </p>
         </FadeIn>
 

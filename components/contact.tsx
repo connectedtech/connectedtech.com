@@ -80,7 +80,7 @@ function SuccessCard({ heading, body }: { heading: string; body: string }) {
 // ── Intake form (project sizing) ──────────────────────────────────────────────
 
 const SERVICE_OPTIONS = [
-  "AI Strategy & Integration",
+  "AI Strategy & Automation",
   "Website or App",
   "Digital Marketing",
   "Workflow Automation",
