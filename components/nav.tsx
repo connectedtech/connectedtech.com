@@ -8,7 +8,7 @@ const links = [
   { label: "Services", href: "#services" },
   { label: "Industries", href: "#how-we-help" },
   { label: "Approach", href: "#approach" },
-  { label: "Results", href: "#results" },
+  { label: "Proof", href: "#results" },
 ];
 
 export function Nav() {
@@ -109,7 +109,7 @@ export function Nav() {
               href="#contact"
               className="group relative inline-flex items-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-primary to-brand-ai px-5 py-2 text-sm font-semibold text-white shadow-[0_2px_20px_oklch(0.55_0.22_260_/_0.35)] transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_4px_32px_oklch(0.55_0.22_260_/_0.55)] active:scale-[0.97]"
             >
-              <span>Let&apos;s Talk</span>
+              <span>Start a Project</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -197,7 +197,7 @@ export function Nav() {
                 className="group flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-primary to-brand-ai px-6 py-5 text-lg font-bold text-white shadow-[0_8px_40px_oklch(0.55_0.22_260_/_0.5)] transition-all duration-300 active:scale-[0.97]"
                 onClick={() => setMobileOpen(false)}
               >
-                <span>Let&apos;s Talk</span>
+                <span>Start a Project</span>
                 <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
               </a>
 

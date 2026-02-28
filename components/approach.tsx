@@ -115,11 +115,11 @@ export function Approach() {
 
         <FadeIn delay={0.3} className="mt-12 text-center">
           <p className="font-semibold text-foreground">
-            Step 1 is a free strategy call. No commitment required.
+            Ready to get started? No commitment required.
           </p>
           <Button asChild className="group mt-4">
             <a href="#contact">
-              Book Your Free Call
+              Start a Project
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </Button>

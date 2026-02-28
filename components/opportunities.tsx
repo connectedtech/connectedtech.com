@@ -301,7 +301,7 @@ export function Opportunities() {
           <p className="text-muted-foreground">
             Don&apos;t see your industry?{" "}
             <a href="#contact" className="font-medium text-primary hover:underline">
-              Let&apos;s talk — we&apos;ve likely worked in your space.
+              Get in touch — we&apos;ve likely worked in your space.
             </a>
           </p>
         </FadeIn>

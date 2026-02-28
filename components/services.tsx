@@ -24,7 +24,7 @@ const services = [
       "Marketing analytics and performance reporting",
       "Campaign optimization driven by real data",
     ],
-    cta: "Book a Free Strategy Call",
+    cta: "Start a Project",
     // Bar chart bars grow taller — revenue going up
     iconVariants: {
       rest: { scale: 1, y: 0 },
@@ -43,7 +43,7 @@ const services = [
       "Team training and adoption support",
       "Ongoing optimization and iteration",
     ],
-    cta: "Start the Conversation",
+    cta: "Start a Project",
     // Brain pulses and wobbles — thinking hard
     iconVariants: {
       rest: { scale: 1, rotate: 0 },
@@ -69,7 +69,7 @@ const services = [
       "Performance optimization and Core Web Vitals",
       "Ongoing maintenance and support",
     ],
-    cta: "Discuss Your Project",
+    cta: "Start a Project",
     // Code brackets bounce — like typing furiously
     iconVariants: {
       rest: { x: 0 },
