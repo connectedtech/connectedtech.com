@@ -42,7 +42,29 @@ export function Nav() {
       >
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
+          <a href="#" className="flex items-center gap-3">
+            {/* Brand mark — bar-and-corner frame, matches favicon geometry */}
+            <svg
+              width="26"
+              height="26"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              className="flex-none"
+            >
+              {/* Frame bars */}
+              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="2"  y="2"  width="28" height="7"  rx="2.5"/>
+              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="23" y="2"  width="7"  height="28" rx="2.5"/>
+              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="2"  y="23" width="28" height="7"  rx="2.5"/>
+              <rect style={{ fill: mobileOpen ? "oklch(0.82 0.12 260)" : "oklch(0.68 0.16 260)", transition: "fill 0.3s" }} x="2"  y="2"  width="7"  height="28" rx="2.5"/>
+              {/* Darkened corners */}
+              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="2"  y="2"  width="7" height="7" rx="2.5"/>
+              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="23" y="2"  width="7" height="7" rx="2.5"/>
+              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="2"  y="23" width="7" height="7" rx="2.5"/>
+              <rect style={{ fill: mobileOpen ? "oklch(0.75 0.22 140)" : "oklch(0.42 0.24 260)", transition: "fill 0.3s" }} x="23" y="23" width="7" height="7" rx="2.5"/>
+            </svg>
+
             <span
               className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
                 mobileOpen ? "text-white" : "text-foreground"
