@@ -58,8 +58,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Marketing that finds buyers. Websites that convert. AI that handles
-          the work in between.
+          Marketing that converts. Websites that connect. AI that compounds.
         </motion.p>
 
         <motion.div
