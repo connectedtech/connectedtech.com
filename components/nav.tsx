@@ -63,27 +63,29 @@ export function Nav() {
                   <stop offset="100%" stopColor="oklch(0.75 0.22 140)"/>
                 </linearGradient>
               </defs>
-              {/* Default state — gradient brackets */}
+              {/* Default state — gradient connected nodes */}
               <g style={{ opacity: mobileOpen ? 0 : 1, transition: "opacity 0.3s" }}>
-                <rect x="2"  y="2"  width="10" height="4" rx="2" fill="url(#ct-grad)"/>
-                <rect x="2"  y="2"  width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
-                <rect x="20" y="2"  width="10" height="4" rx="2" fill="url(#ct-grad)"/>
-                <rect x="26" y="2"  width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
-                <rect x="2"  y="26" width="10" height="4" rx="2" fill="url(#ct-grad)"/>
-                <rect x="2"  y="20" width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
-                <rect x="20" y="26" width="10" height="4" rx="2" fill="url(#ct-grad)"/>
-                <rect x="26" y="20" width="4"  height="10" rx="2" fill="url(#ct-grad)"/>
+                <line x1="16" y1="7" x2="16" y2="12.5" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="19.5" y1="16" x2="25" y2="16" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="16" y1="19.5" x2="16" y2="25" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="7" y1="16" x2="12.5" y2="16" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
+                <circle cx="16" cy="16" r="3.5" fill="url(#ct-grad)"/>
+                <circle cx="16" cy="4.5" r="2.5" fill="url(#ct-grad)"/>
+                <circle cx="27.5" cy="16" r="2.5" fill="url(#ct-grad)"/>
+                <circle cx="16" cy="27.5" r="2.5" fill="url(#ct-grad)"/>
+                <circle cx="4.5" cy="16" r="2.5" fill="url(#ct-grad)"/>
               </g>
-              {/* Mobile open state — white brackets on dark bg */}
-              <g style={{ opacity: mobileOpen ? 1 : 0, transition: "opacity 0.3s" }} fill="white">
-                <rect x="2"  y="2"  width="10" height="4" rx="2"/>
-                <rect x="2"  y="2"  width="4"  height="10" rx="2"/>
-                <rect x="20" y="2"  width="10" height="4" rx="2"/>
-                <rect x="26" y="2"  width="4"  height="10" rx="2"/>
-                <rect x="2"  y="26" width="10" height="4" rx="2"/>
-                <rect x="2"  y="20" width="4"  height="10" rx="2"/>
-                <rect x="20" y="26" width="10" height="4" rx="2"/>
-                <rect x="26" y="20" width="4"  height="10" rx="2"/>
+              {/* Mobile open state — white connected nodes on dark bg */}
+              <g style={{ opacity: mobileOpen ? 1 : 0, transition: "opacity 0.3s" }}>
+                <line x1="16" y1="7" x2="16" y2="12.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="19.5" y1="16" x2="25" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="16" y1="19.5" x2="16" y2="25" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <line x1="7" y1="16" x2="12.5" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                <circle cx="16" cy="16" r="3.5" fill="white"/>
+                <circle cx="16" cy="4.5" r="2.5" fill="white"/>
+                <circle cx="27.5" cy="16" r="2.5" fill="white"/>
+                <circle cx="16" cy="27.5" r="2.5" fill="white"/>
+                <circle cx="4.5" cy="16" r="2.5" fill="white"/>
               </g>
             </svg>
             </motion.div>
