@@ -15,11 +15,11 @@ const PIWIK_CONTAINER_ID = process.env.NEXT_PUBLIC_PIWIK_CONTAINER_ID;
 const PIWIK_CONTAINER_URL = process.env.NEXT_PUBLIC_PIWIK_CONTAINER_URL;
 
 export const metadata: Metadata = {
-  title: "Connected Technologies | AI-Powered Solutions for Modern Businesses",
+  title: "Connected Technologies | AI-Powered Marketing & Technology Solutions",
   description:
     "We help businesses identify and implement AI opportunities that drive real results. AI strategy, digital marketing, and web development — all under one roof.",
   openGraph: {
-    title: "Connected Technologies | AI-Powered Solutions for Modern Businesses",
+    title: "Connected Technologies | AI-Powered Marketing & Technology Solutions",
     description:
       "We help businesses identify and implement AI opportunities that drive real results.",
     type: "website",
