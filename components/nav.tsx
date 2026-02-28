@@ -8,7 +8,7 @@ const links = [
   { label: "Services", href: "#services" },
   { label: "Industries", href: "#how-we-help" },
   { label: "Approach", href: "#approach" },
-  { label: "Proof", href: "#outcomes" },
+  { label: "AI", href: "#ai-in-action" },
 ];
 
 export function Nav() {

@@ -1,7 +1,8 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
 import { Services } from "@/components/services";
-import { Outcomes } from "@/components/outcomes";
+// import { Outcomes } from "@/components/outcomes"; // hidden — keeping for later
+import { AiTicker } from "@/components/ai-ticker";
 import { Opportunities } from "@/components/opportunities";
 import { Approach } from "@/components/approach";
 import { Contact } from "@/components/contact";
@@ -14,7 +15,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <Outcomes />
+        <AiTicker />
         <Opportunities />
         <Approach />
         <Contact />
