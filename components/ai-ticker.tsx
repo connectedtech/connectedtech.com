@@ -6,10 +6,7 @@ import { ArrowRight } from "lucide-react";
 const categories = [
   {
     label: "Lead Gen & Sales",
-    color: "oklch(0.65 0.18 150)",
-    colorBg: "oklch(0.65 0.18 150 / 0.12)",
-    colorBorder: "oklch(0.65 0.18 150 / 0.25)",
-    colorHover: "oklch(0.65 0.18 150 / 0.20)",
+    color: "oklch(0.70 0.14 190)",
     items: [
       "Auto-qualify leads from your contact form",
       "Score inbound leads before sales touches them",
@@ -22,9 +19,6 @@ const categories = [
   {
     label: "Content & Marketing",
     color: "oklch(0.75 0.22 140)",
-    colorBg: "oklch(0.75 0.22 140 / 0.10)",
-    colorBorder: "oklch(0.75 0.22 140 / 0.22)",
-    colorHover: "oklch(0.75 0.22 140 / 0.18)",
     items: [
       "Write a month of social posts in an hour",
       "Repurpose one blog post into 10 assets",
@@ -37,9 +31,6 @@ const categories = [
   {
     label: "Operations & Automation",
     color: "oklch(0.68 0.18 220)",
-    colorBg: "oklch(0.68 0.18 220 / 0.12)",
-    colorBorder: "oklch(0.68 0.18 220 / 0.25)",
-    colorHover: "oklch(0.68 0.18 220 / 0.20)",
     items: [
       "Summarize sales calls into action items",
       "Auto-tag and route support tickets",
@@ -52,9 +43,6 @@ const categories = [
   {
     label: "SEO & Visibility",
     color: "oklch(0.72 0.18 300)",
-    colorBg: "oklch(0.72 0.18 300 / 0.10)",
-    colorBorder: "oklch(0.72 0.18 300 / 0.22)",
-    colorHover: "oklch(0.72 0.18 300 / 0.18)",
     items: [
       "Monitor competitors and surface insights weekly",
       "Identify content gaps vs. top-ranking pages",
@@ -104,27 +92,15 @@ export function AiTicker() {
                 </div>
 
                 {/* Items */}
-                <FadeInStagger className="flex flex-col gap-2">
+                <FadeInStagger className="mt-1 flex flex-col gap-3">
                   {cat.items.map((item) => (
                     <FadeInStaggerItem key={item}>
-                      <div
-                        className="group flex cursor-default items-center gap-3 rounded-xl border px-4 py-3 transition-colors duration-150"
-                        style={{
-                          backgroundColor: cat.colorBg,
-                          borderColor: cat.colorBorder,
-                        }}
-                        onMouseEnter={(e) => {
-                          (e.currentTarget as HTMLDivElement).style.backgroundColor = cat.colorHover;
-                        }}
-                        onMouseLeave={(e) => {
-                          (e.currentTarget as HTMLDivElement).style.backgroundColor = cat.colorBg;
-                        }}
-                      >
+                      <div className="group flex items-start gap-3">
                         <span
-                          className="mt-0.5 h-1.5 w-1.5 flex-none rounded-full opacity-60 transition-opacity duration-150 group-hover:opacity-100"
+                          className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full opacity-40 transition-opacity duration-150 group-hover:opacity-100"
                           style={{ backgroundColor: cat.color }}
                         />
-                        <span className="text-sm leading-snug text-white/90 transition-colors duration-150 group-hover:text-white">
+                        <span className="text-sm leading-relaxed text-white/60 transition-colors duration-150 group-hover:text-white/90">
                           {item}
                         </span>
                       </div>
