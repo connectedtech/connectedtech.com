@@ -153,7 +153,7 @@ export function Services() {
 
                 {/* CTA — pinned to bottom */}
                 <div className="mt-auto pt-8">
-                  <Button asChild size="default" variant="outline" className="w-full">
+                  <Button asChild size="default" className="w-full">
                     <a href="#contact">
                       {service.cta}
                       <ArrowRight className="ml-2 h-4 w-4" />

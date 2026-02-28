@@ -243,22 +243,14 @@ export function Opportunities() {
           </p>
         </FadeIn>
 
-        {/* First 3 — always visible, mobile carousel on small screens */}
-        <FadeInStagger className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 sm:grid sm:snap-none sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
+        {/* First 3 — always visible, stacked on mobile */}
+        <FadeInStagger className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {industries.slice(0, INITIAL_COUNT).map((industry) => (
-            <FadeInStaggerItem
-              key={industry.title}
-              className="min-h-[366px] w-[75vw] max-w-[300px] flex-none snap-start sm:w-auto sm:max-w-none"
-            >
+            <FadeInStaggerItem key={industry.title} className="min-h-[366px]">
               <IndustryCard industry={industry} />
             </FadeInStaggerItem>
           ))}
         </FadeInStagger>
-
-        {/* Mobile swipe hint */}
-        <p className="mt-3 text-center text-xs text-muted-foreground sm:hidden">
-          Swipe to explore →
-        </p>
 
         {/* Remaining industries — animated expand */}
         <AnimatePresence>
