@@ -58,46 +58,20 @@ export function Nav() {
               className="flex-none"
             >
               <defs>
-                <linearGradient id="ct-grad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                <linearGradient id="ct-grad" x1="3" y1="3" x2="29" y2="29" gradientUnits="userSpaceOnUse">
                   <stop offset="0%" stopColor="oklch(0.55 0.22 260)"/>
                   <stop offset="100%" stopColor="oklch(0.75 0.22 140)"/>
                 </linearGradient>
               </defs>
-              {/* Default state — gradient network */}
+              {/* Gradient — default state */}
               <g style={{ opacity: mobileOpen ? 0 : 1, transition: "opacity 0.3s" }}>
-                {/* Outer ring — nodes connected to each other */}
-                <line x1="16" y1="4.5" x2="27.5" y2="16" stroke="url(#ct-grad)" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="27.5" y1="16" x2="16" y2="27.5" stroke="url(#ct-grad)" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="16" y1="27.5" x2="4.5" y2="16" stroke="url(#ct-grad)" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="4.5" y1="16" x2="16" y2="4.5" stroke="url(#ct-grad)" strokeWidth="1.5" strokeLinecap="round"/>
-                {/* Spokes — hub to outer nodes */}
-                <line x1="16" y1="7" x2="16" y2="12.5" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="19.5" y1="16" x2="25" y2="16" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="16" y1="19.5" x2="16" y2="25" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="7" y1="16" x2="12.5" y2="16" stroke="url(#ct-grad)" strokeWidth="2" strokeLinecap="round"/>
-                <circle cx="16" cy="16" r="3.5" fill="url(#ct-grad)"/>
-                <circle cx="16" cy="4.5" r="2.5" fill="url(#ct-grad)"/>
-                <circle cx="27.5" cy="16" r="2.5" fill="url(#ct-grad)"/>
-                <circle cx="16" cy="27.5" r="2.5" fill="url(#ct-grad)"/>
-                <circle cx="4.5" cy="16" r="2.5" fill="url(#ct-grad)"/>
+                <circle cx="12" cy="12" r="9" stroke="url(#ct-grad)" strokeWidth="2.5"/>
+                <circle cx="20" cy="20" r="9" stroke="url(#ct-grad)" strokeWidth="2.5"/>
               </g>
-              {/* Mobile open state — white network on dark bg */}
+              {/* White — mobile open on dark bg */}
               <g style={{ opacity: mobileOpen ? 1 : 0, transition: "opacity 0.3s" }}>
-                {/* Outer ring */}
-                <line x1="16" y1="4.5" x2="27.5" y2="16" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="27.5" y1="16" x2="16" y2="27.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="16" y1="27.5" x2="4.5" y2="16" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                <line x1="4.5" y1="16" x2="16" y2="4.5" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                {/* Spokes */}
-                <line x1="16" y1="7" x2="16" y2="12.5" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="19.5" y1="16" x2="25" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="16" y1="19.5" x2="16" y2="25" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <line x1="7" y1="16" x2="12.5" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-                <circle cx="16" cy="16" r="3.5" fill="white"/>
-                <circle cx="16" cy="4.5" r="2.5" fill="white"/>
-                <circle cx="27.5" cy="16" r="2.5" fill="white"/>
-                <circle cx="16" cy="27.5" r="2.5" fill="white"/>
-                <circle cx="4.5" cy="16" r="2.5" fill="white"/>
+                <circle cx="12" cy="12" r="9" stroke="white" strokeWidth="2.5"/>
+                <circle cx="20" cy="20" r="9" stroke="white" strokeWidth="2.5"/>
               </g>
             </svg>
             </motion.div>
