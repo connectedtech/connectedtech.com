@@ -18,7 +18,7 @@ export function Hero() {
         >
           {/* Badge — hover to spin the sparkle */}
           <motion.div
-            className="mb-6 inline-flex cursor-default items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground"
+            className="group mb-6 inline-flex cursor-default items-center gap-2 rounded-full border border-brand-ai/30 bg-brand-ai/10 px-4 py-1.5 text-sm font-medium text-foreground"
             initial="rest"
             whileHover="hover"
             whileTap={{ scale: 0.95 }}
@@ -33,7 +33,9 @@ export function Hero() {
             >
               <Sparkles className="h-4 w-4 text-brand-ai" />
             </motion.span>
-            AI-Powered Digital Solutions
+            <span className="transition-colors duration-300 group-hover:text-brand-ai">
+              AI-Powered Digital Solutions
+            </span>
           </motion.div>
         </motion.div>
 

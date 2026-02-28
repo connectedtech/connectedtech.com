@@ -98,7 +98,7 @@ export function Nav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="relative text-sm font-medium text-muted-foreground transition-colors duration-200 hover:text-primary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:rounded-full after:bg-gradient-to-r after:from-primary after:to-brand-ai after:transition-all after:duration-300 after:ease-out after:content-[''] hover:after:w-full"
               >
                 {link.label}
               </a>
