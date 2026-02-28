@@ -24,7 +24,7 @@ const services = [
       "Marketing analytics and performance reporting",
       "Campaign optimization driven by real data",
     ],
-    cta: "Start a Project",
+    cta: "Start Growing",
     // Bar chart bars grow taller — revenue going up
     iconVariants: {
       rest: { scale: 1, y: 0 },
@@ -43,7 +43,7 @@ const services = [
       "Team training and adoption support",
       "Ongoing optimization and iteration",
     ],
-    cta: "Start a Project",
+    cta: "Explore AI Strategy",
     // Brain pulses and wobbles — thinking hard
     iconVariants: {
       rest: { scale: 1, rotate: 0 },
@@ -69,7 +69,7 @@ const services = [
       "Performance optimization and Core Web Vitals",
       "Ongoing maintenance and support",
     ],
-    cta: "Start a Project",
+    cta: "Start a Build",
     // Code brackets bounce — like typing furiously
     iconVariants: {
       rest: { x: 0 },
