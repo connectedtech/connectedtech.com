@@ -76,7 +76,7 @@ export function AiTicker() {
         <div className="mt-14 grid gap-8 sm:grid-cols-2">
           {categories.map((cat) => (
             <FadeIn key={cat.label}>
-              <div className="rounded-2xl border border-white/10 p-6">
+              <div className="group rounded-2xl border border-white/10 p-6 transition-all duration-200 md:hover:bg-white/[0.93] md:hover:border-white/20">
                 {/* Category header */}
                 <div className="mb-5 flex items-center gap-2">
                   <span
@@ -95,7 +95,7 @@ export function AiTicker() {
                 <FadeInStagger className="mt-1 flex flex-col">
                   {cat.items.map((item) => (
                     <FadeInStaggerItem key={item}>
-                      <div className="group -mx-4 flex items-start gap-3 rounded-xl px-4 py-2 transition-all duration-200 md:hover:bg-white/[0.93]">
+                      <div className="flex items-start gap-3 py-2">
                         <span
                           className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full opacity-60 transition-all duration-200 md:opacity-40 md:group-hover:opacity-100"
                           style={{ backgroundColor: cat.color }}
