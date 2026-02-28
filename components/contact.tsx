@@ -637,7 +637,7 @@ export function Contact() {
               onClick={() => setActiveTab("intake")}
               className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
                 activeTab === "intake"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
@@ -647,11 +647,11 @@ export function Contact() {
               onClick={() => setActiveTab("general")}
               className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
                 activeTab === "general"
-                  ? "bg-background text-foreground shadow-sm"
+                  ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Ask a Question
+              Send a Message
             </button>
           </div>
         </FadeIn>
@@ -674,7 +674,7 @@ export function Contact() {
           <div className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <motion.a
               href="tel:8102857000"
-              className="inline-flex items-center gap-1.5 hover:text-foreground transition-colors"
+              className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
               initial="rest"
               whileHover="hover"
             >
