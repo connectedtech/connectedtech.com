@@ -92,15 +92,15 @@ export function AiTicker() {
                 </div>
 
                 {/* Items */}
-                <FadeInStagger className="mt-1 flex flex-col gap-3">
+                <FadeInStagger className="mt-1 flex flex-col">
                   {cat.items.map((item) => (
                     <FadeInStaggerItem key={item}>
-                      <div className="group flex items-start gap-3">
+                      <div className="group -mx-4 flex items-start gap-3 rounded-xl px-4 py-2 transition-all duration-200 md:hover:bg-white/[0.93]">
                         <span
-                          className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full opacity-40 transition-opacity duration-150 group-hover:opacity-100"
+                          className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full opacity-60 transition-all duration-200 md:opacity-40 md:group-hover:opacity-100"
                           style={{ backgroundColor: cat.color }}
                         />
-                        <span className="text-sm leading-relaxed text-white/60 transition-colors duration-150 group-hover:text-white/90">
+                        <span className="text-sm leading-relaxed text-white/80 transition-colors duration-200 md:text-white/55 md:group-hover:text-brand-dark">
                           {item}
                         </span>
                       </div>
