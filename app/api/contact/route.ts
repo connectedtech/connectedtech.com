@@ -54,7 +54,7 @@ function row(label: string, value: string | undefined) {
 function buildIntakeEmail(d: {
   name: string; email: string; company: string; phone?: string;
   services: string[]; timeline: string; budget: string;
-  decisionMaker: string; projectDescription: string;
+  projectDescription: string;
 }) {
   return `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#0f172a">
     <div style="background:#6366f1;color:white;padding:16px 24px;border-radius:8px 8px 0 0;margin-bottom:0">
@@ -72,7 +72,6 @@ function buildIntakeEmail(d: {
         ${row("Services", d.services.join(", "))}
         ${row("Timeline", d.timeline)}
         ${row("Budget", d.budget)}
-        ${row("Decision maker", d.decisionMaker)}
       </table>
       <hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0">
       <p style="margin:0 0 8px;color:#64748b;font-size:14px">Project description</p>
@@ -187,13 +186,13 @@ export async function POST(req: NextRequest) {
 
     // ── Intake form ──────────────────────────────────────────────────────────
     if (formType === "intake") {
-      const { name, email, company, phone, services, timeline, budget, decisionMaker, projectDescription } = body as {
+      const { name, email, company, phone, services, timeline, budget, projectDescription } = body as {
         name: string; email: string; company: string; phone?: string;
         services: string[]; timeline: string; budget: string;
-        decisionMaker: string; projectDescription: string;
+        projectDescription: string;
       };
 
-      if (!name || !email || !company || !projectDescription || !timeline || !budget || !decisionMaker) {
+      if (!name || !email || !company || !projectDescription || !timeline || !budget) {
         return NextResponse.json({ success: false, error: "Please fill in all required fields." }, { status: 400 });
       }
 
@@ -207,7 +206,6 @@ export async function POST(req: NextRequest) {
         `Services: ${services?.join(", ") ?? "—"}`,
         `Timeline: ${timeline}`,
         `Budget: ${budget}`,
-        `Decision maker: ${decisionMaker}`,
         "",
         "Project description:",
         projectDescription,
@@ -225,7 +223,7 @@ export async function POST(req: NextRequest) {
 
       await sendNotification(
         `New Project Inquiry — ${company}`,
-        buildIntakeEmail({ name, email, company, phone, services: services ?? [], timeline, budget, decisionMaker, projectDescription }),
+        buildIntakeEmail({ name, email, company, phone, services: services ?? [], timeline, budget, projectDescription }),
       );
 
       return NextResponse.json({ success: true });

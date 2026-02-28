@@ -80,9 +80,9 @@ function SuccessCard({ heading, body }: { heading: string; body: string }) {
 // ── Intake form (project sizing) ──────────────────────────────────────────────
 
 const SERVICE_OPTIONS = [
-  "Digital Marketing",
-  "Website or App",
   "AI Strategy & Integration",
+  "Website or App",
+  "Digital Marketing",
   "Workflow Automation",
   "Not sure yet",
 ];
@@ -90,16 +90,10 @@ const SERVICE_OPTIONS = [
 const TIMELINE_OPTIONS = ["Right now", "1–3 months", "3–6 months", "Just exploring"];
 
 const BUDGET_OPTIONS = [
-  "Under $1,500/mo",
-  "$1,500–$3,500/mo",
-  "$3,500–$7,500/mo",
-  "$7,500+/mo",
-];
-
-const DECISION_OPTIONS = [
-  "Yes — I can greenlight this",
-  "I influence the decision",
-  "Researching for someone else",
+  "Under $2,500/mo",
+  "$2,500–$5,000/mo",
+  "$5,000–$10,000/mo",
+  "$10,000+/mo",
 ];
 
 function IntakeForm() {
@@ -116,7 +110,6 @@ function IntakeForm() {
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
   const [timeline, setTimeline] = useState("");
   const [budget, setBudget] = useState("");
-  const [decisionMaker, setDecisionMaker] = useState("");
 
   function toggleService(s: string) {
     setSelectedServices((prev) =>
@@ -156,7 +149,6 @@ function IntakeForm() {
       selectedServices.length === 0 ||
       !timeline ||
       !budget ||
-      !decisionMaker ||
       !projectDescription.trim()
     ) {
       setError("Please complete all required fields before submitting.");
@@ -179,7 +171,6 @@ function IntakeForm() {
           services: selectedServices,
           timeline,
           budget,
-          decisionMaker,
           projectDescription,
         }),
       });
@@ -357,24 +348,6 @@ function IntakeForm() {
         </div>
         {attempted && !budget && (
           <p className={groupError}>Please select a budget range.</p>
-        )}
-      </div>
-
-      {/* Decision maker */}
-      <div className="space-y-2.5">
-        <p className={sectionLabel}>Your role in this decision</p>
-        <div className="flex flex-wrap gap-2">
-          {DECISION_OPTIONS.map((d) => (
-            <PillOption
-              key={d}
-              label={d}
-              selected={decisionMaker === d}
-              onClick={() => setDecisionMaker(d)}
-            />
-          ))}
-        </div>
-        {attempted && !decisionMaker && (
-          <p className={groupError}>Please select an option.</p>
         )}
       </div>
 
