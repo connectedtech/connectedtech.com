@@ -36,24 +36,28 @@ export function Hero() {
           >
             Grow.
           </motion.span>{" "}
-          {/* Build — literally rises up, like stacking */}
+          {/* Build — stretches taller from the bottom, like a tower rising */}
           <motion.span
             className="inline-block cursor-default text-primary"
-            whileHover={{ y: -10 }}
+            style={{ transformOrigin: "bottom center" }}
+            whileHover={{ scaleY: 1.22 }}
             transition={{ type: "spring", stiffness: 350, damping: 12 }}
           >
             Build.
           </motion.span>{" "}
-          {/* Automate — loops on its own, like a machine running */}
+          {/* Automate — slides back and forth on its own, like a piston/conveyor */}
           <motion.span
             className="inline-block cursor-default text-brand-ai"
-            whileHover={{ rotate: [0, -4, 4, -4, 0] }}
-            transition={{ rotate: { duration: 0.5, repeat: Infinity, ease: "easeInOut" } }}
+            whileHover={{ x: [0, 10, 0] }}
+            transition={{ x: { duration: 0.55, repeat: Infinity, ease: "linear" } }}
           >
             Automate.
           </motion.span>
-          <br />
-          <span className="text-muted-foreground">Powered by AI.</span>
+          {/* Byline */}
+          <span className="mt-4 block text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground/55 md:text-sm">
+            <Sparkles className="mr-1.5 inline-block h-3 w-3 -translate-y-px text-brand-ai/70" />
+            Powered by AI
+          </span>
         </motion.h1>
 
         <motion.p
