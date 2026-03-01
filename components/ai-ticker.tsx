@@ -145,8 +145,7 @@ export function AiTicker() {
             The work that finally gets done
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Not productivity hacks — the projects you&rsquo;ve been putting off
-            for years, now within reach.
+            The projects you&rsquo;ve been putting off for years, now within reach.
           </p>
         </FadeIn>
 
