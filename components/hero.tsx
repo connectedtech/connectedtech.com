@@ -69,7 +69,7 @@ export function Hero() {
         >
           <Button size="lg" asChild className="group">
             <a href="#contact">
-              Start a Project
+              Start an Engagement
               <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
             </a>
           </Button>

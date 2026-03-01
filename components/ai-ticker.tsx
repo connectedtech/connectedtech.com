@@ -3,19 +3,59 @@
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 import { ArrowRight } from "lucide-react";
 
-/* ─── Items: real transformative outcomes, not productivity tips ── */
+/* ─── Items: specific deliverables, not generic promises ─────── */
 
 const items = [
-  "Compress weeks of strategic research into a single afternoon",
-  "Build the tools and features your team has been requesting for years",
-  "Ship website updates in days instead of development cycles",
-  "Automate the workflows your team still does by hand",
-  "Find the brand voice you\u2019ve been trying to nail for months",
-  "Create interactive experiences that used to need a full dev team",
-  "Turn scattered data into a strategy you\u2019d actually bet on",
-  "Finally write the SOPs and playbooks that never get prioritized",
-  "Replace the spreadsheets holding your operations together",
-  "Get competitive intelligence you never had the bandwidth for",
+  {
+    title: "Market opportunity brief",
+    description:
+      "Competitive landscape, market sizing, and strategic recommendations — packaged and ready to present.",
+  },
+  {
+    title: "Full website features and pages",
+    description:
+      "Interactive forms, new sections, landing pages, and tools — designed, built, and deployed.",
+  },
+  {
+    title: "Brand voice and messaging guide",
+    description:
+      "Positioning, tone frameworks, and key messaging your whole team can use consistently.",
+  },
+  {
+    title: "Workflow automation",
+    description:
+      "CRM updates, task routing, status reports, approvals — the repetitive work your team shouldn't be doing.",
+  },
+  {
+    title: "Advertising campaign creative",
+    description:
+      "Copy, targeting strategy, and creative concepts built around your brand and audience.",
+  },
+  {
+    title: "Custom internal tools",
+    description:
+      "Dashboards, calculators, intake forms, and reporting tools tailored to how your team works.",
+  },
+  {
+    title: "Content strategy and production",
+    description:
+      "Blog posts, social media, email sequences — planned, drafted, and ready for review.",
+  },
+  {
+    title: "SEO audit and implementation",
+    description:
+      "Technical fixes, content gaps, and search optimization — executed, not just documented.",
+  },
+  {
+    title: "Operations playbooks and SOPs",
+    description:
+      "The process documentation your team has needed for years, written and organized.",
+  },
+  {
+    title: "Competitive intelligence report",
+    description:
+      "What your competitors are doing, where they're vulnerable, and what it means for your strategy.",
+  },
 ];
 
 /* ─── Accent color per rank (teal → purple spectrum) ─────────── */
@@ -35,12 +75,18 @@ const accentColors = [
 
 /* ─── List item ──────────────────────────────────────────────── */
 
-function ListItem({ title, rank }: { title: string; rank: number }) {
+function ListItem({
+  item,
+  rank,
+}: {
+  item: (typeof items)[number];
+  rank: number;
+}) {
   const accent = accentColors[rank - 1];
 
   return (
     <div
-      className="group relative flex items-center gap-5 rounded-xl px-4 py-4 transition-all duration-300 sm:px-5"
+      className="group relative flex items-start gap-5 rounded-xl px-4 py-5 transition-all duration-300 sm:px-5"
       style={
         {
           "--accent": accent,
@@ -63,7 +109,7 @@ function ListItem({ title, rank }: { title: string; rank: number }) {
 
       {/* Rank number */}
       <span
-        className="relative w-8 flex-none text-right text-lg font-bold tabular-nums transition-colors duration-300"
+        className="relative mt-0.5 w-8 flex-none text-right text-lg font-bold tabular-nums transition-colors duration-300"
         style={{ color: "rgba(255,255,255,0.18)" }}
       >
         <span className="group-hover:hidden">{rank}</span>
@@ -72,10 +118,15 @@ function ListItem({ title, rank }: { title: string; rank: number }) {
         </span>
       </span>
 
-      {/* Title */}
-      <p className="relative text-[15px] font-medium leading-snug text-white/75 transition-colors duration-300 group-hover:text-white">
-        {title}
-      </p>
+      {/* Content */}
+      <div className="relative min-w-0 flex-1">
+        <p className="text-[15px] font-semibold leading-snug text-white/90 transition-colors duration-300 group-hover:text-white">
+          {item.title}
+        </p>
+        <p className="mt-1 text-sm leading-relaxed text-white/45 transition-colors duration-300 group-hover:text-white/65">
+          {item.description}
+        </p>
+      </div>
     </div>
   );
 }
@@ -100,9 +151,9 @@ export function AiTicker() {
         </FadeIn>
 
         <FadeInStagger className="mt-12 flex flex-col">
-          {items.map((title, i) => (
-            <FadeInStaggerItem key={title}>
-              <ListItem title={title} rank={i + 1} />
+          {items.map((item, i) => (
+            <FadeInStaggerItem key={item.title}>
+              <ListItem item={item} rank={i + 1} />
             </FadeInStaggerItem>
           ))}
         </FadeInStagger>

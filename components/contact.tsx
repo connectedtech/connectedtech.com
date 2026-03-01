@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { CheckCircle2, Phone, Send, ArrowRight } from "lucide-react";
+import { CheckCircle2, Phone, Send } from "lucide-react";
 import { FadeIn } from "@/components/motion-wrapper";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -29,10 +29,10 @@ function PillOption({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full border px-4 py-1.5 text-sm font-medium transition-all duration-150 ${
+      className={`rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-150 ${
         selected
           ? "border-primary bg-primary text-primary-foreground"
-          : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:text-foreground"
+          : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:bg-primary/5 hover:text-foreground"
       }`}
     >
       {label}
@@ -208,10 +208,10 @@ function IntakeForm() {
   const groupError = "mt-1.5 text-xs text-destructive";
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="on" className="mt-8 space-y-7">
+    <form onSubmit={handleSubmit} autoComplete="on" className="mt-10 space-y-10">
       {/* Name + Email */}
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2">
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-2.5">
           <Label htmlFor="i-name">Name</Label>
           <div className="relative">
             <Input
@@ -242,7 +242,7 @@ function IntakeForm() {
           )}
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           <Label htmlFor="i-email">Email</Label>
           <div className="relative">
             <Input
@@ -276,8 +276,8 @@ function IntakeForm() {
       </div>
 
       {/* Company + Phone */}
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2">
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-2.5">
           <Label htmlFor="i-company">Company</Label>
           <Input
             id="i-company"
@@ -287,7 +287,7 @@ function IntakeForm() {
             className={attempted && !document.querySelector<HTMLInputElement>("#i-company")?.value?.trim() ? "border-destructive" : ""}
           />
         </div>
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           <Label htmlFor="i-phone">
             Phone{" "}
             <span className="text-xs font-normal text-muted-foreground/60">(optional)</span>
@@ -302,9 +302,9 @@ function IntakeForm() {
       </div>
 
       {/* Services */}
-      <div className="space-y-2.5">
+      <div className="space-y-3">
         <p className={sectionLabel}>What are you looking to do?</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {SERVICE_OPTIONS.map((s) => (
             <PillOption
               key={s}
@@ -320,9 +320,9 @@ function IntakeForm() {
       </div>
 
       {/* Timeline */}
-      <div className="space-y-2.5">
+      <div className="space-y-3">
         <p className={sectionLabel}>When do you want to start?</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {TIMELINE_OPTIONS.map((t) => (
             <PillOption
               key={t}
@@ -338,9 +338,9 @@ function IntakeForm() {
       </div>
 
       {/* Budget */}
-      <div className="space-y-2.5">
+      <div className="space-y-3">
         <p className={sectionLabel}>Monthly investment range</p>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2.5">
           {BUDGET_OPTIONS.map((b) => (
             <PillOption
               key={b}
@@ -356,13 +356,13 @@ function IntakeForm() {
       </div>
 
       {/* Project description */}
-      <div className="space-y-2">
-        <Label htmlFor="i-project">Tell us about your project</Label>
+      <div className="space-y-2.5">
+        <Label htmlFor="i-project">Tell us about your business</Label>
         <Textarea
           id="i-project"
           name="projectDescription"
           required
-          className="min-h-36 placeholder:text-muted-foreground/40"
+          className="min-h-40 placeholder:text-muted-foreground/40"
           placeholder="What's the situation? What would a win look like? The more context you give us, the faster we can respond with something useful."
         />
         {attempted && (
@@ -379,11 +379,11 @@ function IntakeForm() {
 
       <Button type="submit" size="lg" className="w-full" disabled={loading}>
         {loading ? (
-          "Submitting…"
+          "Sending…"
         ) : (
           <>
-            Submit Project Inquiry
-            <ArrowRight className="ml-2 h-4 w-4" />
+            Send
+            <Send className="ml-2 h-4 w-4" />
           </>
         )}
       </Button>
@@ -483,9 +483,9 @@ function GeneralForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="on" className="mt-8 space-y-6">
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div className="space-y-2">
+    <form onSubmit={handleSubmit} autoComplete="on" className="mt-10 space-y-8">
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-2.5">
           <Label htmlFor="g-name">Name</Label>
           <div className="relative">
             <Input
@@ -512,7 +512,7 @@ function GeneralForm() {
           )}
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-2.5">
           <Label htmlFor="g-email">Email</Label>
           <div className="relative">
             <Input
@@ -541,7 +541,7 @@ function GeneralForm() {
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <Label htmlFor="g-company">
           Company{" "}
           <span className="text-xs font-normal text-muted-foreground/60">(optional)</span>
@@ -560,13 +560,13 @@ function GeneralForm() {
         </div>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <Label htmlFor="g-message">What&apos;s going on?</Label>
         <Textarea
           id="g-message"
           name="message"
           required
-          className={`min-h-48 placeholder:text-muted-foreground/40 ${fields.message === "valid" ? "border-green-500" : ""}`}
+          className={`min-h-52 placeholder:text-muted-foreground/40 ${fields.message === "valid" ? "border-green-500" : ""}`}
           placeholder={`e.g. "We're a 30-person B2B software company. Our leads have dried up — cost per lead doubled this year and we don't know if it's the ads, the SEO, or the messaging. We want to figure this out before Q2."`}
           onBlur={(e) => handleBlur("message", e.target.value)}
         />
@@ -583,7 +583,7 @@ function GeneralForm() {
           "Sending…"
         ) : (
           <>
-            Send Message
+            Send
             <Send className="ml-2 h-4 w-4" />
           </>
         )}
@@ -607,26 +607,26 @@ export function Contact() {
             Let&apos;s Get to Work
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Ready to start? Tell us about your project. Just exploring? Send us a message.
+            Ready to start? Tell us about your business. Just exploring? Send us a message.
           </p>
         </FadeIn>
 
         {/* Tab switcher */}
         <FadeIn delay={0.1}>
-          <div className="mt-8 flex rounded-xl border border-border bg-muted/40 p-1">
+          <div className="mt-10 flex rounded-xl border border-border bg-muted/40 p-1.5">
             <button
               onClick={() => setActiveTab("intake")}
-              className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
+              className={`flex-1 rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-200 ${
                 activeTab === "intake"
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              Start a Project
+              Start an Engagement
             </button>
             <button
               onClick={() => setActiveTab("general")}
-              className={`flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
+              className={`flex-1 rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-200 ${
                 activeTab === "general"
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
