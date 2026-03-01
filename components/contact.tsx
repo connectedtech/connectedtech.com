@@ -204,7 +204,7 @@ function IntakeForm() {
     );
   }
 
-  const sectionLabel = "text-sm font-semibold text-foreground";
+  const sectionLabel = "text-base font-semibold text-foreground";
   const groupError = "mt-1.5 text-xs text-destructive";
 
   return (
