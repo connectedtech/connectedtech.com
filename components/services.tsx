@@ -13,23 +13,6 @@ const sparkleVariants: Variants = {
 
 const services = [
   {
-    icon: BarChart3,
-    title: "Digital Marketing",
-    description:
-      "Generate more qualified leads and revenue through SEO, content, paid media, and analytics — all enhanced by AI to move faster and target smarter.",
-    bullets: [
-      "Rank higher and get found by the right buyers",
-      "Reach decision-makers on Google, Meta, and LinkedIn",
-      "Performance reporting tied to revenue, not vanity metrics",
-    ],
-    cta: "Start Growing",
-    // Bar chart bars grow taller — revenue going up
-    iconVariants: {
-      rest: { scale: 1, y: 0 },
-      hover: { scale: 1.28, y: -4, transition: { type: "spring", stiffness: 400, damping: 10 } },
-    } as Variants,
-  },
-  {
     icon: Brain,
     title: "AI Strategy & Automation",
     description:
@@ -51,6 +34,23 @@ const services = [
           rotate: { duration: 0.5, ease: "easeInOut" },
         },
       },
+    } as Variants,
+  },
+  {
+    icon: BarChart3,
+    title: "Digital Marketing",
+    description:
+      "Generate more qualified leads and revenue through SEO, content, paid media, and analytics — all enhanced by AI to move faster and target smarter.",
+    bullets: [
+      "Rank higher and get found by the right buyers",
+      "Reach decision-makers on Google, Meta, and LinkedIn",
+      "Performance reporting tied to revenue, not vanity metrics",
+    ],
+    cta: "Start Growing",
+    // Bar chart bars grow taller — revenue going up
+    iconVariants: {
+      rest: { scale: 1, y: 0 },
+      hover: { scale: 1.28, y: -4, transition: { type: "spring", stiffness: 400, damping: 10 } },
     } as Variants,
   },
   {

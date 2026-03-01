@@ -7,7 +7,7 @@ import { motion, type Variants } from "framer-motion";
 const profiles = [
   {
     icon: Users,
-    label: "Scaling",
+    label: "Scrappy Teams",
     title: "Growing teams that need to punch above their weight",
     description:
       "Companies with 10–200 people where marketing and operations capacity is the bottleneck. You have ambition that exceeds your headcount — you need systems that scale, not more seats.",
@@ -18,7 +18,7 @@ const profiles = [
   },
   {
     icon: Lightbulb,
-    label: "AI-Ready",
+    label: "AI-Aspirational",
     title: "Leaders who know AI matters but aren't sure where to start",
     description:
       "You've seen the demos. You've tried ChatGPT. But you haven't found someone who can connect AI to actual business outcomes in your workflows. You want a partner, not a vendor.",
@@ -29,7 +29,7 @@ const profiles = [
   },
   {
     icon: TrendingUp,
-    label: "Growth-Minded",
+    label: "ROI-Driven",
     title: "Businesses ready to invest in growth, not just spend on marketing",
     description:
       "You think in terms of ROI, not impressions. You're comfortable with $2,500–$10,000+/mo because you've seen what cheap marketing costs in the long run.",
@@ -43,8 +43,8 @@ const profiles = [
 const notForYou = [
   "You need a single campaign, not an ongoing partner",
   "Your team prefers to manage all execution in-house",
-  "You're looking for a large agency with dedicated department leads",
-  "You need results in under 30 days with no room to iterate",
+  "You're not open to sharing access to your tools, data, or workflows",
+  "Every deliverable needs committee sign-off before work moves forward",
 ];
 
 export function WhoWeServe() {
@@ -86,7 +86,7 @@ export function WhoWeServe() {
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold leading-snug text-foreground">
+                <h3 className="text-xl font-bold leading-snug text-foreground">
                   {profile.title}
                 </h3>
 
