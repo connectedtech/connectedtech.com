@@ -43,8 +43,8 @@ const profiles = [
 const notForYou = [
   "You need a single campaign, not an ongoing partner",
   "Your team prefers to manage all execution in-house",
-  "You're not open to sharing access to your tools, data, or workflows",
-  "Every deliverable needs committee sign-off before work moves forward",
+  "You're not able to share access to your tools, data, or workflows",
+  "Approvals move slowly in your organization",
 ];
 
 export function WhoWeServe() {

@@ -209,8 +209,7 @@ export function AiTicker() {
           </h2>
           <p className="mt-4 text-lg text-white/70">
             Most businesses know they should be doing more with AI. The hard part
-            is knowing which moves to make first. Here&rsquo;s a taste of what we help
-            clients implement — and maintain long after launch.
+            is determining which moves to make first. Here are a few ideas.
           </p>
         </FadeIn>
 
