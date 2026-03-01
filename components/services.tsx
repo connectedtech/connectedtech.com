@@ -20,9 +20,7 @@ const services = [
     bullets: [
       "Rank higher and get found by the right buyers",
       "Reach decision-makers on Google, Meta, and LinkedIn",
-      "AI-assisted content that drives traffic and conversions",
       "Performance reporting tied to revenue, not vanity metrics",
-      "Continuous optimization driven by real data",
     ],
     cta: "Start Growing",
     // Bar chart bars grow taller — revenue going up
@@ -40,8 +38,6 @@ const services = [
       "AI readiness assessment and prioritized roadmap",
       "Workflow automation that eliminates manual work",
       "Custom AI tools built for your specific processes",
-      "Team training so your people actually adopt it",
-      "Ongoing optimization as AI capabilities evolve",
     ],
     cta: "Explore AI Strategy",
     // Brain pulses and wobbles — thinking hard
@@ -65,9 +61,7 @@ const services = [
     bullets: [
       "Conversion-focused design and user experience",
       "Web apps, dashboards, and custom software",
-      "Next.js and modern framework development",
       "Performance optimization and Core Web Vitals",
-      "Ongoing maintenance, iteration, and support",
     ],
     cta: "Start a Build",
     // Code brackets bounce — like typing furiously

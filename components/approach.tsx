@@ -11,7 +11,7 @@ const steps = [
     icon: Search,
     title: "Discover",
     description:
-      "We start by understanding your business, your goals, and where AI can make the biggest difference. No assumptions, no templates — just focused listening.",
+      "We start by understanding your business, your goals, and where AI can make the biggest difference. We audit your workflows, your tools, and your data — no assumptions, no templates.",
     // Search zooms in — magnifying glass looking for answers
     iconVariants: {
       rest: { scale: 1 },
