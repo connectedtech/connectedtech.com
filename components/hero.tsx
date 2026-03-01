@@ -74,7 +74,7 @@ export function Hero() {
             </a>
           </Button>
           <Button variant="outline" size="lg" asChild>
-            <a href="#ai-in-action">Ideas to Get Started</a>
+            <a href="#ai-in-action">Get AI-deas</a>
           </Button>
         </motion.div>
       </div>

@@ -209,7 +209,7 @@ export function AiTicker() {
           </h2>
           <p className="mt-4 text-lg text-white/70">
             Real AI applications across sales, marketing, operations, and SEO.
-            Take what&apos;s relevant to your priorities.
+            Take what works and leave the rest.
           </p>
         </FadeIn>
 
