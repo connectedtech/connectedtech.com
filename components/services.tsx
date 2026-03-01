@@ -22,7 +22,7 @@ const services = [
       "Workflow automation that eliminates manual work",
       "Custom AI tools built for your specific processes",
     ],
-    cta: "Book an AI Assessment",
+    cta: "Start an AI Project",
     // Brain pulses and wobbles — thinking hard
     iconVariants: {
       rest: { scale: 1, rotate: 0 },
@@ -46,7 +46,7 @@ const services = [
       "Reach decision-makers on Google, Meta, and LinkedIn",
       "Performance reporting tied to revenue, not vanity metrics",
     ],
-    cta: "Request a Marketing Audit",
+    cta: "Start a Marketing Project",
     // Bar chart bars grow taller — revenue going up
     iconVariants: {
       rest: { scale: 1, y: 0 },
@@ -63,7 +63,7 @@ const services = [
       "Web apps, dashboards, and custom software",
       "Performance optimization and Core Web Vitals",
     ],
-    cta: "Get a Project Quote",
+    cta: "Start a Web Project",
     // Code brackets bounce — like typing furiously
     iconVariants: {
       rest: { x: 0 },

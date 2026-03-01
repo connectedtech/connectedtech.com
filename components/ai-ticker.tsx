@@ -2,205 +2,135 @@
 
 import { FadeIn, FadeInStagger, FadeInStaggerItem } from "@/components/motion-wrapper";
 import { ArrowRight } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
 
-const categories = [
-  {
-    label: "Lead Gen & Sales",
+/* ─── Category styles ────────────────────────────────────────── */
+
+const categoryStyles = {
+  sales: {
+    label: "Sales",
     color: "oklch(0.70 0.14 190)",
-    glow: {
-      bg: "oklch(0.70 0.14 190 / 0.08)",
-      border: "oklch(0.70 0.14 190 / 0.30)",
-      shadow: "0 8px 28px oklch(0.70 0.14 190 / 0.25)",
-    },
-    items: [
-      "Auto-qualify leads from your contact form",
-      "Score inbound leads before sales touches them",
-      "Personalize outreach at scale",
-      "Trigger follow-up sequences from CRM activity",
-      "Identify high-intent website visitors",
-      "Draft proposals from a simple intake form",
-    ],
+    bg: "oklch(0.70 0.14 190 / 0.12)",
   },
-  {
-    label: "Content & Marketing",
+  marketing: {
+    label: "Marketing",
     color: "oklch(0.75 0.22 140)",
-    glow: {
-      bg: "oklch(0.75 0.22 140 / 0.08)",
-      border: "oklch(0.75 0.22 140 / 0.30)",
-      shadow: "0 8px 28px oklch(0.75 0.22 140 / 0.25)",
-    },
-    items: [
-      "Write a month of social posts in an hour",
-      "Repurpose one blog post into 10 assets",
-      "Draft landing page copy in minutes",
-      "Create ad variations and test them faster",
-      "Generate email campaigns from a brief",
-      "Produce weekly newsletters automatically",
-    ],
+    bg: "oklch(0.75 0.22 140 / 0.12)",
   },
-  {
-    label: "Operations & Automation",
+  operations: {
+    label: "Operations",
     color: "oklch(0.68 0.18 220)",
-    glow: {
-      bg: "oklch(0.68 0.18 220 / 0.08)",
-      border: "oklch(0.68 0.18 220 / 0.30)",
-      shadow: "0 8px 28px oklch(0.68 0.18 220 / 0.25)",
-    },
-    items: [
-      "Summarize sales calls into action items",
-      "Auto-tag and route support tickets",
-      "Automate your monthly reporting workflows",
-      "Turn your SOPs into an always-on knowledge base",
-      "Build a 24/7 FAQ bot for your website",
-      "Respond to reviews and inquiries around the clock",
-    ],
+    bg: "oklch(0.68 0.18 220 / 0.12)",
+  },
+  seo: {
+    label: "SEO",
+    color: "oklch(0.72 0.18 300)",
+    bg: "oklch(0.72 0.18 300 / 0.12)",
+  },
+} as const;
+
+type Category = keyof typeof categoryStyles;
+
+/* ─── Ranked items (by impact × ease) ────────────────────────── */
+
+const items: { title: string; impact: string; category: Category }[] = [
+  {
+    title: "Auto-summarize meetings into notes and next steps",
+    impact: "Set up in minutes. Saves 3+ hours per person, per week.",
+    category: "operations",
   },
   {
-    label: "SEO & Visibility",
-    color: "oklch(0.72 0.18 300)",
-    glow: {
-      bg: "oklch(0.72 0.18 300 / 0.08)",
-      border: "oklch(0.72 0.18 300 / 0.30)",
-      shadow: "0 8px 28px oklch(0.72 0.18 300 / 0.25)",
-    },
-    items: [
-      "Monitor competitors and surface insights weekly",
-      "Identify content gaps vs. top-ranking pages",
-      "Generate optimized meta and schema at scale",
-      "Track keyword trends and flag opportunities",
-      "Refresh underperforming pages automatically",
-      "Build topical authority faster with AI-assisted content",
-    ],
+    title: "Draft a month of marketing content in an afternoon",
+    impact: "Cut first-draft time by 60\u201380%.",
+    category: "marketing",
+  },
+  {
+    title: "Deploy a 24/7 support chatbot on your website",
+    impact: "Drop support costs up to 90% per interaction.",
+    category: "operations",
+  },
+  {
+    title: "Personalize and automate email campaigns",
+    impact: "Automated emails see 2\u00d7 the open rates of manual sends.",
+    category: "marketing",
+  },
+  {
+    title: "Score and route inbound leads automatically",
+    impact: "Sales spends time on prospects who actually convert.",
+    category: "sales",
+  },
+  {
+    title: "Respond to every online review, on brand",
+    impact: "Stay consistent across Google, Yelp, and social \u2014 without the hours.",
+    category: "marketing",
+  },
+  {
+    title: "Turn one blog post into ten social media assets",
+    impact: "Cut content production time by 60%+.",
+    category: "marketing",
+  },
+  {
+    title: "Optimize existing pages for SEO and AI search",
+    impact: "Improve rankings up to 49% with AI-assisted optimization.",
+    category: "seo",
+  },
+  {
+    title: "Build dashboards anyone can query in plain English",
+    impact: "Replace \u2018Can someone pull this report?\u2019 with instant answers.",
+    category: "operations",
+  },
+  {
+    title: "Generate proposals and SOWs from simple intake forms",
+    impact: "What took 3 hours now takes 20 minutes.",
+    category: "sales",
   },
 ];
 
-/* ─── Category card ───────────────────────────────────────────── */
+/* ─── List item ──────────────────────────────────────────────── */
 
-function CategoryCard({
-  cat,
-  isMobileActive,
+function ListItem({
+  item,
+  rank,
 }: {
-  cat: (typeof categories)[number];
-  isMobileActive: boolean;
+  item: (typeof items)[number];
+  rank: number;
 }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const isActive = isHovered || isMobileActive;
+  const cat = categoryStyles[item.category];
 
   return (
-    <div
-      className="rounded-2xl border p-6 transition-all duration-300 ease-out"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      style={{
-        transform: `translateY(${isActive ? -4 : 0}px)`,
-        borderColor: isActive ? cat.glow.border : "rgba(255,255,255,0.14)",
-        backgroundColor: isActive ? cat.glow.bg : "transparent",
-        boxShadow: isActive
-          ? cat.glow.shadow
-          : "0 0px 0px transparent",
-      }}
-    >
-      {/* Category header */}
-      <div className="mb-5 flex items-center gap-2.5">
-        <span
-          className="h-2.5 w-2.5 flex-none rounded-full"
-          style={{ backgroundColor: cat.color }}
-        />
-        <span
-          className="text-sm font-semibold uppercase tracking-widest"
-          style={{ color: cat.color }}
-        >
-          {cat.label}
-        </span>
-      </div>
+    <div className="group flex items-start gap-4 rounded-xl px-3 py-4 transition-all duration-200 hover:bg-white/[0.04] sm:px-4">
+      {/* Rank number */}
+      <span className="w-7 flex-none text-right text-lg font-bold tabular-nums text-white/20 transition-colors duration-200 group-hover:text-white/40">
+        {rank}
+      </span>
 
-      {/* Items */}
-      <FadeInStagger className="mt-1 flex flex-col">
-        {cat.items.map((item) => (
-          <FadeInStaggerItem key={item}>
-            <div className="flex items-start gap-3 py-2">
-              <span
-                className="mt-[7px] h-1.5 w-1.5 flex-none rounded-full transition-opacity duration-300"
-                style={{
-                  backgroundColor: cat.color,
-                  opacity: isActive ? 1 : 0.55,
-                }}
-              />
-              <span
-                className="text-sm leading-relaxed transition-colors duration-300"
-                style={{
-                  color: isActive
-                    ? "rgba(255,255,255,0.95)"
-                    : "rgba(255,255,255,0.65)",
-                }}
-              >
-                {item}
-              </span>
-            </div>
-          </FadeInStaggerItem>
-        ))}
-      </FadeInStagger>
+      {/* Content */}
+      <div className="min-w-0 flex-1">
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <p className="text-[15px] font-medium leading-snug text-white/90 transition-colors duration-200 group-hover:text-white">
+            {item.title}
+          </p>
+          <span
+            className="flex-none rounded-full px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide"
+            style={{ color: cat.color, backgroundColor: cat.bg }}
+          >
+            {cat.label}
+          </span>
+        </div>
+        <p className="mt-1 text-sm leading-relaxed text-white/40 transition-colors duration-200 group-hover:text-white/60">
+          {item.impact}
+        </p>
+      </div>
     </div>
   );
 }
 
-/* ─── Main section ────────────────────────────────────────────── */
+/* ─── Main section ───────────────────────────────────────────── */
 
 export function AiTicker() {
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const [mobileActiveIndex, setMobileActiveIndex] = useState<number | null>(
-    null,
-  );
-  const isMobileRef = useRef(false);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(max-width: 639px)");
-    isMobileRef.current = mq.matches;
-
-    const handleMediaChange = (e: MediaQueryListEvent) => {
-      isMobileRef.current = e.matches;
-      if (!e.matches) setMobileActiveIndex(null);
-    };
-    mq.addEventListener("change", handleMediaChange);
-
-    const handleScroll = () => {
-      if (!isMobileRef.current) return;
-
-      const center = window.innerHeight / 2;
-      let idx: number | null = null;
-      let best = Infinity;
-
-      cardRefs.current.forEach((ref, i) => {
-        if (!ref) return;
-        const r = ref.getBoundingClientRect();
-        if (r.bottom < 0 || r.top > window.innerHeight) return;
-
-        const d = Math.abs(r.top + r.height / 2 - center);
-        if (d < best) {
-          best = d;
-          idx = i;
-        }
-      });
-
-      // Only highlight when a card is near viewport centre
-      if (best > window.innerHeight * 0.45) idx = null;
-      setMobileActiveIndex(idx);
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      mq.removeEventListener("change", handleMediaChange);
-    };
-  }, []);
-
   return (
     <section id="ai-in-action" className="bg-brand-dark px-6 py-16 md:py-20">
-      <div className="mx-auto max-w-6xl">
-        <FadeIn className="mx-auto max-w-2xl text-center">
+      <div className="mx-auto max-w-3xl">
+        <FadeIn className="text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-brand-ai">
             AI in the wild
           </p>
@@ -208,34 +138,24 @@ export function AiTicker() {
             A few ideas worth putting to work
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Real AI applications across sales, marketing, operations, and SEO.
-            Take what works and leave the rest.
+            Ranked by impact and ease. Start at the top.
           </p>
         </FadeIn>
 
-        <div className="mt-14 grid gap-8 sm:grid-cols-2">
-          {categories.map((cat, i) => (
-            <FadeIn key={cat.label}>
-              <div
-                ref={(el) => {
-                  cardRefs.current[i] = el;
-                }}
-              >
-                <CategoryCard
-                  cat={cat}
-                  isMobileActive={mobileActiveIndex === i}
-                />
-              </div>
-            </FadeIn>
+        <FadeInStagger className="mt-12 flex flex-col divide-y divide-white/[0.06]">
+          {items.map((item, i) => (
+            <FadeInStaggerItem key={item.title}>
+              <ListItem item={item} rank={i + 1} />
+            </FadeInStaggerItem>
           ))}
-        </div>
+        </FadeInStagger>
 
         <FadeIn className="mt-12 text-center">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full border border-brand-ai/40 bg-brand-ai/10 px-6 py-3 text-sm font-semibold text-brand-ai transition-all duration-200 hover:bg-brand-ai/20 hover:border-brand-ai/60"
+            className="group inline-flex items-center gap-2 rounded-full border border-brand-ai/40 bg-brand-ai/10 px-6 py-3 text-sm font-semibold text-brand-ai transition-all duration-200 hover:border-brand-ai/60 hover:bg-brand-ai/20"
           >
-            Find your first AI win
+            Put AI to work for your business
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
           </a>
         </FadeIn>
