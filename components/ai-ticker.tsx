@@ -205,11 +205,11 @@ export function AiTicker() {
             AI in the wild
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl">
-            Where do you even start?
+            A few ideas worth putting to work
           </h2>
           <p className="mt-4 text-lg text-white/70">
-            Most businesses know they should be doing more with AI. The hard part
-            is determining which moves to make first. Here are a few ideas.
+            Real AI applications across sales, marketing, operations, and SEO.
+            Take what&apos;s relevant to your priorities.
           </p>
         </FadeIn>
 

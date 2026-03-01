@@ -98,15 +98,7 @@ export function Approach() {
                 </div>
 
                 <p className="mt-1 leading-relaxed text-muted-foreground transition-colors duration-200 group-hover:text-foreground">
-                  {step.description.split(/(AI)/g).map((part, j) =>
-                    part === "AI" ? (
-                      <span key={j} className="font-semibold text-brand-ai">
-                        {part}
-                      </span>
-                    ) : (
-                      part
-                    )
-                  )}
+                  {step.description}
                 </p>
               </motion.div>
             </FadeInStaggerItem>
