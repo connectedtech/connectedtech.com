@@ -58,7 +58,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Marketing that converts. Websites that engage. AI that delivers, consistently.
+          We build AI-powered marketing, websites, and automation to help your business run better.
         </motion.p>
 
         <motion.div
