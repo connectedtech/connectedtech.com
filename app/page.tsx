@@ -1,10 +1,9 @@
 import { Nav } from "@/components/nav";
 import { Hero } from "@/components/hero";
+import { WhyCustom } from "@/components/why-custom";
 import { Services } from "@/components/services";
-// import { Outcomes } from "@/components/outcomes"; // hidden — keeping for later
-import { AiTicker } from "@/components/ai-ticker";
-import { WhoWeServe } from "@/components/who-we-serve";
-import { Approach } from "@/components/approach";
+import { Process } from "@/components/process";
+import { Faq } from "@/components/faq";
 import { Contact } from "@/components/contact";
 import { Footer } from "@/components/footer";
 
@@ -14,10 +13,10 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <AiTicker />
+        <WhyCustom />
         <Services />
-        <WhoWeServe />
-        <Approach />
+        <Process />
+        <Faq />
         <Contact />
       </main>
       <Footer />

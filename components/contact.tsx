@@ -1,434 +1,33 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { CheckCircle2, Phone, Send } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { FadeIn } from "@/components/motion-wrapper";
+import { SectionHeader } from "@/components/section-header";
 
-// ── Types ─────────────────────────────────────────────────────────────────────
-
-type FieldState = "untouched" | "valid" | "invalid";
-type Tab = "intake" | "general";
-
-// ── Pill selector (shared between radio and multi-select) ─────────────────────
-
-function PillOption({
-  label,
-  selected,
-  onClick,
-}: {
-  label: string;
-  selected: boolean;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`rounded-full border px-5 py-2.5 text-sm font-medium transition-all duration-150 ${
-        selected
-          ? "border-primary bg-primary text-primary-foreground"
-          : "border-border bg-background text-muted-foreground hover:border-primary/50 hover:bg-primary/5 hover:text-foreground"
-      }`}
-    >
-      {label}
-    </button>
-  );
-}
-
-// ── Success card ──────────────────────────────────────────────────────────────
-
-function SuccessCard({ heading, body }: { heading: string; body: string }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 16 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className="mt-8 rounded-xl border border-primary/20 bg-primary/5 p-8 text-center"
-    >
-      <motion.div
-        initial={{ scale: 0.4, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5, ease: [0.175, 0.885, 0.32, 1.275] }}
-      >
-        <CheckCircle2 className="mx-auto h-12 w-12 text-primary" />
-      </motion.div>
-      <motion.h3
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.25 }}
-        className="mt-4 text-xl font-semibold text-foreground"
-      >
-        {heading}
-      </motion.h3>
-      <motion.p
-        initial={{ opacity: 0, y: 8 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.3, delay: 0.38 }}
-        className="mt-2 text-muted-foreground"
-      >
-        {body}
-      </motion.p>
-    </motion.div>
-  );
-}
-
-// ── Intake form (project sizing) ──────────────────────────────────────────────
-
-const SERVICE_OPTIONS = [
-  "AI Strategy & Automation",
-  "Website or App",
-  "Digital Marketing",
-  "Workflow Automation",
-  "Not sure yet",
+const nextSteps = [
+  {
+    title: "We reply within one business day",
+    body: "A real reply from the person who'd do the work — not an autoresponder.",
+  },
+  {
+    title: "A 30-minute call",
+    body: "No prep or slides needed. Walk us through how work gets done today and where it hurts.",
+  },
+  {
+    title: "A clear first step",
+    body: "If there's a fit, you get a short written proposal for a first phase with a fixed price. If there isn't, we'll say so and point you somewhere useful.",
+  },
 ];
 
-const TIMELINE_OPTIONS = ["Right now", "1–3 months", "3–6 months", "Just exploring"];
-
-const BUDGET_OPTIONS = [
-  "Under $2,500/mo",
-  "$2,500–$5,000/mo",
-  "$5,000–$10,000/mo",
-  "$10,000+/mo",
-];
-
-function IntakeForm() {
+function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [attempted, setAttempted] = useState(false);
-
-  // Text field validation states
-  const [nameState, setNameState] = useState<FieldState>("untouched");
-  const [emailState, setEmailState] = useState<FieldState>("untouched");
-
-  // Selector states
-  const [selectedServices, setSelectedServices] = useState<string[]>([]);
-  const [timeline, setTimeline] = useState("");
-  const [budget, setBudget] = useState("");
-
-  function toggleService(s: string) {
-    setSelectedServices((prev) =>
-      prev.includes(s) ? prev.filter((x) => x !== s) : [...prev, s],
-    );
-  }
-
-  function validateName(v: string): FieldState {
-    return v.trim() ? "valid" : "invalid";
-  }
-  function validateEmail(v: string): FieldState {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "valid" : "invalid";
-  }
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setAttempted(true);
-
-    const form = e.currentTarget;
-    const fd = new FormData(form);
-    const name = fd.get("name") as string;
-    const email = fd.get("email") as string;
-    const company = fd.get("company") as string;
-    const phone = fd.get("phone") as string;
-    const projectDescription = fd.get("projectDescription") as string;
-
-    // Validate text fields
-    const ns = validateName(name);
-    const es = validateEmail(email);
-    setNameState(ns);
-    setEmailState(es);
-
-    if (
-      ns === "invalid" ||
-      es === "invalid" ||
-      !company.trim() ||
-      selectedServices.length === 0 ||
-      !timeline ||
-      !budget ||
-      !projectDescription.trim()
-    ) {
-      setError("Please complete all required fields before submitting.");
-      return;
-    }
-
-    setLoading(true);
-    setError("");
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          formType: "intake",
-          name,
-          email,
-          company,
-          phone: phone || undefined,
-          services: selectedServices,
-          timeline,
-          budget,
-          projectDescription,
-        }),
-      });
-
-      const data = await res.json();
-      if (data.success) {
-        setSubmitted(true);
-        if (typeof window !== "undefined" && typeof window.gtag === "function") {
-          window.gtag("event", "generate_lead", {
-            event_category: "contact",
-            event_label: "project_intake",
-            value: 5,
-          });
-        }
-      } else {
-        setError(data.error || "Something went wrong — please try again.");
-      }
-    } catch {
-      setError("Couldn't reach our server. Check your connection and try again.");
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  if (submitted) {
-    return (
-      <SuccessCard
-        heading="We've got your project details."
-        body="Expect to hear from us within one business day. We'll come back with a clear plan and next steps."
-      />
-    );
-  }
-
-  const sectionLabel = "text-base font-semibold text-foreground";
-  const groupError = "mt-1.5 text-xs text-destructive";
-
-  return (
-    <form onSubmit={handleSubmit} autoComplete="on" className="mt-10 space-y-10">
-      {/* Name + Email */}
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2.5">
-          <Label htmlFor="i-name">Name</Label>
-          <div className="relative">
-            <Input
-              id="i-name"
-              name="name"
-              autoComplete="name"
-              required
-              onBlur={(e) => {
-                if (e.target.value.trim()) setNameState(validateName(e.target.value));
-              }}
-              onChange={(e) => {
-                if (nameState === "invalid") setNameState(validateName(e.target.value));
-              }}
-              className={
-                nameState === "valid"
-                  ? "border-green-500 pr-9"
-                  : nameState === "invalid"
-                    ? "border-destructive pr-9"
-                    : ""
-              }
-            />
-            {nameState === "valid" && (
-              <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
-            )}
-          </div>
-          {nameState === "invalid" && (
-            <p className="text-xs text-destructive">Your name is required.</p>
-          )}
-        </div>
-
-        <div className="space-y-2.5">
-          <Label htmlFor="i-email">Email</Label>
-          <div className="relative">
-            <Input
-              id="i-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              onBlur={(e) => {
-                if (e.target.value.trim()) setEmailState(validateEmail(e.target.value));
-              }}
-              onChange={(e) => {
-                if (emailState === "invalid") setEmailState(validateEmail(e.target.value));
-              }}
-              className={
-                emailState === "valid"
-                  ? "border-green-500 pr-9"
-                  : emailState === "invalid"
-                    ? "border-destructive pr-9"
-                    : ""
-              }
-            />
-            {emailState === "valid" && (
-              <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
-            )}
-          </div>
-          {emailState === "invalid" && (
-            <p className="text-xs text-destructive">Check your email — looks like a typo.</p>
-          )}
-        </div>
-      </div>
-
-      {/* Company + Phone */}
-      <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2.5">
-          <Label htmlFor="i-company">Company</Label>
-          <Input
-            id="i-company"
-            name="company"
-            autoComplete="organization"
-            required
-            className={attempted && !document.querySelector<HTMLInputElement>("#i-company")?.value?.trim() ? "border-destructive" : ""}
-          />
-        </div>
-        <div className="space-y-2.5">
-          <Label htmlFor="i-phone">
-            Phone{" "}
-            <span className="text-xs font-normal text-muted-foreground/60">(optional)</span>
-          </Label>
-          <Input
-            id="i-phone"
-            name="phone"
-            type="tel"
-            autoComplete="tel"
-          />
-        </div>
-      </div>
-
-      {/* Services */}
-      <div className="space-y-3">
-        <p className={sectionLabel}>What are you looking to do?</p>
-        <div className="flex flex-wrap gap-2.5">
-          {SERVICE_OPTIONS.map((s) => (
-            <PillOption
-              key={s}
-              label={s}
-              selected={selectedServices.includes(s)}
-              onClick={() => toggleService(s)}
-            />
-          ))}
-        </div>
-        {attempted && selectedServices.length === 0 && (
-          <p className={groupError}>Select at least one option.</p>
-        )}
-      </div>
-
-      {/* Timeline */}
-      <div className="space-y-3">
-        <p className={sectionLabel}>When do you want to start?</p>
-        <div className="flex flex-wrap gap-2.5">
-          {TIMELINE_OPTIONS.map((t) => (
-            <PillOption
-              key={t}
-              label={t}
-              selected={timeline === t}
-              onClick={() => setTimeline(t)}
-            />
-          ))}
-        </div>
-        {attempted && !timeline && (
-          <p className={groupError}>Please select a timeline.</p>
-        )}
-      </div>
-
-      {/* Budget */}
-      <div className="space-y-3">
-        <p className={sectionLabel}>Monthly investment range</p>
-        <div className="flex flex-wrap gap-2.5">
-          {BUDGET_OPTIONS.map((b) => (
-            <PillOption
-              key={b}
-              label={b}
-              selected={budget === b}
-              onClick={() => setBudget(b)}
-            />
-          ))}
-        </div>
-        {attempted && !budget && (
-          <p className={groupError}>Please select a budget range.</p>
-        )}
-      </div>
-
-      {/* Project description */}
-      <div className="space-y-2.5">
-        <Label htmlFor="i-project">Tell us about your business</Label>
-        <Textarea
-          id="i-project"
-          name="projectDescription"
-          required
-          className="min-h-40 placeholder:text-muted-foreground/40"
-          placeholder="What's the situation? What would a win look like? The more context you give us, the faster we can respond with something useful."
-        />
-        {attempted && (
-          <p className="text-xs text-muted-foreground/60">Required.</p>
-        )}
-      </div>
-
-      {/* Honeypot */}
-      <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" />
-
-      {error && (
-        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">{error}</p>
-      )}
-
-      <Button type="submit" size="lg" className="w-full" disabled={loading}>
-        {loading ? (
-          "Sending…"
-        ) : (
-          <>
-            Send
-            <Send className="ml-2 h-4 w-4" />
-          </>
-        )}
-      </Button>
-    </form>
-  );
-}
-
-// ── General contact form ──────────────────────────────────────────────────────
-
-function GeneralForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const [fields, setFields] = useState<{
-    name: FieldState;
-    email: FieldState;
-    company: FieldState;
-    message: FieldState;
-  }>({ name: "untouched", email: "untouched", company: "untouched", message: "untouched" });
-
-  function getNameState(v: string): FieldState {
-    return v.trim() ? "valid" : "invalid";
-  }
-  function getEmailState(v: string): FieldState {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "valid" : "invalid";
-  }
-
-  function handleBlur(field: keyof typeof fields, value: string) {
-    if (field === "name") {
-      if (value.trim()) setFields((p) => ({ ...p, name: getNameState(value) }));
-    } else if (field === "email") {
-      if (value.trim()) setFields((p) => ({ ...p, email: getEmailState(value) }));
-    } else {
-      setFields((p) => ({ ...p, [field]: value.trim() ? "valid" : "untouched" }));
-    }
-  }
-
-  function handleChange(field: "name" | "email", value: string) {
-    setFields((p) => {
-      if (p[field] !== "invalid") return p;
-      // If they've cleared the field, remove the error rather than keeping it
-      if (!value.trim()) return { ...p, [field]: "untouched" };
-      return { ...p, [field]: field === "name" ? getNameState(value) : getEmailState(value) };
-    });
-  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -442,6 +41,7 @@ function GeneralForm() {
       name: fd.get("name") as string,
       email: fd.get("email") as string,
       company: fd.get("company") as string,
+      phone: (fd.get("phone") as string) || undefined,
       message: fd.get("message") as string,
       botcheck: fd.get("botcheck") as string,
     };
@@ -475,203 +75,103 @@ function GeneralForm() {
 
   if (submitted) {
     return (
-      <SuccessCard
-        heading="You're on our radar!"
-        body="We'll be in touch within one business day. Looking forward to learning more about your business."
-      />
+      <div className="rounded-lg border border-border bg-card p-8">
+        <CheckCircle2 className="h-8 w-8 text-primary" />
+        <h3 className="mt-4 text-xl font-semibold text-foreground">Message received.</h3>
+        <p className="mt-2 text-muted-foreground">
+          You&apos;ll hear back within one business day to set up a time to talk.
+        </p>
+      </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} autoComplete="on" className="mt-10 space-y-8">
+    <form onSubmit={handleSubmit} autoComplete="on" className="space-y-6 rounded-lg border border-border bg-card p-6 shadow-sm md:p-8">
       <div className="grid gap-6 sm:grid-cols-2">
-        <div className="space-y-2.5">
-          <Label htmlFor="g-name">Name</Label>
-          <div className="relative">
-            <Input
-              id="g-name"
-              name="name"
-              autoComplete="name"
-              required
-              onBlur={(e) => handleBlur("name", e.target.value)}
-              onChange={(e) => handleChange("name", e.target.value)}
-              className={
-                fields.name === "valid"
-                  ? "border-green-500 pr-9"
-                  : fields.name === "invalid"
-                    ? "border-destructive pr-9"
-                    : ""
-              }
-            />
-            {fields.name === "valid" && (
-              <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
-            )}
-          </div>
-          {fields.name === "invalid" && (
-            <p className="text-xs text-destructive">Your name is required.</p>
-          )}
+        <div className="space-y-2">
+          <Label htmlFor="c-name">Name</Label>
+          <Input id="c-name" name="name" autoComplete="name" required />
         </div>
-
-        <div className="space-y-2.5">
-          <Label htmlFor="g-email">Email</Label>
-          <div className="relative">
-            <Input
-              id="g-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              onBlur={(e) => handleBlur("email", e.target.value)}
-              onChange={(e) => handleChange("email", e.target.value)}
-              className={
-                fields.email === "valid"
-                  ? "border-green-500 pr-9"
-                  : fields.email === "invalid"
-                    ? "border-destructive pr-9"
-                    : ""
-              }
-            />
-            {fields.email === "valid" && (
-              <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
-            )}
-          </div>
-          {fields.email === "invalid" && (
-            <p className="text-xs text-destructive">Check your email — looks like a typo.</p>
-          )}
+        <div className="space-y-2">
+          <Label htmlFor="c-email">Work email</Label>
+          <Input id="c-email" name="email" type="email" autoComplete="email" required />
         </div>
       </div>
 
-      <div className="space-y-2.5">
-        <Label htmlFor="g-company">
-          Company{" "}
-          <span className="text-xs font-normal text-muted-foreground/60">(optional)</span>
-        </Label>
-        <div className="relative">
-          <Input
-            id="g-company"
-            name="company"
-            autoComplete="organization"
-            onBlur={(e) => handleBlur("company", e.target.value)}
-            className={fields.company === "valid" ? "border-green-500 pr-9" : ""}
-          />
-          {fields.company === "valid" && (
-            <CheckCircle2 className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-green-500" />
-          )}
+      <div className="grid gap-6 sm:grid-cols-2">
+        <div className="space-y-2">
+          <Label htmlFor="c-company">
+            Company <span className="font-normal text-muted-foreground">(optional)</span>
+          </Label>
+          <Input id="c-company" name="company" autoComplete="organization" />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="c-phone">
+            Phone <span className="font-normal text-muted-foreground">(optional)</span>
+          </Label>
+          <Input id="c-phone" name="phone" type="tel" autoComplete="tel" />
         </div>
       </div>
 
-      <div className="space-y-2.5">
-        <Label htmlFor="g-message">What&apos;s going on?</Label>
+      <div className="space-y-2">
+        <Label htmlFor="c-message">What&apos;s slowing your team down?</Label>
         <Textarea
-          id="g-message"
+          id="c-message"
           name="message"
           required
-          className={`min-h-52 placeholder:text-muted-foreground/40 ${fields.message === "valid" ? "border-green-500" : ""}`}
-          placeholder={`e.g. "We're a 30-person B2B software company. Our leads have dried up — cost per lead doubled this year and we don't know if it's the ads, the SEO, or the messaging. We want to figure this out before Q2."`}
-          onBlur={(e) => handleBlur("message", e.target.value)}
+          className="min-h-36 placeholder:text-muted-foreground/60"
+          placeholder="A sentence or two is plenty. e.g. “We pay for three tools that don’t talk to each other, and someone re-keys every order into our accounting system.”"
         />
       </div>
 
-      <input type="checkbox" name="botcheck" className="hidden" aria-hidden="true" />
+      {/* Honeypot */}
+      <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} aria-hidden="true" />
 
       {error && (
-        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-600">{error}</p>
+        <p className="rounded-md bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>
       )}
 
       <Button type="submit" size="lg" className="w-full" disabled={loading}>
-        {loading ? (
-          "Sending…"
-        ) : (
-          <>
-            Send
-            <Send className="ml-2 h-4 w-4" />
-          </>
-        )}
+        {loading ? "Sending…" : "Send message"}
       </Button>
     </form>
   );
 }
 
-// ── Section ───────────────────────────────────────────────────────────────────
-
 export function Contact() {
-  const [activeTab, setActiveTab] = useState<Tab>("intake");
-
   return (
-    <section id="contact" className="px-6 py-20 md:py-28">
-      <div className="mx-auto max-w-2xl">
+    <section id="contact" className="scroll-mt-20 bg-tint px-6 py-20 md:py-28">
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.15fr] lg:gap-20">
+        <FadeIn>
+          <SectionHeader
+            eyebrow="Get started"
+            title="Tell us what's slowing you down."
+            summary="You don't need a spec, a budget, or a timeline to reach out. Describe the problem in plain language and we'll take it from there."
+          />
 
-        {/* Header */}
-        <FadeIn className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-            Let&apos;s Get to Work
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Ready to start? Tell us about your business. Just exploring? Send us a message.
+          <ol className="mt-10 space-y-6">
+            {nextSteps.map((step, i) => (
+              <li key={step.title} className="flex gap-4">
+                <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-primary text-xs font-semibold text-primary-foreground">{i + 1}</span>
+                <div>
+                  <p className="font-semibold text-foreground">{step.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mt-10 text-sm text-muted-foreground">
+            Prefer the phone?{" "}
+            <a href="tel:8102857000" className="font-medium text-foreground underline underline-offset-4 hover:text-primary">
+              (810) 285-7000
+            </a>
           </p>
         </FadeIn>
 
-        {/* Tab switcher */}
         <FadeIn delay={0.1}>
-          <div className="mt-10 flex rounded-xl border border-border bg-muted/40 p-1.5">
-            <button
-              onClick={() => setActiveTab("intake")}
-              className={`flex-1 rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-200 ${
-                activeTab === "intake"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Start an Engagement
-            </button>
-            <button
-              onClick={() => setActiveTab("general")}
-              className={`flex-1 rounded-lg px-4 py-3 text-sm font-semibold transition-all duration-200 ${
-                activeTab === "general"
-                  ? "bg-primary text-primary-foreground shadow-sm"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Send a Message
-            </button>
-          </div>
+          <ContactForm />
         </FadeIn>
-
-        {/* Forms */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.2, ease: "easeInOut" }}
-          >
-            {activeTab === "intake" ? <IntakeForm /> : <GeneralForm />}
-          </motion.div>
-        </AnimatePresence>
-
-        {/* Phone — passive */}
-        <FadeIn delay={0.2}>
-          <div className="mt-10 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-            <motion.a
-              href="tel:8102857000"
-              className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors"
-              initial="rest"
-              whileHover="hover"
-            >
-              <motion.span
-                variants={{
-                  rest: { rotate: 0 },
-                  hover: { rotate: [0, -18, 18, -15, 15, -10, 10, 0], transition: { duration: 0.65 } },
-                }}
-              >
-                <Phone className="h-3.5 w-3.5" />
-              </motion.span>
-              (810) 285-7000
-            </motion.a>
-          </div>
-        </FadeIn>
-
       </div>
     </section>
   );

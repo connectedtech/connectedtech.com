@@ -18,7 +18,7 @@ export function Headshot() {
     <div className="relative h-28 w-28 overflow-hidden rounded-full border-2 border-primary/20">
       <Image
         src="/headshot.jpg"
-        alt="Scott Danforth"
+        alt="Steve Danforth"
         fill
         className="object-cover"
         onError={() => setError(true)}

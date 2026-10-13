@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -10,18 +10,23 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 const PIWIK_CONTAINER_ID = process.env.NEXT_PUBLIC_PIWIK_CONTAINER_ID;
 const PIWIK_CONTAINER_URL = process.env.NEXT_PUBLIC_PIWIK_CONTAINER_URL;
 
 export const metadata: Metadata = {
-  title: "Connected Technologies | AI-Powered Marketing & Technology Solutions",
+  title: "Connected Technologies | Workflow Automation & Custom Business Software",
   description:
-    "Digital marketing, web and software development, and AI automation — built to grow your business. Strategy through execution, all under one roof.",
+    "We automate the manual work slowing your team down and replace expensive, ill-fitting software with custom tools you own — built in phases, adapted as your business changes.",
   openGraph: {
-    title: "Connected Technologies | AI-Powered Marketing & Technology Solutions",
+    title: "Connected Technologies | Workflow Automation & Custom Business Software",
     description:
-      "Digital marketing, web and software development, and AI automation — built to grow your business.",
+      "Automate your workflows and replace expensive, ill-fitting software with custom tools you own.",
     type: "website",
     url: "https://www.connectedtech.com",
   },
@@ -34,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} font-sans antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         {children}
 
         {/* Vercel Analytics & Speed Insights */}

@@ -81,7 +81,7 @@ function buildIntakeEmail(d: {
 }
 
 function buildGeneralEmail(d: {
-  name: string; email: string; company?: string; message: string;
+  name: string; email: string; company?: string; phone?: string; message: string;
 }) {
   return `<div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:24px;color:#0f172a">
     <div style="background:#64748b;color:white;padding:16px 24px;border-radius:8px 8px 0 0">
@@ -92,6 +92,7 @@ function buildGeneralEmail(d: {
         ${row("Name", d.name)}
         ${row("Email", `<a href="mailto:${d.email}" style="color:#6366f1">${d.email}</a>`)}
         ${d.company ? row("Company", d.company) : ""}
+        ${d.phone ? row("Phone", d.phone) : ""}
       </table>
       <hr style="border:none;border-top:1px solid #e2e8f0;margin:16px 0">
       <p style="margin:0 0 8px;color:#64748b;font-size:14px">Message</p>
@@ -230,8 +231,8 @@ export async function POST(req: NextRequest) {
     }
 
     // ── General contact form ─────────────────────────────────────────────────
-    const { name, email, company, message } = body as {
-      name: string; email: string; company?: string; message: string;
+    const { name, email, company, phone, message } = body as {
+      name: string; email: string; company?: string; phone?: string; message: string;
     };
 
     if (!name || !email || !message) {
@@ -245,7 +246,7 @@ export async function POST(req: NextRequest) {
 
     await pushToSalesflare(
       apiKey,
-      { firstname, lastname, email },
+      { firstname, lastname, email, phone },
       accountName,
       emailDomain,
       "",
@@ -255,7 +256,7 @@ export async function POST(req: NextRequest) {
 
     await sendNotification(
       `New Contact Message from ${name}`,
-      buildGeneralEmail({ name, email, company, message }),
+      buildGeneralEmail({ name, email, company, phone, message }),
     );
 
     return NextResponse.json({ success: true });

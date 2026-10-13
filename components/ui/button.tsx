@@ -5,7 +5,7 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg text-sm font-semibold transition-all active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -19,13 +19,12 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
-        cta: "bg-gradient-to-r from-primary to-brand-ai text-white shadow-[0_2px_20px_oklch(0.55_0.22_260_/_0.35)] hover:shadow-[0_4px_32px_oklch(0.55_0.22_260_/_0.55)] hover:scale-[1.03]",
       },
       size: {
         default: "h-10 px-5 py-2.5 has-[>svg]:px-4",
         xs: "h-6 gap-1 rounded-md px-2 text-xs font-medium has-[>svg]:px-1.5 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-9 rounded-lg gap-1.5 px-4 has-[>svg]:px-3",
-        lg: "h-12 rounded-xl px-7 text-base has-[>svg]:px-5",
+        sm: "h-9 rounded-md gap-1.5 px-4 has-[>svg]:px-3",
+        lg: "h-12 rounded-md px-6 text-base has-[>svg]:px-5",
         icon: "size-9",
         "icon-xs": "size-6 rounded-md [&_svg:not([class*='size-'])]:size-3",
         "icon-sm": "size-8",
